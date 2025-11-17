@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story - Atrium Project Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: radial-gradient(circle at center, #0d1b2a 40%, #000 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+
+        video {
+            width: 85%;
+            max-width: 2000px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px #ffffff33;
+            position: absolute;
+        }
+
+        .back-btn {
+            position: absolute;
+      
+        left: 20px; 
+            background-color: #ffffff33;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+            
+        }
+
+        .back-btn:hover {
+            background-color: #a8642f;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🎥 الفيديو -->
+    <video controls >
+        <source src="videos/1m 4k new 2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- 🔙 زر الرجوع -->
+    <button class="back-btn" onclick="goBack()">←</button>
+
+    <script>
+        function goBack() {
+            window.history.back(); // يرجع للصفحة السابقة
+        }
+    </script>
+
+</body>
+
+</html>
