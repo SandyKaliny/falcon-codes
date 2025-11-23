@@ -189,7 +189,7 @@ a {
     padding: 130px 130px;
     margin-top: 25px;
     border-radius: 30px;
-    max-width: 800px;
+    max-width: 900px;
     text-align: center;
     font-size: 30px;
     font-weight: 300;
@@ -480,92 +480,63 @@ style>body {
 }
 
 
-.vision-mission {
+.vmv-section {
+    width: 100%;
+    padding: 50px 0;
     display: flex;
     justify-content: center;
-    gap: 40px;
-    padding: 80px 100px;
-    background-color: #fff;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    margin-right: 10px;
 }
 
-.card-mission {
-    flex: 1 1 400px;
-    padding: 40px;
-    border-radius: 20px;
-    color: #fff;
+.vmv-container {
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.vmv-card {
+    background: linear-gradient(135deg, #a57d6d, #7e675c);
+    padding: 35px 25px;
+    border-radius: 18px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.card-vision {
-    flex: 1 1 400px;
-    padding: 40px;
-    border-radius: 20px;
     color: #fff;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-.card-vision:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+.vmv-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
-.card-mission:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+.vmv-icon {
+    width: 55px;
+    margin-bottom: 18px;
 }
 
-.card-vision {
-    background: linear-gradient(135deg, #958e74, #996e62);
+.vmv-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
 }
 
-.card-mission {
-    background: linear-gradient(135deg, #958e74, #996e62);
+.vmv-card p {
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
-.card-vision img {
-    width: 125px;
-
-}
-
-.card-mission img {
-    width: 80px;
-    margin-top: 25px;
-}
-
-.card-mission h3 {
-    font-size: 32px;
-    margin-top: 50px;
-    font-weight: 400;
-
-}
-
-.card-vision h3 {
-    font-size: 32px;
-
-    font-weight: 400;
-
-}
-
-.vision-mission p {
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 400;
-}
-
-/* 📱 استجابة لجميع المقاسات */
+/* Responsive */
 @media (max-width: 900px) {
-    .vision-mission {
-        flex-direction: column;
+    .vmv-container {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
+@media (max-width: 600px) {
+    .vmv-container {
+        grid-template-columns: 1fr;
+    }
+}
 
 .about-section {
     display: flex;

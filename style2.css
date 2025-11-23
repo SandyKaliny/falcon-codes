@@ -301,6 +301,29 @@ a {
 .hero-content .btn:hover {
     opacity: 1;
 }
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slider .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slider .slide.active {
+    opacity: 1;
+}
+
+.hero-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* Animations */
 @keyframes zoomIn {
@@ -332,6 +355,7 @@ a {
     align-items: center;
     justify-content: flex-start;
     padding-left: 0rem;
+   
     /* Remove left padding since sidebar doesn't affect this section's spacing */
 }
 
@@ -364,7 +388,7 @@ a {
     );
     border-radius: var(--border-radius-md);
     width: 800px;
-    height: 800px;
+    height: 900px;
     z-index: 0;
 }
 
@@ -390,6 +414,7 @@ a {
     font-weight: 500;
     margin-bottom: 10px;
     position: relative;
+   
 }
 
 .content h3:not(#about-us-tag)::after {
@@ -413,7 +438,7 @@ a {
 .content p {
     font-size: 22px;
     font-weight: 300;
-    max-width: 400px;
+    max-width: 600px;
     margin-top: 20px;
 }
 
@@ -474,7 +499,7 @@ button:hover {
 
 .services .content {
     flex: 1;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 80px auto;
     padding: 20px 40px;
     position: static;
@@ -490,12 +515,12 @@ button:hover {
 .services .content h3:not(#about-us-tag)::after {
     content: "";
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    width: 170px;
-    height: 1px;
-    background-color: #000;
+    width: 180px;
+    height: 2px;
+    background-color: #2d2c2c;
 }
 
 .header {
@@ -525,7 +550,7 @@ button:hover {
     margin-top: 30px;
     padding-bottom: 30px;
     scroll-behavior: smooth;
-    height: 450px;
+    height: 550px;
     width: 100%;
     justify-content: flex-start;
     align-items: flex-start;
@@ -539,7 +564,7 @@ button:hover {
     overflow: hidden;
     transition: var(--transition-slow);
     min-width: 350px;
-    height: 400px;
+    height: 420px;
     display: flex;
     flex-direction: column;
 }
@@ -639,8 +664,8 @@ button:hover {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: var(--transition-base);
-    max-width: 600px;
-    width: 100%;
+    max-width: 850px;
+    width: 120%;
 }
 
 .why-card:hover {

@@ -14,7 +14,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             max-width: 100vw;
         }
@@ -63,6 +64,7 @@
                 opacity: 0;
                 transform: translateY(-100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -71,7 +73,7 @@
 
         /* Navbar */
         /* .navbar { */
-            /* width: 100%;
+        /* width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,7 +85,7 @@
             z-index: 1000;
             padding: 0 40px;
             height: 70px; */
-            /* width: 100%;
+        /* width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -250,6 +252,7 @@
             border-radius: 4px;
         }
 
+
         .different-text {
             flex: 2;
             font-size: 23px;
@@ -278,6 +281,10 @@
             margin-left: -1px;
         }
 
+        .preif-title span .yellow {
+            color: #cd600d;
+        }
+
         .highlight2 {
             position: relative;
             display: inline-block;
@@ -291,8 +298,8 @@
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 30%;
-            width: 120%;
+            bottom: 10%;
+            width: 80%;
             height: 0.40em;
             background-color: #fff47d;
             z-index: -1;
@@ -539,7 +546,7 @@
 
             .highlight::after,
             .highlight2::after {
-                width: 100%;
+                width: 80%;
             }
 
             .different-text,
@@ -621,6 +628,7 @@
 
         /* Tablets */
         @media (min-width: 769px) and (max-width: 991px) {
+
             .about-section,
             .preif-section {
                 padding: 40px;
@@ -701,50 +709,75 @@
         </div>
 
         <div class="different-text" data-aos="fade-up" data-aos-duration="2000">
-            NOBU Hotels blend modern cool luxury and minimal Japanese tradition into the concept of a lifestyle hotel. NOBU hotel
-            and restaurant interact together to provide NOBU products and services that share the common characteristics of unique
-            NOBU food experiences. Each provides a local experience with a modern design and stunning spaces. Helmed from
-            world-renowned Chef Nobu Matsuhisa, Robert De Niro, and Meir Teper, the NOBU hotel concept is a curated experience where
+            NOBU Hotels blend modern cool luxury and minimal Japanese tradition into the concept of a lifestyle hotel.
+            NOBU hotel
+            and restaurant interact together to provide NOBU products and services that share the common characteristics
+            of unique
+            NOBU food experiences. Each provides a local experience with a modern design and stunning spaces. Helmed
+            from
+            world-renowned Chef Nobu Matsuhisa, Robert De Niro, and Meir Teper, the NOBU hotel concept is a curated
+            experience where
             every property is different.
         </div>
     </section>
 
     <section class="preif-section">
         <div class="preif-title">
-            <span class="highlight2" data-aos="fade-right" data-aos-duration="1200">Project Description:</span>
+            <span class="highlight2" data-aos="fade-right" data-aos-duration="1200"><span class="yellow">Project</span>
+                Description:</span>
         </div>
 
         <div class="different2-text" data-aos="fade-up" data-aos-duration="2000">
-            The EDNC project is located at New Cairo on 90 Street, adjacent to the AUC. The restaurant and hotel will occupy two
-            existing buildings within the EDNC retail area. The building designated for the hotel was originally designed as a
-            theatre, necessitating significant construction and structural modifications to transform it into a hotel with a total
-            of 50 keys. On the contrary, the restaurant building with total area 2,124 m2 will not need any major changes. Both
-            buildings will be connected on the ground level, sharing the same BOH
+            The EDNC project is a regeneration project located at New Cairo on 90 Street, adjacent to the AUC. The
+            restaurant and
+            hotel will occupy two existing buildings within the EDNC retail area. The building designated for the hotel
+            was
+            originally designed as a theatre, necessitating significant construction and structural modifications to
+            transform it
+            into a hotel with a total of 50 keys. On the contrary, the restaurant building with total area 2,124 m2 will
+            not need
+            any major changes. Both buildings will be connected on the ground level, sharing the same BOH
+
         </div>
     </section>
 
     <section class="gallery-section">
         <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">Hotel</h2>
         <div class="gallery-container">
-            <div class="gallery-item"><img src="images/Guest room.png" alt="Building" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500"/></div>
-            <div class="gallery-item"><img src="images/Courtyard dining.png" alt="Exterior" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/all day dining.png" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500"/></div>
-            <div class="gallery-item"><img src="images/Guest room2.png" alt="Lobby" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Suite2.png" alt="Office" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Lounge.png" alt="Meeting Room" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Reception.png" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500"/></div>
-            <div class="gallery-item"><img src="images/Suite2.png" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Guest room.png" alt="Building" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Courtyard dining.png" alt="Exterior" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/all day dining.png" alt="Lab" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Guest room2.png" alt="Lobby" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Copy of APM Company P (1).jpg" alt="Exterior"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Suite2.png" alt="Office" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Lounge.png" alt="Meeting Room" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Reception.png" alt="Corridor" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Suite2.png" alt="Corridor" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
         </div>
     </section>
 
     <section class="gallery2-section">
         <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">Restaurant</h2>
         <div class="gallery2-container">
-            <div class="gallery2-item"><img src="images/Cigar Lounge.png" alt="Building" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500"/></div>
-            <div class="gallery2-item"><img src="images/Event room.png" alt="Exterior" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
-            <div class="gallery2-item"><img src="images/Main Dining-Sushi bar.png" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500"/></div>
-            <div class="gallery2-item"><img src="images/Main Dining.png" alt="Lobby" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500"/></div>
-            <div class="gallery2-item"><img src="images/Main Dining-bar Lounge.png" alt="Office" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/Cigar Lounge.png" alt="Building" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/Event room.png" alt="Exterior" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/Main Dining-Sushi bar.png" alt="Lab" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/Main Dining.png" alt="Lobby" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/Main Dining-bar Lounge.png" alt="Office" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
         </div>
     </section>
 
