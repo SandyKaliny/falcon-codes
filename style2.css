@@ -213,7 +213,7 @@ a {
 
 /* ======== Hero Section ======== */
 .hero {
-    background-image: url("images/image 19.png");
+   
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -235,7 +235,6 @@ a {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("images/image 19.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -879,7 +878,8 @@ button:hover {
     padding: 30px 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     width: 100%;
-    max-width: 500px;
+    max-width: 700px;
+    height: 700px;
 }
 
 .reachus-subtitle {
@@ -902,6 +902,7 @@ form {
     flex-direction: column;
     gap: 15px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .reachus-names {
@@ -957,7 +958,7 @@ textarea {
     font-size: 15px;
     cursor: pointer;
     transition: var(--transition-base);
-    box-shadow: 0 3px 6px rgba(195, 107, 41, 0.3);
+
 }
 
 .form button:hover {
