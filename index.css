@@ -390,15 +390,17 @@ style>body {
 
  .layout-grid-unique {
      display: grid;
-     grid-template-columns: 40% 60%;
-     gap: 20px;
+     grid-template-columns: 45% 50%;
+     gap: 70px;
+    padding-right: 35px;
  }
 
  /* Images section */
  .image-group-unique {
      display: grid;
      grid-template-columns: 1fr 1fr;
-     gap: 10px;
+     margin-left: 30px;
+    
  }
 
  .image-item-unique {
@@ -419,9 +421,9 @@ style>body {
      background:#8d929c;
      padding: 20px;
      border-radius: 8px;
-     font-size: 18px;
+     font-size: 20px;
      line-height: 1.6;
-     max-width: 350px;
+     max-width: 400px;
      color: white;
  }
 
@@ -558,7 +560,7 @@ style>body {
 
 .vmv-container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1600px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
