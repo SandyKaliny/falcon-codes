@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ain Sokhna Project</title>
+    <title>NOBU HoTELS AND RESTAURANT</title>
     <link rel="icon" type="image/png" href="images/image 18.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -72,8 +72,8 @@
         }
 
         /* Navbar */
-        .navbar {
-            /* width: 100%;
+        /* .navbar { */
+        /* width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -85,7 +85,7 @@
             z-index: 1000;
             padding: 0 40px;
             height: 70px; */
-            width: 100%;
+        /* width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -97,9 +97,9 @@
             z-index: 1000;
             padding: 0 40px;
             height: 70px;
-        }
+        } */
 
-        .navbar .logo {
+        /* .navbar .logo {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -110,6 +110,7 @@
         }
 
         .navbar .lang {
+            padding-right: 40px;
             display: flex;
             align-items: center;
             font-size: 14px;
@@ -121,8 +122,8 @@
         }
 
         .navbar .lang img {
-            width: 20px;
-            border-radius: 3px;
+            width: 60px;
+            height: 20px;
         }
 
         .navbar .lang span {
@@ -145,7 +146,7 @@
 
         .navbar ul li a:hover {
             color: #d29b6f;
-        }
+        } */
 
         /* Hamburger Menu */
         .hamburger {
@@ -170,11 +171,11 @@
         .hero {
             position: relative;
             height: 100vh;
-            background: url("images/المنطقه\ الصناعيه.jpg") no-repeat center center/cover;
+            background: url("images/NORVISKA_HKS_NOBU_View03_a02.jpg") no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: flex-end;
-            margin-top: 0;
+            margin-top: 0px;
         }
 
         .overlay {
@@ -192,15 +193,15 @@
             position: relative;
             color: #fff;
             text-align: left;
-            max-width: 40%;
+            max-width: 60%;
         }
 
         .text-box h1 {
-            font-size: 4rem;
+            font-size: 2.5rem;
             font-weight: 900;
             line-height: 1.1;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
-            margin-right: 350px;
+            margin-left: 250px;
         }
 
         .subtext {
@@ -210,7 +211,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* About Section */
         .about-section {
             display: flex;
             justify-content: space-between;
@@ -222,7 +222,7 @@
         }
 
         .about-title {
-            flex: 1;
+            flex: 2;
             font-size: 38px;
             font-weight: 500;
             color: #DB7125;
@@ -237,6 +237,7 @@
             color: #415270;
             font-weight: 600;
             font-size: 50px;
+            margin-left: 40px;
         }
 
         .highlight::after {
@@ -253,16 +254,70 @@
         }
 
 
-
         .different-text {
             flex: 2;
             font-size: 23px;
             line-height: 1.7;
             color: #333;
             margin-top: 80px;
+
         }
 
-        /* Gallery Section */
+        .preif-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 80px;
+            gap: 30px;
+            margin: 30px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .preif-title {
+            flex: 1;
+            font-size: 38px;
+            font-weight: 500;
+            color: #DB7125;
+            position: relative;
+            margin-top: 150px;
+            margin-left: -1px;
+
+        }
+
+        .preif-title span .yellow {
+            color: #cd600d;
+        }
+
+        .highlight2 {
+            position: relative;
+            display: inline-block;
+            color: #415270;
+            font-weight: 600;
+            font-size: 50px;
+        }
+
+        .highlight2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10%;
+            width: 80%;
+            height: 0.40em;
+            background-color: #fff47d;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .different2-text {
+            flex: 2;
+            font-size: 23px;
+            line-height: 1.7;
+            color: #333;
+            margin-top: 80px;
+            margin-left: 300px;
+        }
+
         .gallery-section {
             padding: 50px;
             font-family: Arial, sans-serif;
@@ -322,53 +377,7 @@
             transform: scale(1.03);
         }
 
-        .video-section h2 {
-            color: #cd600d;
-            margin-bottom: 20px;
-        }
-
-        .hero-slider {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 30px;
-
-        }
-
-        .hero-slider .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-
-        }
-
-        .hero-slider .slide.active {
-            opacity: 1;
-        }
-
-        .hero-slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Animations */
-        @keyframes zoomIn {
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(1.1);
-            }
-        }
-
-
-
-        /* Video Section */
-        .video-section {
+        .gallery2-section {
             padding: 50px;
             font-family: Arial, sans-serif;
             margin-top: 80px;
@@ -376,32 +385,55 @@
             overflow: hidden;
         }
 
-        .video-title {
-            flex: 1;
-            font-size: 38px;
-            font-weight: 500;
-            color: #DB7125;
-            position: relative;
-            margin-top: 50px;
-            margin-bottom: 30px;
-            text-align: left;
+        .gallery2-section h2 {
+            color: #cd600d;
+            margin-bottom: 15px;
+            font-size: 23px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .video-container {
+        .gallery2-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #f7f7f7;
-            padding: 20px;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #aaa transparent;
+            padding-bottom: 10px;
+        }
+
+        .gallery2-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery2-container::-webkit-scrollbar-thumb {
+            background-color: #aaa;
+            border-radius: 10px;
+        }
+
+        .gallery2-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .gallery2-item {
+            flex: 0 0 auto;
             border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .video-container video {
-            width: 80%;
-            max-width: 900px;
+        .gallery2-item img {
+            display: block;
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
             border-radius: 10px;
-            outline: none;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery2-item img:hover {
+            transform: scale(1.03);
         }
 
         /* Mobile Responsive Styles (991px and below) */
@@ -421,7 +453,7 @@
                 padding: 0 20px;
                 justify-content: space-between;
                 height: 60px;
-                top: 0px;
+                top: 40px;
             }
 
             .navbar ul {
@@ -472,6 +504,7 @@
 
             /* Hero Section Mobile */
             .hero {
+                margin-top: 0px;
                 height: 60vh;
             }
 
@@ -493,74 +526,56 @@
                 padding-right: 0;
             }
 
-            /* About Section Mobile */
-            .about-section {
+            /* About & Preif Sections Mobile */
+            .about-section,
+            .preif-section {
                 flex-direction: column;
                 padding: 20px;
                 margin: 10px;
                 gap: 20px;
             }
 
-            .about-title {
+            .about-title,
+            .preif-title {
                 font-size: 24px;
                 margin-top: 50px;
                 margin-left: 0;
                 text-align: center;
             }
 
-            .about-title::after {
-                display: none;
-            }
-
-            .highlight {
+            .highlight,
+            .highlight2 {
                 font-size: 32px;
             }
 
-            .highlight::after {
-                width: 100%;
+            .highlight::after,
+            .highlight2::after {
+                width: 80%;
             }
 
-            .different-text {
+            .different-text,
+            .different2-text {
                 font-size: 16px;
                 margin-top: 20px;
                 text-align: left;
             }
 
-            /* Gallery Section Mobile */
-            .gallery-section {
+            /* Gallery Sections Mobile */
+            .gallery-section,
+            .gallery2-section {
                 padding: 20px;
                 margin-top: 50px;
             }
 
-            .gallery-section h2 {
+            .gallery-section h2,
+            .gallery2-section h2 {
                 font-size: 20px;
             }
 
-            .gallery-item img {
+            .gallery-item img,
+            .gallery2-item img {
                 width: 280px;
                 height: 180px;
-            }
-
-            /* Video Section Mobile */
-            .video-section {
-                padding: 20px;
-                margin-top: 30px;
-            }
-
-            .video-title {
-                font-size: 24px;
-                margin-top: 30px;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-
-            .video-container {
-                padding: 10px;
-            }
-
-            .video-container video {
-                width: 100%;
-                max-width: 100%;
             }
         }
 
@@ -582,74 +597,72 @@
                 font-size: 2rem;
             }
 
-            .about-title {
+            .about-title,
+            .preif-title {
                 font-size: 20px;
             }
 
-            .highlight {
+            .highlight,
+            .highlight2 {
                 font-size: 28px;
             }
 
-            .different-text {
+            .different-text,
+            .different2-text {
                 font-size: 14px;
                 line-height: 1.5;
             }
 
-            .gallery-section {
+            .gallery-section,
+            .gallery2-section {
                 padding: 15px;
             }
 
-            .gallery-item img {
+            .gallery-item img,
+            .gallery2-item img {
                 width: 250px;
                 height: 150px;
             }
 
-            .video-title {
-                font-size: 20px;
-            }
-
-            .gallery-section h2 {
+            .gallery-section h2,
+            .gallery2-section h2 {
                 font-size: 18px;
             }
         }
 
         /* Tablets */
         @media (min-width: 769px) and (max-width: 991px) {
-            .about-section {
+
+            .about-section,
+            .preif-section {
                 padding: 40px;
                 margin: 20px;
             }
 
-            .about-title {
+            .about-title,
+            .preif-title {
                 font-size: 32px;
                 margin-top: 100px;
             }
 
-            .highlight {
+            .highlight,
+            .highlight2 {
                 font-size: 42px;
             }
 
-            .different-text {
+            .different-text,
+            .different2-text {
                 font-size: 20px;
                 margin-top: 60px;
             }
 
-            .gallery-section {
+            .gallery-section,
+            .gallery2-section {
                 padding: 40px;
                 margin-top: 100px;
             }
-
-            .video-title {
-                font-size: 32px;
-                margin-top: 80px;
-            }
-
-            .video-section {
-                padding: 40px;
-            }
         }
     </style>
-
 </head>
 
 <body>
@@ -689,67 +702,115 @@
     <section class="hero">
         <div class="overlay" data-aos="fade-left" data-aos-duration="1200">
             <div class="text-box" data-aos="fade-left" data-aos-duration="1600">
-                <h1>ORIENTAL <br>INDUSTRIAL <br>CITY</h1>
+                <h1>NOBU OGAMI <br> (HOSPITALITY AND BRANDED RESIDENCE) <br>& NOBU BY THE BEACH </h1>
             </div>
         </div>
     </section>
 
     <section class="about-section">
         <div class="about-title">
-            Project <br>
-            <span class="highlight" data-aos="fade-right" data-aos-duration="1200">Summary</span>
+            <span class="highlight" data-aos="fade-right" data-aos-duration="1200">Overview</span>
         </div>
 
         <div class="different-text" data-aos="fade-up" data-aos-duration="2000">
-            The Project is a distinctive model for industrial cities developed by our client Al-Sharqeyoon Industrial
-            Projects
-            Company in Suez Governorate expanding over 10 million square meters is located at Ain Sokhna; hosting a
-            variety of
-            factories from different industries, and different scales and trades, residential area for staying-over
-            labor and
-            services district all connected with well-designed infrastructure networks and roads. The city includes more
-            than 1,000
-            industrial units, several ready-made complexes for small industries to meet the needs of investors enabling
-            immediate
-            setup for small projects, and contains logistics area and service zones. The project provides an ideal
-            environment for
-            developing and enhancing industries in all fields and facilitating all business operations.
+            (Nobu North Coast in Egypt, located at the heart of one of the fastest-growing luxury destinations in middle
+            east
+            region, Ras El Hekma area, including: Nobu Hotel, Restaurant and luxuries Residences.
+
+            Served by Lobby area, lounge, Fitness & spa, Adult & kids pool, Rooftop lounge & bar and beach club.)
         </div>
     </section>
+
+    <section class="preif-section">
+        <div class="preif-title">
+            <span class="highlight2" data-aos="fade-right" data-aos-duration="1200"><span class="yellow">Project</span>
+                Description:</span>
+        </div>
+
+        <div class="different2-text" data-aos="fade-up" data-aos-duration="2000">
+            NOBU OGAMI Development is SODIC newest project located on the North Coast of Egypt. The site is determined
+            by a 780
+            meters beach front on one of the most beautiful beaches on the coast. The project area (37 Acres) lies
+            within a
+            developed Master Plan for 440 Acres, and the project components are branded villas, residential units,
+            retails
+            facilities, 5-stars hotel, and basic amenities. All of the hospitality and residence components shall be
+            operated by the
+            same hotel operator.
+
+        </div>
+    </section>
+
+
+    <section class="gallery2-section">
+        <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">OGAMI NOBU PARCEL</h2>
+        <div class="gallery2-container">
+            <div class="gallery2-item"><img src="images/locaation.jpg" alt="Building" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/location2.jpg" alt="Building" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View16_a05.jpg" alt="Building"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View13_a02.jpg" alt="Exterior"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View12_a03.jpg" alt="Lab"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View10_a05.jpg" alt="Lobby"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View08_a03.jpg" alt="Office"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View07_a03.jpg" alt="Office"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View05_a03.jpg" alt="Office"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery2-item"><img src="images/NORVISKA_HKS_NOBU_View01_a04.jpg" alt="Office"
+                    data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
+
+            <div class="gallery2-item"><img src="images/location6.png" alt="Building" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+        </div>
+
+    </section>
+
 
     <section class="gallery-section">
-        <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">GALLERY</h2>
+        <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">NOBU RESTAURANT</h2>
         <div class="gallery-container">
-            <div class="gallery-item"><img src="images/sky.png" alt="Lobby" data-aos="zoom-in-up" data-aos-delay="300"
-                    data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/المنطقه الصناعيه.jpg" alt="Building" data-aos="zoom-in-up"
+
+            <div class="gallery-item"><img src="images/ogami9.jpeg" alt="Corridor" data-aos="zoom-in-up"
                     data-aos-delay="100" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Copy of APM Company P (1) copy.jpg" alt="Lab"
-                    data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/sky2.png" alt="Office" data-aos="zoom-in-up" data-aos-delay="400"
+            <div class="gallery-item"><img src="images/ogamiiii.jpeg" alt="Corridor" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogamii.jpeg" alt="Building" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami1.jpeg" alt="Exterior" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami2.jpeg" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100"
                     data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami3.jpeg" alt="Lobby" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami4.jpeg" alt="Exterior" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami5.jpeg" alt="Office" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami6.jpeg" alt="Meeting Room" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami7jpeg.jpeg" alt="Corridor" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/ogami8.jpeg" alt="Corridor" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+
+            <div class="gallery-item"><img src="images/ogamiii.jpeg" alt="Corridor" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
 
         </div>
     </section>
-   
 
-    <section class="video-section">
-        <div class="video-title" data-aos="fade-right" data-aos-duration="1200">
-            Video
-        </div>
-        <div class="video-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-            <video controls>
-                <source src="videos/Untitled design (1).mp4" type="video/mp4" />
-                متصفحك لا يدعم تشغيل الفيديو.
-            </video>
-        </div>
-    </section>
 
     <script>
         AOS.init({
             duration: 1000,
-            once: true,
-            offset: 100
+            once: true
         });
 
         // Hamburger menu functionality
@@ -773,22 +834,7 @@
                 navLinks.classList.remove('show');
             }
         });
-
-
     </script>
-    <script>
-        const slides = document.querySelectorAll(".hero-slider .slide");
-        let index = 0;
-
-        function showNextSlide() {
-            slides[index].classList.remove("active");
-            index = (index + 1) % slides.length;
-            slides[index].classList.add("active");
-        }
-
-        setInterval(showNextSlide, 4000); // كل 4 ثواني
-    </script>
-
 </body>
 
 </html>
