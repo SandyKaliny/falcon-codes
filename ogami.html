@@ -435,6 +435,36 @@
         .gallery2-item img:hover {
             transform: scale(1.03);
         }
+         #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #lightbox.show {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        #close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
 
         /* Mobile Responsive Styles (991px and below) */
         @media (max-width: 991px) {
@@ -744,6 +774,10 @@
 
     <section class="gallery2-section">
         <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">OGAMI NOBU PARCEL</h2>
+        <div id="lightbox">
+            <span id="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Preview">
+        </div>
         <div class="gallery2-container">
             <div class="gallery2-item"><img src="images/locaation.jpg" alt="Building" data-aos="zoom-in-up"
                     data-aos-delay="100" data-aos-duration="1500" /></div>
@@ -775,6 +809,10 @@
 
     <section class="gallery-section">
         <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">NOBU RESTAURANT</h2>
+        <div id="lightbox">
+            <span id="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Preview">
+        </div>
         <div class="gallery-container">
 
             <div class="gallery-item"><img src="images/ogami9.jpeg" alt="Corridor" data-aos="zoom-in-up"
@@ -833,6 +871,78 @@
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
                 navLinks.classList.remove('show');
             }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".gallery-item img");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("close-lightbox");
+
+
+
+            images.forEach(img => {
+                img.addEventListener("click", function () {
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add("show");
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".gallery2-item img");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("close-lightbox");
+
+
+
+            images.forEach(img => {
+                img.addEventListener("click", function () {
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add("show");
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
         });
     </script>
 </body>

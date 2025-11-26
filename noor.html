@@ -319,6 +319,36 @@
         .gallery-item img:hover {
             transform: scale(1.03);
         }
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox.show {
+    display: flex;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+}
+
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
 
         /* Video Section */
         .video-section {
@@ -671,15 +701,26 @@
 
     <section class="gallery-section">
         <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">GALLERY</h2>
-        <div class="gallery-container">
-            <div class="gallery-item"><img src="images/Picture6.jpg" alt="Building" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Picture2.png" alt="Lab" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Picture1.png" alt="Lobby" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Noor-most-used-scaled 1.png" alt="Office" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Picture7.jpg" alt="Meeting Room" data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Picture8.jpg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="1500" /></div>
-            <div class="gallery-item"><img src="images/Picture9.jpg" alt="Exterior" data-aos="zoom-in-up" data-aos-delay="700" data-aos-duration="1500" /></div>
+        <div id="lightbox">
+            <span id="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Preview">
         </div>
+        <div class="gallery-container">
+            
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="700"><img src="images/Noor 2.jpeg" alt="Lab" data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1500" /></div>
+            <div class="gallery-item"data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100"><img src="images/Noor 4.jpeg" data-aos="zoom-in-up" data-aos-delay="500"data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/NOOR 9.jpg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Noorr.jpg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600"data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Noor 3.jpeg" alt="Lobby" data-aos="zoom-in-up" data-aos-delay="300" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Noor 5.jpeg" alt="Office" data-aos="zoom-in-up" data-aos-delay="400" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Noor 7.jpeg" alt="Exterior" data-aos="zoom-in-up" data-aos-delay="700"  data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Noor 1.jpeg" alt="Building" data-aos="zoom-in-up" data-aos-delay="100" data-aos-duration="1500" /></div> 
+            <div class="gallery-item"><img src="images/Noor 6.jpeg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/Noor 8.png" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600"
+                    data-aos-duration="1500" /></div>
+            
+        </div>
+       
     </section>
 
     <section class="video-section">
@@ -723,6 +764,40 @@
             }
         });
     </script>
+   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".gallery-item img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.getElementById("close-lightbox");
+
+        images.forEach(img => {
+            img.addEventListener("click", function () {
+                lightboxImg.src = this.src;
+                lightbox.classList.add("show");
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.classList.remove("show");
+            lightboxImg.src = "";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
