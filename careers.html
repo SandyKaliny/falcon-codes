@@ -5,154 +5,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandoz – Careers</title>
-    
+
 
     <style>
-      html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: "Inter", sans-serif;
-    background-color: #fff;
-    color: #ffffff;
-    overflow-x: hidden;
-    line-height: 1.6;
-    padding-top: 70px;
-}
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #fff;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+            padding-top: 70px;
+        }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         :root {
-    /* Colors */
-    --primary-orange: #ea8f4d;
-    --secondary-orange: #E38541;
-    --accent-orange: #c67a2c;
-    --primary-blue: #71B2F0;
-    --dark-blue: #003366;
-    --light-blue: #DDE5F0;
-    --text-gray: #646766;
-    --border-gray: #c7d1e0;
-    --bg-light: #e9edf3;
-    
-    /* Spacing */
-    --navbar-height: 70px;
-    --section-padding: 40px;
-    --card-spacing: 20px;
-    /* --border-radius-sm: 8px; */
-    --border-radius-md: 15px;
-    --border-radius-lg: 25px;
-    --border-radius-xl: 50px;
-    
-    /* Typography */
-    --font-size-xs: 12px;
-    --font-size-sm: 14px;
-    --font-size-base: 16px;
-    --font-size-lg: 18px;
-    --font-size-xl: 20px;
-    --font-size-2xl: 24px;
-    --font-size-3xl: 28px;
-    --font-size-4xl: 35px;
-    --font-size-5xl: 45px;
-    
-    /* Shadows */
-    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
-    
-    /* Transitions */
-    --transition-base: 0.3s ease;
-    --transition-slow: 0.5s ease;
-}
+            /* Colors */
+            --primary-orange: #ea8f4d;
+            --secondary-orange: #E38541;
+            --accent-orange: #c67a2c;
+            --primary-blue: #71B2F0;
+            --dark-blue: #003366;
+            --light-blue: #DDE5F0;
+            --text-gray: #646766;
+            --border-gray: #c7d1e0;
+            --bg-light: #e9edf3;
 
-/* ======== Navbar Section ======== */
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    box-shadow: var(--shadow-sm);
-    z-index: 1000;
-    padding: 0 var(--section-padding);
-    height: var(--navbar-height);
-}
+            /* Spacing */
+            --navbar-height: 70px;
+            --section-padding: 40px;
+            --card-spacing: 20px;
+            /* --border-radius-sm: 8px; */
+            --border-radius-md: 15px;
+            --border-radius-lg: 25px;
+            --border-radius-xl: 50px;
 
-.navbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+            /* Typography */
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-base: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 20px;
+            --font-size-2xl: 24px;
+            --font-size-3xl: 28px;
+            --font-size-4xl: 35px;
+            --font-size-5xl: 45px;
 
-.navbar .logo img {
-    width: 200px;
-}
+            /* Shadows */
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
 
-.navbar .lang {
-    display: flex;
-    align-items: center;
-    font-size: var(--font-size-sm);
-    cursor: pointer;
-}
+            /* Transitions */
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* ======== Navbar Section ======== */
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 0 var(--section-padding);
+            height: var(--navbar-height);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar .logo img {
+            width: 200px;
+        }
+
+        .navbar .lang {
+            display: flex;
+            align-items: center;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+        }
 
 
-.navbar .lang span {
-    font-size: var(--font-size-lg);
-    color: var(--text-gray);
-    margin-right: 5px;
-}
+        .navbar .lang span {
+            font-size: var(--font-size-lg);
+            color: var(--text-gray);
+            margin-right: 5px;
+        }
 
-.navbar .lang i {
-    color: var(--text-gray);
-}
+        .navbar .lang i {
+            color: var(--text-gray);
+        }
 
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 60px;
-}
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 60px;
+        }
 
-.navbar ul li a {
-    color: var(--text-gray);
-    font-weight: 500;
-    transition: var(--transition-base);
-    font-size: var(--font-size-lg);
-}
+        .navbar ul li a {
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: var(--transition-base);
+            font-size: var(--font-size-lg);
+        }
 
-.navbar ul li a:hover {
-    color: #d29b6f;
-}
+        .navbar ul li a:hover {
+            color: #d29b6f;
+        }
 
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 18px;
-    cursor: pointer;
-    z-index: 1001;
-}
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 18px;
+            cursor: pointer;
+            z-index: 1001;
+        }
 
-.hamburger span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background: var(--text-gray);
-    transition: var(--transition-base);
-}
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--text-gray);
+            transition: var(--transition-base);
+        }
 
         /* Hero Section */
         .hero {
@@ -184,73 +185,72 @@ a {
             flex: 1;
             position: relative;
             z-index: 1;
-            
-            
-            
+
+
+
         }
 
         .hero-img img {
             width: 200px;
             position: absolute;
             right: 100px;
-           
-          
-           
-           
+
+
+
+
         }
+
         .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.7) 40%,
-        rgba(0, 0, 0, 0.5) 80%,
-        rgba(0, 0, 0, 0) 100%
-    );
-    
-    width: 500px;
-   
-}.career-text-section {
-    max-width: 900px;
-    margin: 80px auto;
-   
-    font-family: Arial, sans-serif;
-    color: #3a3a3a;
-    line-height: 1.8;
-}
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right,
+                    rgba(0, 0, 0, 0.8) 0%,
+                    rgba(0, 0, 0, 0.7) 40%,
+                    rgba(0, 0, 0, 0.5) 80%,
+                    rgba(0, 0, 0, 0) 100%);
 
-.breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 20px;
-    margin-bottom: 30px;
-}
+            width: 500px;
 
-.breadcrumb a {
-    color: #00205b;
-    font-weight: 600;
-    text-decoration: none;
-}
+        }
 
-.breadcrumb span {
-    color: #666;
-}
+        .career-text-section {
+            max-width: 900px;
+            margin: 80px auto;
 
-.breadcrumb p {
-    margin: 0;
-    color: #444;
-}
+            font-family: Arial, sans-serif;
+            color: #3a3a3a;
+            line-height: 1.8;
+        }
 
-.career-content p {
-    font-size: 20px;
-    margin-bottom: 25px;
-    
-}
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
 
+        .breadcrumb a {
+            color: #00205b;
+            font-weight: 600;
+            text-decoration: none;
+        }
 
-        
+        .breadcrumb span {
+            color: #666;
+        }
+
+        .breadcrumb p {
+            margin: 0;
+            color: #444;
+        }
+
+        .career-content p {
+            font-size: 20px;
+            margin-bottom: 25px;
+
+        }
     </style>
 
 </head>
@@ -264,11 +264,11 @@ a {
             <span></span>
             <span></span>
         </div>
-    
+
         <div class="logo">
             <img src="images/image 18.png" alt="Atrium Logo">
         </div>
-    
+
         <ul>
             <li><a href="#about">About Us</a></li>
             <li><a href="#services">Services</a></li>
@@ -276,9 +276,9 @@ a {
             <!-- <li><a href="#">Blog</a></li> -->
             <li><a href="#" onclick="location.href='careers.html'">Careers</a></li>
             <li><a href="#contact">Contact</a></li>
-    
+
         </ul>
-    
+
         <div class="lang">
             <!-- <img src="https://flagcdn.com/us.svg" alt="EN"> -->
             <span>En</span>
@@ -298,13 +298,13 @@ a {
             <a href="#">Home</a> <span>›</span>
             <p>Careers</p>
         </div>
-    
+
         <div class="career-content">
             <p>
                 Becoming an independent listed company in October 2023 was a pivotal moment for Sandoz
                 that started us on an exciting multi-year journey of transformation and growth.
             </p>
-    
+
             <p>
                 Together, we are shaping the future of Sandoz. Our momentum is driven by our talented
                 and ambitious colleagues, who, in return for applying their skills, experience a
