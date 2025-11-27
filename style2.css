@@ -239,7 +239,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     border-radius: var(--border-radius-xl);
-    animation: zoomIn 10s ease-in-out forwards;
+    animation: zoomIn 15s ease-in-out forwards;
     z-index: 0;
 }
 
@@ -310,7 +310,7 @@ a {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .hero-slider .slide.active {
