@@ -221,8 +221,7 @@ style>body {
     /* اللون البرتقالي اللي في الصورة */
     position: relative;
     margin-top: 200px;
-    margin-left: 30px;
-
+   
 }
 
 .about-title::after {

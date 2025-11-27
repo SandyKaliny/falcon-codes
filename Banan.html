@@ -15,7 +15,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             max-width: 100vw;
         }
@@ -64,6 +65,7 @@
                 opacity: 0;
                 transform: translateY(-100%);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -239,7 +241,7 @@
             border-radius: 4px;
         }
 
-       
+
         .different-text {
             flex: 2;
             font-size: 23px;
@@ -247,7 +249,95 @@
             color: #333;
             margin-top: 80px;
         }
+  /* Gallery Section */
+        .gallery-section {
+            padding: 50px;
+            font-family: Arial, sans-serif;
+            margin-top: 150px;
+            max-width: 100%;
+            overflow: hidden;
+        }
 
+        .gallery-section h2 {
+            color: #cd600d;
+            margin-bottom: 15px;
+            font-size: 23px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #aaa transparent;
+            padding-bottom: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background-color: #aaa;
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox.show {
+    display: flex;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+}
+
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
         /* Video Section */
         .video-section {
             padding: 50px;
@@ -315,7 +405,7 @@
                 background-color: white;
                 flex-direction: column;
                 padding: 80px 20px 20px 20px;
-                box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
                 transition: right 0.3s ease;
                 gap: 20px;
@@ -406,6 +496,51 @@
                 margin-top: 20px;
                 text-align: left;
             }
+
+           /* Gallery Section Mobile */
+            .gallery-section {
+                padding: 20px;
+                margin-top: 50px;
+            }
+
+            .gallery-section h2 {
+                font-size: 20px;
+            }
+
+            .gallery-item img {
+                width: 280px;
+                height: 180px;
+            }
+            #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightbox.show {
+    display: flex;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.6);
+}
+
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
 
             /* Video Section Mobile */
             .video-section {
@@ -552,22 +687,54 @@
         </div>
 
         <div class="different-text" data-aos="fade-up" data-aos-duration="2000">
-        Banan Project is located in Dahyet Al Fursan, Riyad, KSA, the capital of the Kingdom of Saudi Arabia, and center of the
-        business in the region, the site is 30 km from the heart of Al Riyadh and is close by many landmarks like King Khaled
-        Airport King Salman Park, King Abdulaziz Equestrian Field El Roshan development, and other several landmarks. The
-        development is surrounded by many roads that connect to the heart of Riyadh, airports, and main districts. The project
-        is a mega mix-use development city aiming to create a distinctive residential community encompassed by a main park and
-        an integrated urban quarter by pocket gardens. It provids around 28 thousand residential units accommodating about
-        135,000 residences, including villas and apartments, on a total area of 10 million square meters
-        The project is being developed in partnership between Talaat Mustafa Group - KSA, and the Saudi National Housing Company
-        and will incubate high standard Commercial, Communal, Cultural, educational, and Entertainment Facilities.
+            Banan Project is located in Dahyet Al Fursan, Riyad, KSA, the capital of the Kingdom of Saudi Arabia, and
+            center of the
+            business in the region, the site is 30 km from the heart of Al Riyadh and is close by many landmarks like
+            King Khaled
+            Airport King Salman Park, King Abdulaziz Equestrian Field El Roshan development, and other several
+            landmarks. The
+            development is surrounded by many roads that connect to the heart of Riyadh, airports, and main districts.
+            The project
+            is a mega mix-use development city aiming to create a distinctive residential community encompassed by a
+            main park and
+            an integrated urban quarter by pocket gardens. It provids around 28 thousand residential units accommodating
+            about
+            135,000 residences, including villas and apartments, on a total area of 10 million square meters
+            The project is being developed in partnership between Talaat Mustafa Group - KSA, and the Saudi National
+            Housing Company
+            and will incubate high standard Commercial, Communal, Cultural, educational, and Entertainment Facilities.
 
         </div>
     </section>
+    <section class="gallery-section">
+        <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">GALLERY</h2>
+        <div id="lightbox">
+            <span id="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Preview">
+        </div>
+        <div class="gallery-container">
     
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="700">
+                <img src="images/Bird.jpg" alt="Lab"  data-aos="zoom-in-up" data-aos-delay="200" data-aos-duration="1500" /></div>
+            <div class="gallery-item" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="100"><img
+                    src="images/banan 00.jpg" data-aos="zoom-in-up" data-aos-delay="500" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/banan 000.jpg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600"
+                    data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/banan 0000.jpg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600"
+                    data-aos-duration="1500" /></div>
+                    <div class="gallery-item"><img src="images/banan 0.jpg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600"
+                            data-aos-duration="1500" /></div>
+                            <div class="gallery-item"><img src="images/Banan.jpg" alt="Corridor" data-aos="zoom-in-up" data-aos-delay="600"
+                                    data-aos-duration="1500" /></div>
+           
+    
+        </div>
+    
+    </section>
+
     <section class="video-section">
         <div class="video-title" data-aos="fade-right" data-aos-duration="1200">
-            Video 
+            Video
         </div>
         <div class="video-container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
             <video controls>
@@ -606,6 +773,40 @@
             }
         });
     </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".gallery-item img");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.getElementById("close-lightbox");
+
+        images.forEach(img => {
+            img.addEventListener("click", function () {
+                lightboxImg.src = this.src;
+                lightbox.classList.add("show");
+            });
+        });
+
+        closeBtn.addEventListener("click", () => {
+            lightbox.classList.remove("show");
+            lightboxImg.src = "";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
