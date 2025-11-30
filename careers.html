@@ -157,7 +157,7 @@
 
         /* Hero Section */
         .hero {
-            background-image: url("images/sky.png");
+            background-image: url("images/career1.jpg");
             height: 550px;
             display: flex;
             align-items: center;
@@ -210,13 +210,13 @@
                     rgba(0, 0, 0, 0.5) 80%,
                     rgba(0, 0, 0, 0) 100%);
 
-            width: 500px;
+            width: 350px;
 
         }
 
         .career-text-section {
-            max-width: 900px;
-            margin: 80px auto;
+            max-width: 1100px;
+            margin: 100px auto;
 
             font-family: Arial, sans-serif;
             color: #3a3a3a;
@@ -251,6 +251,64 @@
             margin-bottom: 25px;
 
         }
+         .section-life {
+            padding: 60px 40px;
+            text-align: center;
+            background-color:var(--light-blue);
+         }
+
+        .section-life h2 {
+            font-size: 40px;
+            margin-bottom: 50px;
+            font-weight: 700;
+            color: #00205b;
+        }
+
+        .cards {
+            display: flex;
+            gap: 250px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: transparent;
+            width: 430px;
+            text-align: left;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            font-size: 24px;
+            margin-top: 15px;
+            color: #00205b;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #333;
+            margin: 10px 0 20px 0;
+        }
+
+        .card button {
+            background: #a4d4ff;
+            color: #06224a;
+            border: none;
+            padding: 12px 25px;
+            font-size: 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+
     </style>
 
 </head>
@@ -301,21 +359,43 @@
 
         <div class="career-content">
             <p>
-                Becoming an independent listed company in October 2023 was a pivotal moment for Sandoz
-                that started us on an exciting multi-year journey of transformation and growth.
+            At APM Construction, our success is powered by talented individuals who bring passion, skill, and ambition to every
+            project. We foster a collaborative and supportive culture where our people feel valued, trusted, and empowered to make
+            an impact.
+            
+          
             </p>
 
             <p>
-                Together, we are shaping the future of Sandoz. Our momentum is driven by our talented
-                and ambitious colleagues, who, in return for applying their skills, experience a
-                supportive and collaborative culture, with impactful, flexible-hybrid careers,
-                where diversity is welcomed, and personal growth is encouraged!
-                <br>Join us!
+                With diverse career paths across engineering, project management, and support functions, we offer opportunities that
+                encourage growth, innovation, and continuous learning.
+                Join APM and help shape a stronger, smarter, and more sustainable future for Egypt’s construction landscape.
             </p>
         </div>
     </section>
-
-
+    <section class="section-life">
+        <h2>Life at APM</h2>
+    
+        <div class="cards">
+    
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="images/job search.png" alt="">
+                <h3>Job Search</h3>
+                <p>The future is ours to shape!</p>
+                <button onclick="location.href='Job.html'">Browse open positions</button>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="images/Growth.png" alt="">
+                <h3>Personal Growth & Learning</h3>
+                <p>Your growth in your hands</p>
+                <button>Read more</button>
+            </div>
+        </div>
+        
+       
 </body>
 
 </html>
