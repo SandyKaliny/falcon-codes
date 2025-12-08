@@ -1,0 +1,850 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOBU HoTELS AND RESTAURANT</title>
+    <link rel="icon" type="image/png" href="images/image 18.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <style>
+        html,
+        body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #fff;
+            color: #333;
+            padding-top: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Update Banner */
+        /* .update-banner-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #FF6B35, #F7931E);
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            animation: fadeDown 0.6s ease-out;
+        } */
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navbar */
+        /* .navbar { */
+        /* width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            position: fixed;
+            top: 45px;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 0 40px;
+            height: 70px; */
+        /* width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            padding: 0 40px;
+            height: 70px;
+        } */
+
+        /* .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar .logo img {
+            width: 200px;
+        }
+
+        .navbar .lang {
+            padding-right: 40px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .navbar .lang i {
+            margin-left: 5px;
+        }
+
+        .navbar .lang img {
+            width: 60px;
+            height: 20px;
+        }
+
+        .navbar .lang span {
+            font-size: 18px;
+            color: #646766;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 60px;
+        }
+
+        .navbar ul li a {
+            color: #646766;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .navbar ul li a:hover {
+            color: #d29b6f;
+        } */
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 18px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: #646766;
+            transition: 0.3s;
+        }
+
+        /* ======== Hero Section ======== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url("images/AZAD\ 3.jpg") no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 0px;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 28, 57, 0.7) 55%, rgba(0, 59, 74, 0.8));
+            clip-path: polygon(60% 0, 100% 0, 100% 100%, 35% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8%;
+        }
+
+        .text-box {
+            position: relative;
+            color: #fff;
+            text-align: left;
+            max-width: 40%;
+        }
+
+        .text-box h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+            margin-right: 350px;
+        }
+
+        .subtext {
+            font-size: 0.9rem;
+            color: #b3d9ff;
+            margin-top: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 80px;
+            gap: 40px;
+            margin: 30px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .about-title {
+            flex: 1;
+            font-size: 38px;
+            font-weight: 500;
+            color: #DB7125;
+            position: relative;
+            margin-top: 150px;
+            margin-left: -1px;
+        }
+
+        .highlight {
+            position: relative;
+            display: inline-block;
+            color: #415270;
+            font-weight: 600;
+            font-size: 50px;
+        }
+
+        .highlight::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 30%;
+            width: 120%;
+            height: 0.40em;
+            background-color: #fff47d;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+
+        .different-text {
+            flex: 2;
+            font-size: 23px;
+            line-height: 1.7;
+            color: #333;
+            margin-top: 80px;
+        }
+
+        .preif-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 80px;
+            gap: 30px;
+            margin: 30px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .preif-title {
+            flex: 1;
+            font-size: 38px;
+            font-weight: 500;
+            color: #DB7125;
+            position: relative;
+            margin-top: 150px;
+            margin-left: -1px;
+        }
+
+        .preif-title span .yellow {
+            color: #cd600d;
+        }
+
+        .highlight2 {
+            position: relative;
+            display: inline-block;
+            color: #415270;
+            font-weight: 600;
+            font-size: 50px;
+        }
+
+        .highlight2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10%;
+            width: 80%;
+            height: 0.40em;
+            background-color: #fff47d;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .different2-text {
+            flex: 2;
+            font-size: 23px;
+            line-height: 1.7;
+            color: #333;
+            margin-top: 80px;
+        }
+
+        .gallery-section {
+            padding: 50px;
+            font-family: Arial, sans-serif;
+            margin-top: 150px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-section h2 {
+            color: #cd600d;
+            margin-bottom: 15px;
+            font-size: 23px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #aaa transparent;
+            padding-bottom: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background-color: #aaa;
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .gallery-item {
+            flex: 0 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 400px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+
+
+
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #lightbox.show {
+            display: flex;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        #close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Mobile Responsive Styles (991px and below) */
+        @media (max-width: 991px) {
+            body {
+                padding-top: 0px;
+            }
+
+            /* Update Banner Mobile */
+            .update-banner-fixed {
+                font-size: 12px;
+                padding: 8px 0;
+            }
+
+            /* Navbar Mobile */
+            /* .navbar {
+                padding: 0 20px;
+                justify-content: space-between;
+                height: 60px;
+                top: 40px;
+            }
+
+            .navbar ul {
+                display: flex;
+                position: fixed;
+                top: 0;
+                right: -250px;
+                height: 100vh;
+                width: 250px;
+                background-color: white;
+                flex-direction: column;
+                padding: 80px 20px 20px 20px;
+                box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                transition: right 0.3s ease;
+                gap: 20px;
+            }
+
+            .navbar ul.show {
+                right: 0;
+            }
+
+            .navbar ul li {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .navbar ul li a {
+                font-size: 16px;
+                padding: 12px 0;
+                display: block;
+                border-bottom: 1px solid #f0f0f0;
+                width: 100%;
+            }
+
+            .hamburger {
+                display: flex;
+                order: -1;
+            }
+
+            .navbar .lang {
+                display: none;
+            }
+
+            .navbar .logo img {
+                width: 150px;
+            } */
+
+            /* Hero Section Mobile */
+            .hero {
+                margin-top: 0px;
+                height: 60vh;
+            }
+
+            .text-box h1 {
+                font-size: 2.5rem;
+                margin-right: 0;
+            }
+
+            .text-box {
+                max-width: 90%;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .overlay {
+                clip-path: none;
+                background: rgba(0, 40, 80, 0.85);
+                justify-content: center;
+                padding-right: 0;
+            }
+
+            /* About & Preif Sections Mobile */
+            .about-section,
+            .preif-section {
+                flex-direction: column;
+                padding: 20px;
+                margin: 10px;
+                gap: 20px;
+            }
+
+            .about-title,
+            .preif-title {
+                font-size: 24px;
+                margin-top: 50px;
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .highlight,
+            .highlight2 {
+                font-size: 32px;
+            }
+
+            .highlight::after,
+            .highlight2::after {
+                width: 80%;
+            }
+
+            .different-text,
+            .different2-text {
+                font-size: 16px;
+                margin-top: 20px;
+                text-align: left;
+            }
+
+            /* Gallery Sections Mobile */
+            .gallery-section,
+            .gallery2-section {
+                padding: 20px;
+                margin-top: 50px;
+            }
+
+            .gallery-section h2,
+            .gallery2-section h2 {
+                font-size: 20px;
+            }
+
+            .gallery-item img,
+            .gallery2-item img {
+                width: 280px;
+                height: 180px;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            body {
+                padding-top: 0px;
+            }
+
+            .navbar .logo img {
+                width: 130px;
+            }
+
+            .hero {
+                height: 50vh;
+            }
+
+            .text-box h1 {
+                font-size: 2rem;
+            }
+
+            .about-title,
+            .preif-title {
+                font-size: 20px;
+            }
+
+            .highlight,
+            .highlight2 {
+                font-size: 28px;
+            }
+
+            .different-text,
+            .different2-text {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .gallery-section,
+            .gallery2-section {
+                padding: 15px;
+            }
+
+            .gallery-item img,
+            .gallery2-item img {
+                width: 250px;
+                height: 150px;
+            }
+
+            .gallery-section h2,
+            .gallery2-section h2 {
+                font-size: 18px;
+            }
+        }
+
+        /* Tablets */
+        @media (min-width: 769px) and (max-width: 991px) {
+
+            .about-section,
+            .preif-section {
+                padding: 40px;
+                margin: 20px;
+            }
+
+            .about-title,
+            .preif-title {
+                font-size: 32px;
+                margin-top: 100px;
+            }
+
+            .highlight,
+            .highlight2 {
+                font-size: 42px;
+            }
+
+            .different-text,
+            .different2-text {
+                font-size: 20px;
+                margin-top: 60px;
+            }
+
+            .gallery-section,
+            .gallery2-section {
+                padding: 40px;
+                margin-top: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Update Banner -->
+    <!-- <div class="update-banner-fixed">
+        ⚙️ Our website is currently under development — updates are in progress.
+    </div> -->
+
+    <!-- Navbar -->
+    <!-- <nav class="navbar" id="home">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo">
+            <img src="images/image 18.png" alt="Atrium Logo">
+        </div>
+
+        <ul>
+            <li><a href="#about">Our Company</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Our Projects</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+        </ul>
+
+        <div class="lang">
+            <img src="https://flagcdn.com/us.svg" alt="EN">
+            <span>En</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </nav> -->
+
+    <section class="hero">
+        <div class="overlay" data-aos="fade-left" data-aos-duration="1200">
+            <div class="text-box" data-aos="fade-left" data-aos-duration="1600">
+                <h1>BAHEYA <br>CENTER </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-title">
+            <span class="highlight" data-aos="fade-right" data-aos-duration="1200">Overview</span>
+        </div>
+
+        <div class="different-text" data-aos="fade-up" data-aos-duration="2000">
+            Located close to the American University New Cairo , AZAD Views is an extension of a residential community,
+            a mixeduse
+            destination that will promote and encourage an outdoor, car-free pedestrian lifestyle, within a safe,
+            vibrant, and
+            landscaped environment.
+            The view is designated to be a beautiful landscape, water feature and a unique architecture design.
+            AZAD Views is designed with the concept of high-quality lifestyle along the concept of the coziness in a
+            neighborhood.
+        </div>
+    </section>
+
+    <section class="preif-section">
+        <div class="preif-title">
+            <span class="highlight2" data-aos="fade-right" data-aos-duration="1200"><span class="yellow">Project</span>
+                Description:</span>
+        </div>
+
+        <div class="different2-text" data-aos="fade-up" data-aos-duration="2000">
+            The project is linked to AZAD I project through a Promenade, representing a beautifully designed avenue that
+            connects
+            the two compounds.
+            The global design of AZAD is created to facilitate convenience for all of its residents by giving them
+            access to all of
+            the
+            amenities and facilities of AZAD I, including the business lounge and the community center.
+            The Promenade itself, while both functional as plentiful greenery, will also serve as a social and
+            commercial hub, with
+            spaces especially designed to host walking markets, sports activities, outdoor yoga, dance studios, and
+            picnics.
+            APM’s primary role in this project is procurement management and design management across a variety of
+            disciplines.
+
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-offset="150">Hotel</h2>
+        <div id="lightbox">
+            <span id="close-lightbox">&times;</span>
+            <img id="lightbox-img" src="" alt="Preview">
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="images/AZAD.jpg" alt="Building" data-aos="zoom-in-up"
+                    data-aos-delay="100" data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/AZAD 7.jpg" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100"
+                    data-aos-duration="1500" /></div>
+
+            <div class="gallery-item"><img src="images/AZAD 2.jpg" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100"
+                    data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/AZAD 5.jpg" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100"
+                    data-aos-duration="1500" /></div>
+            <div class="gallery-item"><img src="images/AZAD 4.jpg" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100"
+                    data-aos-duration="1500" /></div>
+
+            <div class="gallery-item"><img src="images/AZAD 6.jpg" alt="Lab" data-aos="zoom-in-up" data-aos-delay="100"
+                    data-aos-duration="1500" /></div>
+
+
+        </div>
+    </section>
+
+
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.navbar ul');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Close menu when clicking on a link
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('show');
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".gallery-item img");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("close-lightbox");
+
+
+
+            images.forEach(img => {
+                img.addEventListener("click", function () {
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add("show");
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll(".gallery2-item img");
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.getElementById("close-lightbox");
+
+
+
+            images.forEach(img => {
+                img.addEventListener("click", function () {
+                    lightboxImg.src = this.src;
+                    lightbox.classList.add("show");
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                lightbox.classList.remove("show");
+                lightboxImg.src = "";
+            });
+
+            lightbox.addEventListener("click", (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    lightbox.classList.remove("show");
+                    lightboxImg.src = "";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
