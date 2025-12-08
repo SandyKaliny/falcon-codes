@@ -523,12 +523,13 @@ style>body {
     flex: 1;
     text-align: right;
     margin-top: 100px;
-    margin-right: 40px;
+   
+  
 
 }
 
 .journey-image img {
-    width: 60%;
+    width: 100%;
     border-radius: 10px;
 
 }
