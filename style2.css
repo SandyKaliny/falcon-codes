@@ -707,7 +707,7 @@ button:hover {
 /* ======== Landmark Section ======== */
 .landmark-section {
     width: 100%;
-    background: linear-gradient(to bottom, #e4ebf6, #202b46);
+    background: linear-gradient(to bottom, #e4ebf6, #3c3d42);
     min-height: 90vh;
     color: #333;
     backdrop-filter: blur(12px);
