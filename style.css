@@ -490,7 +490,6 @@ ul {
     justify-content: center;
 
     width: 190px;
-    height: 58px;
 
     border: 1px solid #ddd;
 
@@ -1100,7 +1099,7 @@ ul {
     }
 
     .card3 {
-        top: 75%;
+        top: 65%;
         bottom: auto;
         left: 22px;
         right: auto;
@@ -1711,19 +1710,32 @@ ul {
         color: #8B8798;
     }
 
-    /* CTA — Frame 180 text stack (title + talk paragraph) */
+    /* CTA + footer overlapping zone */
+    .footer-cta-zone {
+        display: flex;
+        flex-direction: column;
+        margin-top: 28px;
+        overflow: visible;
+    }
+
     .cta {
-        padding: 20px 0 36px;
-        background: #fff;
+        order: 1;
+        position: relative;
+        z-index: 2;
+        margin: 0 0 -40px;
+        padding: 0;
+        background: transparent;
+        pointer-events: none;
     }
 
     .cta-box {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
         text-align: left;
-        gap: 18px;
+        gap: 14px;
         padding: 22px 18px;
         border-radius: 20px;
+        pointer-events: auto;
     }
 
     .cta-left {
@@ -1774,25 +1786,50 @@ ul {
         display: none;
     }
 
-    /* Footer */
+    .footer-cta-zone footer,
     footer {
-        padding: 36px 0 28px;
+        order: 2;
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+        padding: 72px 0 calc(96px + env(safe-area-inset-bottom, 0px));
+        background: #1B123A;
     }
 
     .footer-top,
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
         gap: 18px;
     }
 
+    .footer-top {
+        padding-bottom: 24px;
+    }
+
+    .footer-top img,
+    .footer-logo img {
+        width: 140px;
+    }
+
     .social-links {
+        width: 100%;
         flex-wrap: wrap;
+        justify-content: flex-start;
         gap: 14px 18px;
     }
 
     .social-links a {
         font-size: 13px;
+    }
+
+    .footer-bottom .footer-legal,
+    .footer-bottom div {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
     }
 
     .footer-bottom p,
@@ -3704,213 +3741,195 @@ ul {
 }
 
 /*==========================
-        CTA
+        CTA + FOOTER ZONE
+        (CTA overlaps dark footer)
 ===========================*/
 
+.footer-cta-zone {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+    margin-top: 24px;
+}
+
 .cta {
+    position: relative;
+    z-index: 10;
+    margin: 0 0 -110px;
+    padding: 0;
+    background: transparent;
+    pointer-events: none;
+}
 
-    background: #F8F7FD;
-
-    padding-bottom: 90px;
-
+.cta .container {
+    pointer-events: none;
 }
 
 .cta-box {
-
-    background: linear-gradient(90deg, #24165E, #A04EFF);
-
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    background: linear-gradient(135deg, #24165E 0%, #6B4EFF 55%, #A04EFF 100%);
     border-radius: 28px;
-
-    padding: 45px 60px;
-
+    padding: 40px 48px;
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
+    gap: 28px;
     color: white;
-
+    box-shadow: 0 20px 60px rgba(84, 58, 156, 0.35);
 }
 
 .cta-left {
-
     display: flex;
-
     align-items: center;
-
-    gap: 30px;
-
+    gap: 28px;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
 }
 
 .cta-icon {
-
-    width: 90px;
-
-    height: 90px;
-
+    width: 72px;
+    height: 72px;
     background: white;
-
     color: #6B4EFF;
-
     border-radius: 50%;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
-    font-size: 38px;
-
+    font-size: 32px;
+    flex-shrink: 0;
 }
 
 .cta-text {
     flex: 1;
     min-width: 0;
+    text-align: left;
 }
 
 .cta-box h2,
 .cta-text h2 {
-
-    font-size: 42px;
+    font-size: clamp(22px, 2.4vw, 28px);
     font-weight: 800;
-
-    margin-bottom: 18px;
-
+    line-height: 1.25;
+    margin: 0 0 8px;
+    color: #fff;
 }
 
 .cta-box p,
 .cta-text p {
-
-    color: #ddd;
-
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.55;
-
+    font-size: 15px;
 }
 
 .cta-btn {
-
     background: white;
-
     color: #6B4EFF;
-
-    padding: 18px 35px;
-
-    border-radius: 15px;
-
-    display: flex;
-
+    padding: 16px 28px;
+    border-radius: 14px;
+    display: inline-flex;
     align-items: center;
-
-    gap: 12px;
-
+    gap: 10px;
     font-weight: 600;
-
-    transition: .4s;
-
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: .35s;
 }
 
 .cta-btn:hover {
-
-    transform: translateY(-8px);
-
+    transform: translateY(-4px);
 }
 
 /*==========================
         FOOTER
 ===========================*/
 
+.footer-cta-zone footer,
 footer {
-
+    position: relative;
+    z-index: 1;
     background: #1B123A;
-
     color: white;
-
-    padding: 70px 0 30px;
-
+    padding: 148px 0 32px;
+    margin-top: 0;
 }
 
 .footer-top {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
-    margin-bottom: 40px;
-
+    gap: 24px;
+    margin-bottom: 0;
+    padding-bottom: 32px;
 }
 
-.footer-top img {
+.footer-logo {
+    display: inline-flex;
+    flex-shrink: 0;
+}
 
-    width: 140px;
-
+.footer-top img,
+.footer-logo img {
+    width: 160px;
+    height: auto;
+    display: block;
 }
 
 .social-links {
-
     display: flex;
-
+    flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 28px;
-
 }
 
 .social-links a {
-
     color: #BFB8DD;
-
     transition: .3s;
-
+    font-size: 14px;
 }
 
 .social-links a:hover {
-
     color: white;
-
 }
 
+.footer-cta-zone footer hr,
 footer hr {
-
     border: none;
-
     height: 1px;
-
     background: rgba(255, 255, 255, .1);
-
-    margin: 35px 0;
-
+    margin: 0 0 24px;
 }
 
 .footer-bottom {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
+    gap: 20px;
 }
 
 .footer-bottom p {
-
     color: #A7A0C8;
-
+    margin: 0;
+    font-size: 14px;
 }
 
+.footer-bottom .footer-legal,
 .footer-bottom div {
-
     display: flex;
-
     gap: 25px;
-
+    flex-wrap: wrap;
 }
 
 .footer-bottom a {
-
     color: #A7A0C8;
+    font-size: 14px;
+}
 
+.footer-bottom a:hover {
+    color: white;
 }
 
 /*==========================
@@ -3920,37 +3939,56 @@ footer hr {
 @media(max-width:992px) {
 
     .testimonial-grid {
-
         grid-template-columns: 1fr;
+    }
 
+    .cta {
+        margin-bottom: -88px;
     }
 
     .cta-box {
-
-        flex-direction: column;
-
-        text-align: center;
-
-        gap: 35px;
-
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+        padding: 32px 28px;
     }
 
     .cta-left {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 18px;
+    }
 
-        flex-direction: column;
+    .cta-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 28px;
+    }
 
+    .cta-box h2,
+    .cta-text h2 {
+        font-size: 22px;
+    }
+
+    .cta-box p,
+    .cta-text p {
+        font-size: 14px;
+    }
+
+    .footer-cta-zone footer,
+    footer {
+        padding: 120px 0 32px;
     }
 
     .footer-top,
-
     .footer-bottom {
-
-        flex-direction: column;
-
-        gap: 25px;
-
-        text-align: center;
-
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+        gap: 20px;
     }
 
 }
@@ -3958,21 +3996,9 @@ footer hr {
 @media(max-width:768px) {
 
     .testimonial-header {
-
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 20px;
-
-    }
-
-    .social-links {
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-
     }
 
 }
@@ -6166,6 +6192,35 @@ Responsive
         display: none !important;
     }
 
+    .footer-cta-zone {
+        overflow: visible !important;
+    }
+
+    .cta {
+        margin: 0 0 -40px !important;
+        padding: 0 !important;
+        background: transparent !important;
+        z-index: 2 !important;
+    }
+
+    .footer-cta-zone footer,
+    footer {
+        padding: 72px 0 calc(96px + env(safe-area-inset-bottom, 0px)) !important;
+        background: #1B123A !important;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+
+    .social-links {
+        justify-content: flex-start !important;
+    }
+
     .about {
         background: #F9F8FF !important;
         padding: 64px 0 48px !important;
@@ -6355,6 +6410,7 @@ Responsive
     .cta-box {
         text-align: left !important;
         align-items: flex-start !important;
+        flex-direction: row !important;
     }
 
     .cta-left {
