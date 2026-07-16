@@ -789,6 +789,15 @@ ul {
 
 @media (max-width:768px) {
 
+    .page-web .section-title {
+        text-align: left;
+    }
+
+    .page-web .section-title .line {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
     .section-title h2 {
 
         font-size: 34px;
