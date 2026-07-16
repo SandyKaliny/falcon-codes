@@ -18,53 +18,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-    
-    
 
 </head>
 
-<body>
+<body id="top">
+
+    <!-- ================= NAVBAR ================= -->
+    <div id="site-header">
+        <header class="site-header">
+            <nav class="nav" aria-label="Primary">
+                <a class="nav-logo" href="falcon.html" aria-label="Falcon of Codes — Home">
+                    <img src="images/falcon logo.svg" alt="Falcon of Codes — website builder and managed hosting"
+                        width="160" height="54" />
+                </a>
+                <div class="nav-links">
+                    <a href="falcon.html" data-nav="home" class="is-active">Home</a>
+                    <a href="services.html" data-nav="services">Services</a>
+                    <a href="about.html" data-nav="about">About</a>
+                    <a href="#projects" data-nav="portfolio">Portfolio</a>
+                    <a href="contact.html" data-nav="contact">Contact</a>
+                </div>
+                <a class="btn btn-nav" href="contact.html">Let's Talk</a>
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </header>
+    </div>
 
     <div class="loader">
-        <!-- ================= NAVBAR ================= -->
-
-        <header>
-
-            <div class="container">
-
-                <nav class="navbar">
-
-                    <div class="logo">
-
-                        <img src="images/falcon logo.svg" alt="Logo">
-
-                    </div>
-
-                    <ul class="nav-menu">
-
-                        <li><a class="active" href="#">Home</a></li>
-
-                        <li><a href="#">Services</a></li>
-
-                        <li><a href="#">About</a></li>
-
-                        <li><a href="#">Portfolio</a></li>
-
-                        <li><a href="#">Contact</a></li>
-
-                    </ul>
-
-                    <a href="#" class="nav-btn">
-
-                        Let's Talk
-
-                    </a>
-
-                </nav>
-
-            </div>
-
-        </header>
 
         <!-- ================= HERO ================= -->
 
@@ -383,7 +365,7 @@
 
                     </div>
 
-                    
+
 
                 </div>
 
@@ -527,198 +509,129 @@
 
         </section>
 
-<!--======================
+        <!--======================
     FEATURED PROJECTS
 =======================-->
 
-<section class="projects">
+        <section class="projects" id="projects">
 
-    <div class="container">
+            <div class="container">
 
-        <!-- Header -->
+                <!-- Header -->
 
-        <div class="projects-header">
-
-            <div>
-
-                <span class="section-title">
-                    FEATURED PROJECTS
-                </span>
-
-                <h2>
-                    Projects That
-                    <span>Drive Results</span>
-                </h2>
-
-            </div>
-
-            <a href="#" class="view-btn">
-
-                View All Projects
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-        <!-- Cards -->
-
-        <div class="projects-grid">
-
-            <!-- Card 1 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/Real state.jpg" alt="Dream House">
-
-                    <span class="project-tag">
-                        REAL ESTATE
-                    </span>
-
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Dream House</h3>
-
-                    <p>
-                        Modern real estate platform
-                        with advanced search.
-                    </p>
-
-                    <strong>+300% Leads Generated</strong>
-
-                </div>
-
-            </div>
-
-            <!-- Card 2 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/fashoin.jpg" alt="Fashion Store">
-
-                    <span class="project-tag">
-                        E-COMMERCE
-                    </span>
-
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Fashion Store</h3>
-
-                    <p>
-                        Complete e-commerce store
-                        with payments & CMS.
-                    </p>
-
-                    <strong>+120% Sales Increase</strong>
-
-                </div>
-
-            </div>
-
-            <!-- Card 3 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img src="images/medicine.jpg" alt="Healthcare">
-
-                    <span class="project-tag">
-                        HEALTHCARE
-                    </span>
-
-                </div>
-
-                <div class="project-content">
-
-                    <h3>Medicare Plus</h3>
-
-                    <p>
-                        Healthcare platform with
-                        appointment system.
-                    </p>
-
-                    <strong>+85% Organic Traffic</strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<!--======================
-    TESTIMONIALS
-=======================-->
-
-<section class="testimonials">
-
-    <div class="container">
-
-        <!-- Header -->
-
-        <div class="testimonial-header">
-
-            <div>
-
-                <span class="section-title">
-                    CLIENTS LOVE US
-                </span>
-
-                <h2>
-                    What Our Clients Say About Us
-                </h2>
-
-            </div>
-
-            <a href="#" class="view-btn">
-
-                View All Projects
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-        </div>
-
-        <!-- Reviews -->
-
-        <div class="testimonial-grid">
-
-            <!-- Review 1 -->
-
-            <div class="testimonial-card">
-
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-
-                <p>
-
-                    "Falcon Codes transformed our outdated website
-                    into a modern, fast, and SEO-friendly platform.
-                    We've seen incredible traffic growth!"
-
-                </p>
-
-                <div class="client-info">
-
-                    <img src="images/client1.jpg" alt="Ahmed">
+                <div class="projects-header">
 
                     <div>
 
-                        <h4>Ahmed K.</h4>
+                        <span class="section-title">
+                            FEATURED PROJECTS
+                        </span>
 
-                        <span>CEO, Atrium</span>
+                        <h2>
+                            Projects That
+                            <span>Drive Results</span>
+                        </h2>
+
+                    </div>
+
+                    <a href="#" class="view-btn">
+
+                        View All Projects
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+                <!-- Cards -->
+
+                <div class="projects-grid">
+
+                    <!-- Card 1 -->
+
+                    <div class="project-card">
+
+                        <div class="project-image">
+
+                            <img src="images/Real state.jpg" alt="Dream House">
+
+                            <span class="project-tag">
+                                REAL ESTATE
+                            </span>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>Dream House</h3>
+
+                            <p>
+                                Modern real estate platform
+                                with advanced search.
+                            </p>
+
+                            <strong>+300% Leads Generated</strong>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 2 -->
+
+                    <div class="project-card">
+
+                        <div class="project-image">
+
+                            <img src="images/fashoin.jpg" alt="Fashion Store">
+
+                            <span class="project-tag">
+                                E-COMMERCE
+                            </span>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>Fashion Store</h3>
+
+                            <p>
+                                Complete e-commerce store
+                                with payments & CMS.
+                            </p>
+
+                            <strong>+120% Sales Increase</strong>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Card 3 -->
+
+                    <div class="project-card">
+
+                        <div class="project-image">
+
+                            <img src="images/medicine.jpg" alt="Healthcare">
+
+                            <span class="project-tag">
+                                HEALTHCARE
+                            </span>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>Medicare Plus</h3>
+
+                            <p>
+                                Healthcare platform with
+                                appointment system.
+                            </p>
+
+                            <strong>+85% Organic Traffic</strong>
+
+                        </div>
 
                     </div>
 
@@ -726,152 +639,277 @@
 
             </div>
 
-            <!-- Review 2 -->
-
-            <div class="testimonial-card">
-
-                <i class="fa-solid fa-quote-left quote-icon"></i>
-
-                <p>
-
-                    "Professional, responsive, and highly skilled team.
-                    They delivered our project on time with amazing
-                    results."
-
-                </p>
-
-                <div class="client-info">
-
-                    <img src="images/client2.jpg" alt="Sara">
-
+        </section>
+        <!--======================
+            TESTIMONIALS
+        =======================-->
+        
+        <section class="testimonials">
+        
+            <div class="container">
+        
+                <!-- Header -->
+        
+                <div class="testimonial-header">
+        
                     <div>
-
-                        <h4>Sara K.</h4>
-
-                        <span>Marketing Manager</span>
-
+        
+                        <span class="section-title">
+                            CLIENTS LOVE US
+                        </span>
+        
+                        <h2>
+                            What Our Clients Say About Us
+                        </h2>
+        
                     </div>
-
+        
+                    <a href="#" class="view-btn">
+        
+                        View All Projects
+        
+                        <i class="fa-solid fa-arrow-right"></i>
+        
+                    </a>
+        
                 </div>
-
+        
+                <!-- Reviews -->
+        
+                <div class="testimonial-grid">
+        
+                    <!-- Review 1 -->
+        
+                    <div class="testimonial-card">
+        
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+        
+                        <p>
+        
+                            "Falcon Codes transformed our outdated website
+                            into a modern, fast, and SEO-friendly platform.
+                            We've seen incredible traffic growth!"
+        
+                        </p>
+        
+                        <div class="client-info">
+        
+                            <img src="images/avatar-1.jpg.png" alt="Ahmed">
+        
+                            <div>
+        
+                                <h4>Ahmed K.</h4>
+        
+                                <span>CEO, Atrium</span>
+        
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                    <!-- Review 2 -->
+        
+                    <div class="testimonial-card">
+        
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+        
+                        <p>
+        
+                            "Professional, responsive, and highly skilled team.
+                            They delivered our project on time with amazing
+                            results."
+        
+                        </p>
+        
+                        <div class="client-info">
+        
+                            <img src="images/avatar-1.jpg.png" alt="Sara">
+        
+                            <div>
+        
+                                <h4>Sara K.</h4>
+        
+                                <span>Marketing Manager</span>
+        
+                            </div>
+        
+                        </div>
+        
+                    </div>
+        
+                </div>
+        
             </div>
-
-        </div>
+        
+        </section>
+        
+        <!--======================
+                CTA
+        =======================-->
+        
+        <section class="cta">
+        
+            <div class="container">
+        
+                <div class="cta-box">
+        
+                    <div class="cta-left">
+        
+                        <div class="cta-icon">
+        
+                            <i class="fa-solid fa-rocket"></i>
+        
+                        </div>
+        
+                        <div>
+        
+                            <h2>
+        
+                                Ready To Build A Website
+                                <br>
+                                That Works As Hard As You Do?
+        
+                            </h2>
+        
+                            <p>
+        
+                                Let's build something amazing together.
+                                From idea to online success, we're your partner.
+        
+                            </p>
+        
+                        </div>
+        
+                    </div>
+        
+                    <a href="#" class="cta-btn">
+        
+                        Start Your Project
+        
+                        <i class="fa-solid fa-arrow-right"></i>
+        
+                    </a>
+        
+                </div>
+        
+            </div>
+        
+        </section>
+        
+        <!--======================
+                FOOTER
+        =======================-->
+        
+        <footer>
+        
+            <div class="container">
+        
+                <div class="footer-top">
+        
+                    <img src="images/falcon logo.svg" alt="Logo">
+        
+                    <div class="social-links">
+        
+                        <a href="#">Dribbble</a>
+        
+                        <a href="#">Behance</a>
+        
+                        <a href="#">LinkedIn</a>
+        
+                        <a href="#">Instagram</a>
+        
+                        <a href="#">Twitter (X)</a>
+        
+                    </div>
+        
+                </div>
+        
+                <hr>
+        
+                <div class="footer-bottom">
+        
+                    <p>
+        
+                        © 2024 Falcon of Codes.
+                        All rights reserved.
+        
+                    </p>
+        
+                    <div>
+        
+                        <a href="#">Privacy Policy</a>
+        
+                        <a href="#">Terms of Service</a>
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </footer>
 
     </div>
 
-</section>
+    <!-- ================= MOBILE NAV ================= -->
+    <div id="site-mobile-nav">
+        <nav class="mobile-tabbar" aria-label="Mobile navigation">
+            <div class="mobile-tabbar-indicator" aria-hidden="true"></div>
 
-<!--======================
-        CTA
-=======================-->
-
-<section class="cta">
-
-    <div class="container">
-
-        <div class="cta-box">
-
-            <div class="cta-left">
-
-                <div class="cta-icon">
-
-                    <i class="fa-solid fa-rocket"></i>
-
-                </div>
-
-                <div>
-
-                    <h2>
-
-                        Ready To Build A Website
-                        <br>
-                        That Works As Hard As You Do?
-
-                    </h2>
-
-                    <p>
-
-                        Let's build something amazing together.
-                        From idea to online success, we're your partner.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <a href="#" class="cta-btn">
-
-                Start Your Project
-
-                <i class="fa-solid fa-arrow-right"></i>
-
+            <a href="falcon.html" class="mobile-tab is-active" data-page="home" aria-label="Home">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.5z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Home</span>
             </a>
 
-        </div>
+            <a href="about.html" class="mobile-tab" data-page="about" aria-label="About">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">About</span>
+            </a>
 
+            <a href="services.html" class="mobile-tab" data-page="services" aria-label="Services">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" />
+                        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Services</span>
+            </a>
+
+            <a href="#projects" class="mobile-tab" data-page="portfolio" aria-label="Portfolio">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Portfolio</span>
+            </a>
+
+            <a href="contact.html" class="mobile-tab" data-page="contact" aria-label="Contact">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Contact</span>
+            </a>
+        </nav>
     </div>
 
-</section>
-
-<!--======================
-        FOOTER
-=======================-->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-top">
-
-            <img src="images/logo-white.png" alt="Logo">
-
-            <div class="social-links">
-
-                <a href="#">Dribbble</a>
-
-                <a href="#">Behance</a>
-
-                <a href="#">LinkedIn</a>
-
-                <a href="#">Instagram</a>
-
-                <a href="#">Twitter (X)</a>
-
-            </div>
-
-        </div>
-
-        <hr>
-
-        <div class="footer-bottom">
-
-            <p>
-
-                © 2024 Falcon of Codes.
-                All rights reserved.
-
-            </p>
-
-            <div>
-
-                <a href="#">Privacy Policy</a>
-
-                <a href="#">Terms of Service</a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-    </div>
-
-    <script src="script.js">
+    <script src="js/header.js"></script>
+    <script>
         // Fade Animation
 
         const observer = new IntersectionObserver((entries) => {
@@ -928,7 +966,7 @@
 
         const cards = document.querySelectorAll(".service-card");
 
-        const observer = new IntersectionObserver((entries) => {
+        const observer= new IntersectionObserver((entries) => {
 
             entries.forEach(entry => {
 
@@ -990,160 +1028,7 @@ translateY(-10px)`;
             });
 
         });
-        //===========================
-            // Scroll Reveal
-            //===========================
-
-            const projects = document.querySelectorAll(".project-card");
-
-            const observer = new IntersectionObserver((entries) => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.style.opacity = "1";
-
-                        entry.target.style.transform = "translateY(0)";
-
-                    }
-
-                });
-
-            }, { threshold: .3 });
-
-            projects.forEach((card, index) => {
-
-                card.style.opacity = "0";
-
-                card.style.transform = "translateY(70px)";
-
-                card.style.transition = `${0.8 + index * .2}s`;
-
-                observer.observe(card);
-
-            });
-
-
-            //===========================
-            // 3D Hover
-            //===========================
-
-            projects.forEach(card => {
-
-                card.addEventListener("mousemove", (e) => {
-
-                    const rect = card.getBoundingClientRect();
-
-                    const x = e.clientX - rect.left;
-
-                    const y = e.clientY - rect.top;
-
-                    const rotateY = ((x / rect.width) - 0.5) * 10;
-
-                    const rotateX = ((rect.height / 2 - y) / rect.height) * 10;
-
-                    card.style.transform =
-
-                        `perspective(1000px)
-rotateX(${rotateX}deg)
-rotateY(${rotateY}deg)
-translateY(-10px)`;
-
-                });
-
-                card.addEventListener("mouseleave", () => {
-
-                    card.style.transform = "";
-
-                });
-
-            });
-            //==============================
-                // Spotlight Mouse Effect
-                //==============================
-
-                document.querySelectorAll(".project-card").forEach(card => {
-
-                    card.addEventListener("mousemove", (e) => {
-
-                        const rect = card.getBoundingClientRect();
-
-                        const x = e.clientX - rect.left;
-
-                        const y = e.clientY - rect.top;
-
-                        card.style.setProperty("--x", `${x}px`);
-                        card.style.setProperty("--y", `${y}px`);
-
-                    });
-
-                });
-                //===========================
-                    // Scroll Reveal
-                    //===========================
-
-                    const elements = document.querySelectorAll(
-
-                        ".testimonial-card,.cta-box,.footer-top,.footer-bottom"
-
-                    );
-
-                    const observer = new IntersectionObserver((entries) => {
-
-                        entries.forEach(entry => {
-
-                            if (entry.isIntersecting) {
-
-                                entry.target.style.opacity = "1";
-
-                                entry.target.style.transform = "translateY(0)";
-
-                            }
-
-                        });
-
-                    }, { threshold: .2 });
-
-                    elements.forEach((el, index) => {
-
-                        el.style.opacity = "0";
-
-                        el.style.transform = "translateY(60px)";
-
-                        el.style.transition = `${0.8 + index * .2}s`;
-
-                        observer.observe(el);
-
-                    });
-
-
-                    //===========================
-                    // Magnetic CTA Button
-                    //===========================
-
-                    const btn = document.querySelector(".cta-btn");
-
-                    btn.addEventListener("mousemove", (e) => {
-
-                        const rect = btn.getBoundingClientRect();
-
-                        const x = e.clientX - rect.left;
-
-                        const y = e.clientY - rect.top;
-
-                        btn.style.transform =
-
-                            `translate(${(x - rect.width / 2) / 12}px,
-${(y - rect.height / 2) / 12}px)`;
-
-                    });
-
-                    btn.addEventListener("mouseleave", () => {
-
-                        btn.style.transform = "translate(0,0)";
-
-                    });
+       
     </script>
 
 </body>
