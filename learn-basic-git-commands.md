@@ -5,9 +5,51 @@ Hi Sandy 👋
 Don’t worry about breaking anything. Follow this guide step by step.  
 If something looks wrong, stop and send the error message — we’ll help.
 
-We combined the latest work into a shared branch called **`development`**.  
-That branch has your updates **plus** the mobile work.  
+Mahmoud walked you through this file so you can use Git safely on the Falcon Codes project.  
+**Keep using this guide** whenever you need to pull the latest work or start a new task.
+
+We combine finished work into a shared branch called **`development`**.  
 **For now, use `development` as your starting point.**
+
+---
+
+## What’s on `development` right now (latest)
+
+As of the latest merge, **`development` is the current Figma-aligned clone** with **responsive mobile finished** for these pages:
+
+| Page | File | Status |
+|------|------|--------|
+| Home | `index.html` | Done — desktop + mobile |
+| About | `about.html` | Done — desktop + mobile |
+| Contact | `contact.html` | Done — desktop + mobile |
+| Services (list) | `services.html` | Done — desktop + mobile |
+| Web Development (detail) | `web.html` | Done — desktop + mobile (shared header + footer) |
+
+Also shared across pages: the site header, mobile tab bar, and footer CTA zone.
+
+**Pull `development` to get this full set.**
+
+---
+
+## Next task (deliver Saturday morning)
+
+This is the next piece to ship:
+
+1. **Use `web.html` as the template** for other service detail pages (same layout / header / footer pattern).
+2. **Create JSON file(s)** that hold each service’s content:
+   - titles, text, lists
+   - **image paths**
+   - any other detail fields the page needs
+3. **Update the parent Services list page** (`services.html`) so it **reads the services list from JSON** (not hard-coded only).
+4. When the user **clicks a service**, open the detail page and **load that service’s data from JSON** (same idea as dumping the detail fields into the `web.html`-style page).
+
+Goal for Saturday morning: list page driven by JSON + detail page filled from JSON when a service is clicked.
+
+Suggested branch name when you start (from `development`):
+
+```bash
+git checkout -b sandy-services-json
+```
 
 ---
 
@@ -16,8 +58,8 @@ That branch has your updates **plus** the mobile work.
 | Branch | What it is | What you should do |
 |--------|------------|--------------------|
 | `main` | Older / stable line | Don’t start new work here for now |
-| `mobile` | Mobile UI work (already merged into development branch, mahamoud's edits...) | You don’t need to use this now |
-| **`development`** | **Latest shared project** | **Start here. Pull this. Build from this.** |
+| `mobile` | Older mobile line (already folded into development) | You don’t need this now |
+| **`development`** | **Latest shared project (Figma clone + responsive pages above)** | **Start here. Pull this. Build from this.** |
 
 Repo: `https://github.com/SandyKaliny/falcon-codes`
 
@@ -33,7 +75,7 @@ Repo: `https://github.com/SandyKaliny/falcon-codes`
    Create your **own small branch from `development`**, do your work there, then we merge it back into `development`.
 
 4. You **do not** need to manually copy mobile work into your branch.  
-   When you start from `development`, mobile work is already included.
+   When you start from `development`, the responsive pages listed above are already included.
 
 ---
 
@@ -47,9 +89,9 @@ git checkout development
 git pull origin development
 ```
 
-That’s it. You now have the latest shared version.
+That’s it. You now have the latest shared version (home, about, contact, services, web — responsive).
 
-Open the site from this folder as usual (for example `index.html`).
+Open the site from this folder as usual (for example `index.html` or `web.html`).
 
 ---
 
@@ -114,16 +156,16 @@ git pull origin development
 
 Pick a clear name, for example:
 
+- `sandy-services-json` ← good name for the Saturday task
 - `sandy-about-updates`
 - `sandy-contact-form`
-- `sandy-web-page`
 
 ```bash
-git checkout -b sandy-about-updates
+git checkout -b sandy-services-json
 ```
 
 You are now on your own branch, based on the latest `development`  
-(so you already have the mobile work + shared updates).
+(so you already have the responsive home / about / contact / services / web work).
 
 ### Step 3 — Make your edits, then save them
 
@@ -136,10 +178,10 @@ git commit -m "Describe your update in a short sentence"
 ### Step 4 — Send your branch to GitHub
 
 ```bash
-git push -u origin sandy-about-updates
+git push -u origin sandy-services-json
 ```
 
-(Use your real branch name instead of `sandy-about-updates`.)
+(Use your real branch name instead of `sandy-services-json`.)
 
 ### Step 5 — Merge into `development` (together)
 
@@ -172,9 +214,11 @@ You don’t need to solve that alone.
 | Question | Answer |
 |----------|--------|
 | Where is the latest expected combined code **today**? | **`development`** |
+| What’s finished there now? | Home, About, Contact, Services, Web — responsive / Figma-aligned |
+| What’s next (Saturday morning)? | JSON-driven services list + detail pages (from `web.html` pattern) |
 | Where should your new finished feature go first? | Merge into **`development`** |
 | When does code go to **`main`**? | Later, when `development` is stable and we agree it’s ready |
-| Do you need the `mobile` branch every day? | **No** — it’s already inside `development` - mahmoud already did it |
+| Do you need the `mobile` branch every day? | **No** — that work is already inside `development` |
 
 So you can relax:  
 **pull `development` → create your branch from it → work → push → merge back to `development`.**
@@ -192,8 +236,9 @@ Remember: for current work, go back to `development` (or your branch created fro
 
 ---
 
-## Need help? 
-### Get back to Mahmoud and he'll guide you to walk through this file if you face any problems.
+## Need help?
+
+### Get back to Mahmoud and he’ll walk you through this file if you face any problems.
 
 If a command shows an error, copy the **full message** and send it — we’ll help fix it.  
 Please don’t force-push, and don’t delete branches unless we agree together.
