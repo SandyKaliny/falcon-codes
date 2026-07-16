@@ -21,45 +21,31 @@
 
 </head>
 
-<body>
+<body class="page-about" id="top">
 
-    <header class="header1">
-
-        <div class="container1">
-
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <img src="images/falcon logo.svg" alt="Falcon Codes">
-            </a>
-
-            <!-- Navigation -->
-            <nav class="navbar1">
-
-                <a href="falcon.html">Home</a>
-
-                <a href="services.html">Services</a>
-
-                <a href="about.html" class="active">About</a>
-
-                <a href="portfolio.html">Portfolio</a>
-
-                <a href="contact.html">Contact</a>
-
+    <!-- ================= NAVBAR ================= -->
+    <div id="site-header">
+        <header class="site-header">
+            <nav class="nav" aria-label="Primary">
+                <a class="nav-logo" href="index.html" aria-label="Falcon of Codes — Home">
+                    <img src="images/falcon logo.svg" alt="Falcon of Codes — website builder and managed hosting"
+                        width="160" height="54" />
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" data-nav="home">Home</a>
+                    <a href="services.html" data-nav="services">Services</a>
+                    <a href="about.html" data-nav="about" class="is-active">About</a>
+                    <a href="index.html#projects" data-nav="portfolio">Portfolio</a>
+                    <a href="contact.html" data-nav="contact">Contact</a>
+                </div>
+                <a class="btn btn-nav" href="contact.html">Let's Talk</a>
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
+        </header>
+    </div>
 
-            <!-- Button -->
-            <a href="#" class="talk-btn1">
-                Let's Talk
-            </a>
-
-            <!-- Mobile Menu -->
-            <div class="menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-        </div>
-
-    </header>
     <section class="about-hero">
 
 
@@ -867,24 +853,71 @@
     
     </footer>
 
-    
-   
+    <!-- ================= MOBILE NAV ================= -->
+    <div id="site-mobile-nav">
+        <nav class="mobile-tabbar" aria-label="Mobile navigation">
+            <div class="mobile-tabbar-indicator" aria-hidden="true"></div>
 
-</body>
+            <a href="index.html" class="mobile-tab" data-page="home" aria-label="Home">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.5z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Home</span>
+            </a>
 
-</html>
+            <a href="about.html" class="mobile-tab is-active" data-page="about" aria-label="About">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">About</span>
+            </a>
 
+            <a href="services.html" class="mobile-tab" data-page="services" aria-label="Services">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" />
+                        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Services</span>
+            </a>
 
-<script>
+            <a href="index.html#projects" class="mobile-tab" data-page="portfolio" aria-label="Portfolio">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Portfolio</span>
+            </a>
+
+            <a href="contact.html" class="mobile-tab" data-page="contact" aria-label="Contact">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Contact</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script>
     // =========================
     // Hero Animation
     // =========================
 
-    // Fade when page loads
     window.addEventListener("load", () => {
-        document.querySelector(".hero-content").classList.add("show");
+        document.querySelector(".hero-content1")?.classList.add("show");
     });
-
 
     // =========================
     // Mouse Parallax Effect
@@ -893,94 +926,54 @@
     const hero = document.querySelector(".about-hero");
     const bg = document.querySelector(".bg-img");
 
-    hero.addEventListener("mousemove", (e) => {
+    if (hero && bg) {
+        hero.addEventListener("mousemove", (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            bg.style.transform = `scale(1.08) translate(${x}px, ${y}px)`;
+        });
 
-        const x = (e.clientX / window.innerWidth - 0.5) * 20;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        hero.addEventListener("mouseleave", () => {
+            bg.style.transform = "scale(1.08) translate(0px,0px)";
+        });
 
-        bg.style.transform = `scale(1.08) translate(${x}px, ${y}px)`;
-
-    });
-
-    hero.addEventListener("mouseleave", () => {
-
-        bg.style.transform = "scale(1.08) translate(0px,0px)";
-
-    });
-
-
-    // =========================
-    // Scroll Parallax
-    // =========================
-
-    window.addEventListener("scroll", () => {
-
-        const scroll = window.pageYOffset;
-
-        bg.style.top = scroll * 0.3 + "px";
-
-    });
-
+        window.addEventListener("scroll", () => {
+            bg.style.top = window.pageYOffset * 0.3 + "px";
+        });
+    }
 
     // =========================
     // Button Hover Effect
     // =========================
 
-    const buttons = document.querySelectorAll(".hero-buttons a");
-
-    buttons.forEach(btn => {
-
+    document.querySelectorAll(".hero-buttons a").forEach((btn) => {
         btn.addEventListener("mouseenter", () => {
-
             btn.style.transition = ".4s";
             btn.style.transform = "translateY(-6px) scale(1.04)";
-
         });
 
         btn.addEventListener("mouseleave", () => {
-
             btn.style.transform = "translateY(0) scale(1)";
-
         });
-
     });
-    const menuBtn = document.querySelector(".menu-btn");
-    const navbar = document.querySelector(".navbar");
 
-    menuBtn.onclick = () => {
-
-        navbar.classList.toggle("active");
-
+    if (typeof AOS !== "undefined") {
+        AOS.init({
+            duration: 900,
+            once: true,
+            offset: 120
+        });
     }
-    AOS.init({
-        duration: 900,
-        once: true,
-        offset: 120
-    });
+
     const cards = document.querySelectorAll(".tech-card");
-
     const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
         });
+    }, { threshold: .2 });
 
-    }, {
-        threshold: .2
-    });
-
-    cards.forEach(card => {
-
-        observer.observe(card);
-
-    });
-</script>
+    cards.forEach((card) => observer.observe(card));
+    </script>
 </body>
 
 </html>

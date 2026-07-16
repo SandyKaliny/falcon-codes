@@ -1,11 +1,11 @@
-// Site header + mobile tab bar (from falcon-new-design, adapted for Sandy's pages)
+// Site header + mobile tab bar (adapted for Sandy's pages; home = index.html)
 (function () {
     function getCurrentNavPage() {
-        const file = (window.location.pathname.split("/").pop() || "falcon.html").toLowerCase();
+        const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
         if (file.includes("contact")) return "contact";
         if (file.includes("service")) return "services";
         if (file.includes("about")) return "about";
-        if (file === "falcon.html" || file === "index.html" || file === "" || file === "header.html") return "home";
+        if (file === "index.html" || file === "falcon.html" || file === "" || file === "header.html") return "home";
         return "home";
     }
 
@@ -97,7 +97,16 @@
         navToggle?.addEventListener("click", () => {
             const open = nav.classList.toggle("nav-open");
             navToggle.setAttribute("aria-expanded", open);
+            navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
             if (open) header.classList.remove("is-hidden");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+            link.addEventListener("click", () => {
+                nav?.classList.remove("nav-open");
+                navToggle?.setAttribute("aria-expanded", "false");
+                navToggle?.setAttribute("aria-label", "Open menu");
+            });
         });
     }
 
@@ -110,7 +119,7 @@
         if (!indicator || !tabs.length) return;
 
         const path = window.location.pathname;
-        const file = (path.split("/").pop() || "falcon.html").toLowerCase();
+        const file = (path.split("/").pop() || "index.html").toLowerCase();
         let activePage = "home";
         if (file.includes("contact")) activePage = "contact";
         else if (file.includes("service")) activePage = "services";

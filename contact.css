@@ -26,7 +26,7 @@ body {
 
     color: #1A1A1A;
 
-    overflow-x: hidden;
+    overflow-x: clip;
 
 }
 
@@ -83,7 +83,8 @@ ul {
               NAVBAR
 ======================================*/
 
-header {
+/* Legacy contact navbar (unused — pages use shared #site-header) */
+header:not(.site-header) {
 
     position: absolute;
 
@@ -125,7 +126,7 @@ header {
 
 }
 
-.nav-links {
+.navbar .nav-links {
 
     display: flex;
 
@@ -135,7 +136,7 @@ header {
 
 }
 
-.nav-links a {
+.navbar .nav-links a {
 
     color: #fff;
 
@@ -149,7 +150,7 @@ header {
 
 }
 
-.nav-links a::after {
+.navbar .nav-links a::after {
 
     content: "";
 
@@ -169,8 +170,8 @@ header {
 
 }
 
-.nav-links a:hover::after,
-.nav-links .active::after {
+.navbar .nav-links a:hover::after,
+.navbar .nav-links .active::after {
 
     width: 100%;
 
@@ -810,7 +811,7 @@ header {
 
 @media(max-width:768px) {
 
-    header {
+    header:not(.site-header) {
 
         top: 18px;
 
@@ -822,7 +823,7 @@ header {
 
     }
 
-    .nav-links {
+    .navbar .nav-links {
 
         display: none;
 
@@ -1035,7 +1036,7 @@ MENU MOBILE
 STICKY NAVBAR
 =========================*/
 
-header.sticky {
+header.sticky:not(.site-header) {
 
     position: fixed;
 
