@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -24,6 +24,8 @@
 <body id="top">
 
     <div class="loader">
+
+        <div class="main-hero">
 
         <!-- ================= NAVBAR ================= -->
         <div id="site-header">
@@ -70,9 +72,8 @@
                     </h1>
 
                     <p>
-                        We craft premium websites that combine modern UI,
-                        smooth user experience and powerful performance
-                        to help your business grow faster.
+                        We design intuitive, engaging and user-centered digital products
+                        that not only look beautiful but deliver real results.
                     </p>
 
                 </div>
@@ -137,72 +138,50 @@
             </div>
 
         </section>
+
+        </div><!-- /.main-hero -->
+
         <!-- ================= About ================= -->
 
         <section class="about">
 
             <div class="container about-container">
 
-                <!-- Left -->
-
                 <div class="about-content">
 
-                    <span class="about-tag">
-                        ABOUT FALCON CODES
-                    </span>
+                    <span class="about-tag">ABOUT FALCON CODES</span>
 
                     <h2>
-
-                        Building Digital Experiences
-
+                        Building Digital Experiences That Drive
                         <br>
-
-                        That Drive
-
                         <span>Real Growth.</span>
-
                     </h2>
 
                     <p>
-
                         We help businesses turn ideas into powerful digital
                         solutions designed to connect, engage, and scale.
-
                     </p>
 
                     <div class="about-btn">
 
-                        <a href="about.html">
-
-                            Learn more about us
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
-                        </a>
-
-                        <div class="grow">
-
-
-
-                            <img src="images/arrow.png" alt="arrow">
+                        <div class="grow" aria-hidden="true">
                             <span>Let's grow together</span>
-
+                            <img src="images/arrow.png" alt="">
                         </div>
+
+                        <a href="about.html">
+                            Learn more about us
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
 
                     </div>
 
                 </div>
 
-                <!-- Right -->
-
                 <div class="about-image">
-
                     <div class="shape"></div>
-
                     <img src="images/about.png" alt="about">
-
                     <div class="dots"></div>
-
                 </div>
 
             </div>
@@ -479,7 +458,7 @@
 
                 <!-- Cards -->
 
-                <div class="projects-grid" id="projectsGrid">
+                <div class="projects-grid is-at-start" id="projectsGrid">
 
                     <!-- Card 1 -->
 
@@ -570,7 +549,11 @@
 
                 </div>
 
-                <div class="projects-dots" id="projectsDots" aria-label="Project slides"></div>
+                <div class="projects-dots" id="projectsDots" aria-label="Project slides">
+                    <button type="button" class="is-active" aria-label="Go to slide 1"></button>
+                    <button type="button" aria-label="Go to slide 2"></button>
+                    <button type="button" aria-label="Go to slide 3"></button>
+                </div>
 
             </div>
 
@@ -611,7 +594,7 @@
         
                 <!-- Reviews -->
         
-                <div class="testimonial-grid">
+                <div class="testimonial-grid" id="testimonialsGrid">
         
                     <!-- Review 1 -->
         
@@ -697,21 +680,14 @@
         
                         </div>
         
-                        <div>
+                        <div class="cta-text">
         
                             <h2>
-        
-                                Ready To Build A Website
-                                <br>
-                                That Works As Hard As You Do?
-        
+                                Ready To Build A Website That Works As Hard As You Do?
                             </h2>
         
                             <p>
-        
-                                Let's build something amazing together.
-                                From idea to online success, we're your partner.
-        
+                                Let's build something amazing together. From idea to online success, we're your partner in growth.
                             </p>
         
                         </div>
@@ -845,165 +821,233 @@
 
     <script src="js/header.js"></script>
     <script>
-        // Projects carousel dots (mobile)
+        // Mobile horizontal carousels: projects + testimonials
         (function () {
-            const grid = document.getElementById("projectsGrid");
-            const dotsWrap = document.getElementById("projectsDots");
-            if (!grid || !dotsWrap) return;
+            function isMobile() {
+                return window.matchMedia("(max-width: 768px)").matches;
+            }
 
-            const cards = [...grid.querySelectorAll(".project-card")];
-            if (!cards.length) return;
+            function getScrollerPad(scroller) {
+                return parseFloat(getComputedStyle(scroller).paddingLeft) || 0;
+            }
 
-            cards.forEach((_, i) => {
-                const btn = document.createElement("button");
-                btn.type = "button";
-                btn.setAttribute("aria-label", `Go to project ${i + 1}`);
-                if (i === 0) btn.classList.add("is-active");
-                btn.addEventListener("click", () => {
-                    cards[i].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+            function cardLeftInScroller(scroller, card) {
+                return card.getBoundingClientRect().left
+                    - scroller.getBoundingClientRect().left
+                    + scroller.scrollLeft;
+            }
+
+            function scrollToCard(scroller, card, behavior) {
+                const pad = getScrollerPad(scroller);
+                const left = cardLeftInScroller(scroller, card) - pad;
+                const max = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+                scroller.scrollTo({
+                    left: Math.min(max, Math.max(0, left)),
+                    behavior: behavior || "smooth"
                 });
-                dotsWrap.appendChild(btn);
-            });
+            }
 
-            const dots = [...dotsWrap.querySelectorAll("button")];
-
-            function syncDots() {
-                const mid = grid.scrollLeft + grid.clientWidth / 2;
+            function nearestIndex(scroller, cards) {
+                const pad = getScrollerPad(scroller);
+                const edge = scroller.scrollLeft + pad;
                 let best = 0;
                 let bestDist = Infinity;
                 cards.forEach((card, i) => {
-                    const center = card.offsetLeft + card.offsetWidth / 2;
-                    const dist = Math.abs(center - mid);
+                    const dist = Math.abs(cardLeftInScroller(scroller, card) - edge);
                     if (dist < bestDist) {
                         bestDist = dist;
                         best = i;
                     }
                 });
-                dots.forEach((d, i) => d.classList.toggle("is-active", i === best));
+                return best;
             }
 
-            grid.addEventListener("scroll", () => requestAnimationFrame(syncDots), { passive: true });
+            function enableDragScroll(scroller) {
+                let active = false;
+                let startX = 0;
+                let startLeft = 0;
+                let moved = false;
+
+                scroller.addEventListener("pointerdown", (e) => {
+                    if (!isMobile() || e.pointerType === "mouse" && e.button !== 0) return;
+                    if (e.pointerType === "touch") return; // native touch scroll
+                    active = true;
+                    moved = false;
+                    startX = e.clientX;
+                    startLeft = scroller.scrollLeft;
+                    scroller.classList.add("is-dragging");
+                    scroller.setPointerCapture?.(e.pointerId);
+                });
+
+                scroller.addEventListener("pointermove", (e) => {
+                    if (!active) return;
+                    const dx = e.clientX - startX;
+                    if (Math.abs(dx) > 4) moved = true;
+                    scroller.scrollLeft = startLeft - dx;
+                });
+
+                function endDrag(e) {
+                    if (!active) return;
+                    active = false;
+                    scroller.classList.remove("is-dragging");
+                    if (moved) e.preventDefault();
+                }
+
+                scroller.addEventListener("pointerup", endDrag);
+                scroller.addEventListener("pointercancel", endDrag);
+                scroller.addEventListener("click", (e) => {
+                    if (moved) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        moved = false;
+                    }
+                }, true);
+            }
+
+            function initCarousel(scroller, cardSelector, dotsWrap) {
+                if (!scroller) return;
+                const cards = [...scroller.querySelectorAll(cardSelector)];
+                if (!cards.length) return;
+
+                enableDragScroll(scroller);
+
+                let dots = [];
+                if (dotsWrap) {
+                    dotsWrap.innerHTML = "";
+                    cards.forEach((_, i) => {
+                        const btn = document.createElement("button");
+                        btn.type = "button";
+                        btn.setAttribute("aria-label", `Go to slide ${i + 1}`);
+                        if (i === 0) btn.classList.add("is-active");
+                        btn.addEventListener("click", () => {
+                            if (!isMobile()) return;
+                            scrollToCard(scroller, cards[i], "smooth");
+                        });
+                        dotsWrap.appendChild(btn);
+                    });
+                    dots = [...dotsWrap.querySelectorAll("button")];
+                }
+
+                function syncDots() {
+                    if (!dots.length) return;
+                    const best = nearestIndex(scroller, cards);
+                    dots.forEach((d, i) => d.classList.toggle("is-active", i === best));
+                }
+
+                scroller.addEventListener("scroll", () => {
+                    requestAnimationFrame(syncDots);
+                }, { passive: true });
+                scroller.addEventListener("scrollend", syncDots);
+                window.addEventListener("resize", syncDots);
+                syncDots();
+
+                // Keep horizontal wheel/trackpad gestures inside the carousel
+                scroller.addEventListener("wheel", (e) => {
+                    if (!isMobile()) return;
+                    if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return;
+                    e.preventDefault();
+                    scroller.scrollLeft += e.deltaX;
+                }, { passive: false });
+            }
+
+            // Projects slider only: 40vw inset at first slide, full-bleed after
+            // horizontal swipe inside #projectsGrid (ignores page scroll).
+            (function initProjectsSliderInset() {
+                const grid = document.getElementById("projectsGrid");
+                if (!grid) return;
+
+                function syncInset() {
+                    const atStart = grid.scrollLeft <= 4;
+                    grid.classList.toggle("is-at-start", atStart);
+                }
+
+                grid.addEventListener("scroll", () => {
+                    requestAnimationFrame(syncInset);
+                }, { passive: true });
+                grid.addEventListener("scrollend", syncInset);
+                syncInset();
+            })();
+
+            initCarousel(
+                document.getElementById("projectsGrid"),
+                ".project-card",
+                document.getElementById("projectsDots")
+            );
+            initCarousel(
+                document.getElementById("testimonialsGrid"),
+                ".testimonial-card",
+                null
+            );
         })();
 
         // Fade Animation
-
-        const observer = new IntersectionObserver((entries) => {
-
-            entries.forEach((entry) => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("show");
-
-                }
-
+        (function () {
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
             });
 
-        });
-
-        document.querySelectorAll(".hero-content,.hero-image,.info-card").forEach((el) => {
-
-            el.classList.add("fade-up");
-
-            observer.observe(el);
-
-        });
-
-
+            document.querySelectorAll(".hero-content,.hero-image,.info-card").forEach((el) => {
+                el.classList.add("fade-up");
+                fadeObserver.observe(el);
+            });
+        })();
 
         // Mouse Parallax
+        (function () {
+            const laptop = document.querySelector(".laptop");
+            if (!laptop) return;
 
-        const laptop = document.querySelector(".laptop");
-
-        document.addEventListener("mousemove", (e) => {
-
-            let x = (window.innerWidth / 2 - e.clientX) / 45;
-
-            let y = (window.innerHeight / 2 - e.clientY) / 45;
-
-            laptop.style.transform = `translate(${x}px,${y}px)`;
-
-        });
-
-
+            document.addEventListener("mousemove", (e) => {
+                const x = (window.innerWidth / 2 - e.clientX) / 45;
+                const y = (window.innerHeight / 2 - e.clientY) / 45;
+                laptop.style.transform = `translate(${x}px,${y}px)`;
+            });
+        })();
 
         // Floating Cards
-
         document.querySelectorAll(".info-card").forEach((card, index) => {
-
-            card.style.animationDelay = `${index * .5}s`;
-
+            card.style.animationDelay = `${index * 0.5}s`;
         });
 
-        //==============================
-        // Scroll Reveal
-        //==============================
+        // Scroll Reveal + Mouse Tilt
+        (function () {
+            const cards = document.querySelectorAll(".service-card");
+            if (!cards.length) return;
 
-        const cards = document.querySelectorAll(".service-card");
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, { threshold: 0.3 });
 
-        const observer= new IntersectionObserver((entries) => {
+            cards.forEach((card, index) => {
+                card.style.opacity = "0";
+                card.style.transform = "translateY(60px)";
+                card.style.transition = `${0.8 + index * 0.2}s`;
+                revealObserver.observe(card);
 
-            entries.forEach(entry => {
+                card.addEventListener("mousemove", (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const rotateY = ((x / rect.width) - 0.5) * 12;
+                    const rotateX = ((rect.height / 2 - y) / rect.height) * 12;
+                    card.style.transform =
+                        `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+                });
 
-                if (entry.isIntersecting) {
-
-                    entry.target.style.opacity = "1";
-
-                    entry.target.style.transform = "translateY(0)";
-
-                }
-
+                card.addEventListener("mouseleave", () => {
+                    card.style.transform = "";
+                });
             });
-
-        }, { threshold: .3 });
-
-        cards.forEach((card, index) => {
-
-            card.style.opacity = "0";
-
-            card.style.transform = "translateY(60px)";
-
-            card.style.transition = `${0.8 + index * .2}s`;
-
-            observer.observe(card);
-
-        });
-
-
-        //==============================
-        // Mouse Tilt
-        //==============================
-
-        cards.forEach(card => {
-
-            card.addEventListener("mousemove", (e) => {
-
-                const rect = card.getBoundingClientRect();
-
-                const x = e.clientX - rect.left;
-
-                const y = e.clientY - rect.top;
-
-                const rotateY = ((x / rect.width) - 0.5) * 12;
-
-                const rotateX = ((rect.height / 2 - y) / rect.height) * 12;
-
-                card.style.transform =
-                    `perspective(900px)
-rotateX(${rotateX}deg)
-rotateY(${rotateY}deg)
-translateY(-10px)`;
-
-            });
-
-            card.addEventListener("mouseleave", () => {
-
-                card.style.transform = "";
-
-            });
-
-        });
-       
+        })();
     </script>
 
 </body>
