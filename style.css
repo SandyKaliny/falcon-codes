@@ -14,8 +14,6 @@ body {
 
     background: #F5F2FF;
 
-    overflow-x: hidden;
-
 }
 
 a {
@@ -34,13 +32,15 @@ ul {
 
 
 .loader {
+    position: relative;
+    isolation: isolate;
     background: linear-gradient(90deg, #E4DBFF, #C6A9E1);
-
+    overflow-x: clip;
 }
 
 /* ===========================
    NAVBAR (extended from falcon-new-design)
-   Uses .site-header so it won't clash with section .header blocks
+   Layer stack: #site-header (top) → hero/content (below)
 =========================== */
 
 :root {
@@ -54,25 +54,29 @@ ul {
     --nav-radius-pill: 25px;
 }
 
-.site-header {
+/* Sticky layer lives on the wrapper (same idea as falcon-new-design) */
+#site-header {
     position: sticky;
     top: 16px;
     z-index: 100;
-    padding: 16px var(--nav-header-gutter) 0;
     transition: transform 0.35s ease, opacity 0.35s ease;
     will-change: transform, opacity;
 }
 
-.site-header.is-hidden {
+#site-header.is-hidden {
     transform: translateY(calc(-100% - 20px));
     opacity: 0;
     pointer-events: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .site-header {
+    #site-header {
         transition: none;
     }
+}
+
+.site-header {
+    padding: 16px var(--nav-header-gutter) 0;
 }
 
 .site-header .nav {
@@ -343,6 +347,8 @@ ul {
 
 .hero {
 
+    position: relative;
+    z-index: 1;
     padding: 50px 0;
 
 }
@@ -605,6 +611,8 @@ ul {
 .info-card {
 
     position: absolute;
+
+    z-index: 2;
 
     background: rgba(255, 255, 255, .88);
 
@@ -955,8 +963,11 @@ ul {
         gap: 12px;
     }
 
-    .site-header {
+    #site-header {
         top: 8px;
+    }
+
+    .site-header {
         padding-top: 8px;
     }
 

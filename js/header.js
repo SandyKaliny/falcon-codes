@@ -85,7 +85,7 @@
     }
 
     function initSiteHeader() {
-        const header = document.querySelector(".site-header");
+        const header = document.querySelector("#site-header") || document.querySelector(".site-header");
         const nav = document.querySelector(".nav");
         const navToggle = document.querySelector(".nav-toggle");
         if (!header) return;
