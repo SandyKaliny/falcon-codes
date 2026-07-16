@@ -4397,7 +4397,6 @@ Navbar
 .page-about #site-header,
 .page-contact #site-header {
     position: sticky;
-    top: 16px;
     z-index: 100;
 }
 
@@ -4467,6 +4466,7 @@ Navbar
 .hero-content1 {
     max-width: 620px;
     color: #fff;
+    gap: 6rem;
 }
 
 .section-title {
@@ -4626,22 +4626,23 @@ Responsive
 
 @media(max-width:768px) {
 
-    /* About hero — mobile (left-aligned; keep shared pill header, not design hamburger) */
+    /* About hero — mobile spacing matches Sandy design (keep shared pill header) */
     .about-hero {
         height: 100svh;
         min-height: 640px;
         text-align: left;
-        align-items: flex-end;
-        padding: 0 0 48px;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 88px 0 40px;
         box-sizing: border-box;
     }
 
     .about-hero .overlay {
         background: linear-gradient(
             180deg,
-            rgba(16, 10, 45, 0.55) 0%,
-            rgba(16, 10, 45, 0.72) 45%,
-            rgba(10, 8, 30, 0.88) 100%
+            rgba(16, 10, 45, 0.50) 0%,
+            rgba(16, 10, 45, 0.70) 40%,
+            rgba(10, 8, 30, 0.90) 100%
         );
     }
 
@@ -4649,41 +4650,56 @@ Responsive
         width: 100%;
         max-width: 480px;
         margin: 0 auto;
-        padding: 96px 20px 0;
+        margin-bottom: 0;
+        padding: 0 24px;
         box-sizing: border-box;
     }
 
     .about-hero .hero-content1 {
-        max-width: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        width: 100%;
         text-align: left;
+        margin: 0;
     }
 
+    /* Small gap: label → headline */
     .about-hero .section-title {
+        display: flex;
+        align-items: center;
         justify-content: flex-start;
+        gap: 12px;
         color: #fff;
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 2px;
-        margin-bottom: 18px;
-        gap: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        margin: 0 0 14px;
+        animation: none;
     }
 
     .about-hero .section-title span {
-        width: 28px;
+        width: 32px;
         height: 2px;
         background: #8D6BFF;
+        flex-shrink: 0;
     }
 
+    /* Medium gap: headline → paragraph — keep 3-line breaks from HTML */
     .about-hero .hero-content1 h1 {
-        font-size: clamp(32px, 9vw, 40px);
-        line-height: 1.15;
+        font-size: clamp(34px, 9.2vw, 40px);
+        line-height: 1.12;
         font-weight: 800;
-        margin: 0 0 16px;
+        letter-spacing: -0.02em;
+        margin: 0 0 22px;
         color: #fff;
+        animation: none;
     }
 
     .about-hero .hero-content1 h1 br {
-        display: none;
+        display: block;
     }
 
     .about-hero .hero-content1 h1 span {
@@ -4691,12 +4707,14 @@ Responsive
         display: inline;
     }
 
+    /* Large gap: paragraph → buttons */
     .about-hero .hero-content1 p {
-        color: rgba(255, 255, 255, 0.88);
+        color: rgba(255, 255, 255, 0.90);
         font-size: 15px;
-        line-height: 1.65;
-        max-width: 340px;
-        margin: 0 0 28px;
+        line-height: 1.7;
+        max-width: 34ch;
+        margin: 0 0 36px;
+        animation: none;
     }
 
     .about-hero .hero-buttons {
@@ -4704,8 +4722,10 @@ Responsive
         flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: stretch;
-        gap: 10px;
+        gap: 12px;
         width: 100%;
+        margin: 0;
+        animation: none;
     }
 
     .about-hero .btn-primary1,
@@ -4713,10 +4733,10 @@ Responsive
         flex: 1 1 0;
         width: auto;
         min-width: 0;
-        min-height: 48px;
-        height: 48px;
-        padding: 0 14px;
-        border-radius: 12px;
+        min-height: 50px;
+        height: 50px;
+        padding: 0 16px;
+        border-radius: 999px;
         font-size: 13px;
         font-weight: 600;
         gap: 8px;
@@ -4767,30 +4787,44 @@ Responsive
 @media(max-width:480px) {
 
     .about-hero {
-        min-height: 580px;
-        padding-bottom: 40px;
+        min-height: 600px;
+        padding: 80px 0 32px;
     }
 
     .about-hero .container {
-        padding: 88px 18px 0;
+        padding: 0 20px;
+    }
+
+    .about-hero .section-title {
+        font-size: 11px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
     }
 
     .about-hero .hero-content1 h1 {
-        font-size: 30px;
+        font-size: 42px;
+        line-height: 1.12;
+        margin-bottom: 20px;
     }
 
     .about-hero .hero-content1 p {
-        font-size: 14px;
-        margin-bottom: 24px;
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 32ch;
+        margin-bottom: 34px;
+    }
+
+    .about-hero .hero-buttons {
+        gap: 10px;
     }
 
     .about-hero .btn-primary1,
     .about-hero .btn-secondary1 {
-        min-height: 46px;
-        height: 46px;
-        font-size: 12px;
-        padding: 0 10px;
-        gap: 6px;
+        min-height: 48px;
+        height: 48px;
+        font-size: 12.5px;
+        padding: 0 12px;
+        gap: 7px;
     }
 
     .hero-content h1 {
@@ -5083,55 +5117,38 @@ Responsive
 @media(max-width:992px) {
 
     .about {
-
         padding: 80px 0;
-
     }
 
+    /* Mobile/tablet order: text first, image second (matches design; desktop stays row) */
     .about-container1 {
-
-        flex-direction: column-reverse;
-
+        flex-direction: column;
         text-align: center;
-
-        gap: 60px;
-
+        gap: 48px;
     }
 
     .about-content1 {
-
         width: 100%;
+        order: 1;
+    }
 
+    .about-image1 {
+        width: 100%;
+        order: 2;
     }
 
     .about-content1 p {
-
         max-width: 650px;
-
         margin: auto;
-
-    }
-
-
-
-    .about-image1 {
-
-        width: 100%;
-
     }
 
     .about-image1 img {
-
         width: 90%;
-
         max-width: 600px;
-
     }
 
     .shape {
-
         right: 80px;
-
     }
 
 }
@@ -5139,50 +5156,72 @@ Responsive
 @media(max-width:768px) {
 
     .about {
+        padding: 56px 20px;
+        background: #F8F7FE;
+    }
 
-        padding: 60px 0;
+    .about-container1 {
+        width: 100%;
+        gap: 36px;
+    }
 
+    .about-tag1 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        color: #6B4EFF;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2.2px;
+        text-transform: uppercase;
+    }
+
+    .about-tag1::before,
+    .about-tag1::after {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: #6B4EFF;
+        border-radius: 2px;
+        flex-shrink: 0;
     }
 
     .about-content1 h2 {
+        font-size: clamp(28px, 7vw, 36px);
+        font-weight: 800;
+        line-height: 1.2;
+        margin: 16px 0 18px;
+        color: #111;
+    }
 
-        font-size: 38px;
-
+    .about-content1 h2 span {
+        color: #6B4EFF;
     }
 
     .about-content1 p {
-
-        font-size: 17px;
-
-        line-height: 30px;
-
+        font-size: 15px;
+        line-height: 1.7;
+        color: #7d7d7d;
+        max-width: 36ch;
+        margin: 0 auto;
     }
 
-
     .about-image1 img {
-
         width: 100%;
-
-        border-radius: 30px;
-
+        max-width: 420px;
+        border-radius: 24px;
     }
 
     .shape {
-
         width: 120px;
-
         height: 120px;
-
         top: -15px;
-
         right: 10px;
-
     }
 
     .dots {
-
         display: none;
-
     }
 
 }
@@ -5190,23 +5229,16 @@ Responsive
 @media(max-width:480px) {
 
     .about-content1 h2 {
-
-        font-size: 30px;
-
+        font-size: 28px;
     }
 
     .about-tag1 {
-
-        font-size: 13px;
-
+        font-size: 11px;
         letter-spacing: 2px;
-
     }
 
     .about-content1 p {
-
-        font-size: 16px;
-
+        font-size: 14px;
     }
 
 }
@@ -5640,7 +5672,7 @@ Responsive
     }
 
     .our-process .heading {
-        font-size: clamp(26px, 7vw, 32px);
+        font-size: 20px;
         font-weight: 800;
         line-height: 1.2;
         color: #111;
@@ -5947,18 +5979,6 @@ Responsive
     padding: 100px 50px;
 }
 
-@media (max-width: 800px) {
-    .why-choose .comparison {
-        grid-template-columns: 1fr;
-        padding: 30px 24px;
-        margin: 0;
-    }
-
-    .why-choose .vs-badge {
-        margin: 10px auto;
-    }
-}
-
 /* Why Choose — mobile stacked cards (matches design) */
 @media (max-width: 768px) {
     .why-choose {
@@ -6104,6 +6124,107 @@ Responsive
         color: #E8E4F5;
         z-index: 0;
         pointer-events: none;
+    }
+
+    /* VS comparison — Falcon on top, Traditional below, badge overlaps */
+    .why-choose .comparison {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: transparent;
+        border-radius: 0;
+        padding: 0;
+        margin: 8px 0 0;
+        box-shadow: none;
+        grid-template-columns: none;
+    }
+
+    .why-choose .compare-col--falcon {
+        order: 1;
+    }
+
+    .why-choose .vs-badge {
+        order: 2;
+    }
+
+    .why-choose .compare-col--traditional {
+        order: 3;
+    }
+
+    .why-choose .compare-col {
+        width: 100%;
+        background: #fff;
+        border-radius: 18px;
+        padding: 24px 22px 22px;
+        box-shadow: 0 12px 32px rgba(84, 58, 156, 0.10);
+        text-align: left;
+    }
+
+    .why-choose .compare-col h4 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #111;
+        margin: 0 0 18px;
+    }
+
+    .why-choose .compare-col ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .why-choose .compare-col li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        color: #8b8797;
+        margin: 0 0 14px;
+        line-height: 1.4;
+    }
+
+    .why-choose .compare-col li:last-child {
+        margin-bottom: 0;
+    }
+
+    .why-choose .mark {
+        width: 22px;
+        height: 22px;
+    }
+
+    .why-choose .mark svg {
+        width: 11px;
+        height: 11px;
+    }
+
+    .why-choose .mark.good {
+        background: #6B4EFF;
+    }
+
+    .why-choose .mark.bad {
+        background: #E0785A;
+    }
+
+    .why-choose .vs-badge {
+        width: 64px;
+        height: 64px;
+        margin: -32px auto;
+        z-index: 3;
+        position: relative;
+        font-size: 15px;
+        letter-spacing: 1px;
+        background: linear-gradient(135deg, #818CF8 0%, #6B4EFF 55%, #9354B7 100%);
+        box-shadow: 0 10px 28px rgba(107, 78, 255, 0.40);
+        flex-shrink: 0;
+    }
+
+    .why-choose .compare-col--falcon {
+        padding-bottom: 36px;
+    }
+
+    .why-choose .compare-col--traditional {
+        padding-top: 36px;
     }
 }
 
@@ -6876,7 +6997,7 @@ Responsive
     .services .section-tag,
     .projects .section-title,
     .testimonials .section-title {
-        font-size: 11px !important;
+        font-size: 12px !important;
         letter-spacing: 2.2px !important;
         font-weight: 600 !important;
     }
@@ -6932,8 +7053,8 @@ Responsive
     }
 
     .hero-content h1 {
-        font-size: 30px !important;
-        line-height: 1.18 !important;
+        font-size: 32px !important;
+        line-height: 1.25 !important;
     }
 
     .about-content h2,
@@ -6951,7 +7072,7 @@ Responsive
     .service-card p,
     .project-content p,
     .testimonial-card p {
-        font-size: 14px !important;
+        font-size: 18px !important;
         line-height: 1.65 !important;
     }
 
@@ -7022,7 +7143,7 @@ Responsive
 
     .cta-box h2,
     .cta-text h2 {
-        font-size: 17px !important;
+        font-size: 18px !important;
         line-height: 1.35 !important;
         font-weight: 800 !important;
         margin: 0 0 8px !important;
@@ -7032,7 +7153,7 @@ Responsive
 
     .cta-box p,
     .cta-text p {
-        font-size: 12px !important;
+        font-size: 14px !important;
         line-height: 1.5 !important;
         margin: 0 !important;
         text-align: left !important;
