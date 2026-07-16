@@ -270,37 +270,46 @@ header {
 
 }
 
-.primary-btn {
+.primary-btn,
+.secondary-btn {
 
-    padding: 16px 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+    height: 52px;
+    padding: 0 34px;
 
     border-radius: 50px;
-
-    background: linear-gradient(90deg, #6C4CF1, #A55DFF);
-
-    color: #fff;
+    border: 1px solid transparent;
+    box-sizing: border-box;
 
     font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
 
     transition: .35s;
 
 }
 
+.primary-btn {
+
+    background: linear-gradient(90deg, #6C4CF1, #A55DFF);
+
+    color: #fff;
+
+}
+
 .secondary-btn {
-
-    padding: 16px 34px;
-
-    border-radius: 50px;
 
     background: #fff;
 
     color: #222;
 
-    font-weight: 400;
+    border-color: #e4dff5;
 
     box-shadow: var(--shadow);
-
-    transition: .35s;
 
 }
 
@@ -978,6 +987,18 @@ font-weight: 600;
     .hero-buttons {
 
         justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+
+    .primary-btn,
+    .secondary-btn {
+
+        min-width: 180px;
+        min-height: 52px;
+        height: 52px;
+        padding: 0 28px;
 
     }
 
