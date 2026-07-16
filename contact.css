@@ -1422,6 +1422,7 @@ header:not(.site-header) {
 
     .contact-heading {
         padding-right: 90px;
+        margin-bottom: 18px;
     }
 
     .contact-left h1 {

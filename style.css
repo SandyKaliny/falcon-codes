@@ -6131,7 +6131,7 @@ Responsive
         display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
+        gap: 1rem;
         background: transparent;
         border-radius: 0;
         padding: 0;
