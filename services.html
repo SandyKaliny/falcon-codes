@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falcon Of Codes</title>
+    <title>Falcon Of Codes | Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
     <style>
         * {
@@ -17,95 +18,101 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        body {
+        body.page-services {
             background: #05010f;
             overflow-x: hidden;
+            /* Same content rail as home / about: 90% width, max 1500px */
+            --svc-container: 1500px;
+            --svc-rail: 90%;
+            --svc-inline: max(5%, calc((100% - var(--svc-container)) / 2));
         }
 
-        .hero {
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at top right, #4a22b8 0%, #1b0d4f 40%, #05010f 90%);
-            padding: 30px 7%;
+        /* Inner rails (explicit containers) — same as home/about */
+        .page-services .deliver-container,
+        .page-services .comparison-container,
+        .page-services .stats-section,
+        .page-services .footer-container,
+        .page-services .container {
+            width: var(--svc-rail) !important;
+            max-width: var(--svc-container) !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            box-sizing: border-box;
+        }
+
+        /* Full-bleed sections without an inner .container: pad to 90%/1500 rail */
+        .page-services .dp-section,
+        .page-services .ux-journey {
+            padding-left: var(--svc-inline);
+            padding-right: var(--svc-inline);
+            box-sizing: border-box;
+        }
+
+        /*
+          Services hero: flex-center content in the viewport.
+          Side rail via --svc-inline; vertical via flex (no magic 100px top pad).
+        */
+        .page-services .hero {
+            --hero-pad-y: clamp(1.5rem, 4vh, 3rem);
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--hero-pad-y) var(--svc-inline);
+            box-sizing: border-box;
             position: relative;
             overflow: hidden;
+            background:
+                radial-gradient(circle at top right, #4a22b8 0%, #1b0d4f 40%, #05010f 90%);
         }
 
-        /* Navbar */
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 80px;
-        }
-
-        .logo {
-            font-size: 30px;
-            font-weight: 800;
-            color: #fff;
-            line-height: 1;
-        }
-
-        .logo span {
-            display: block;
-            font-size: 18px;
-            font-weight: 400;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #fff;
-            font-size: 15px;
-            transition: .3s;
-        }
-
-        .nav-links a:hover {
-            color: #8b5cf6;
-        }
-
-        .talk-btn {
-            background: linear-gradient(90deg, #5865ff, #b14dff);
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-        }
-
-        /* Content */
-
-        .hero-content {
+        .page-services .hero-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 50px;
+            gap: clamp(1.5rem, 4vw, 3.5rem);
+            width: 100%;
+            max-width: var(--svc-container);
+            margin: 0 auto;
         }
 
-        .left {
-            max-width: 600px;
+        .page-services .hero .left {
+            flex: 1 1 46%;
+            max-width: 36rem;
+            min-width: 0;
             animation: fadeUp 1s ease;
+        }
+
+        .page-services .hero .right {
+            flex: 1 1 48%;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-services .hero .right img {
+            width: 100%;
+            max-width: 42rem;
+            height: auto;
+            display: block;
+            margin: 0;
+            animation: float 4s ease-in-out infinite;
         }
 
         .small-title {
             color: #7f7cff;
             letter-spacing: 2px;
             font-size: 14px;
-            margin-bottom: 25px;
+            margin-bottom: 1.25rem;
         }
 
-        .left h1 {
-            font-size: 72px;
+        .page-services .left h1 {
+            font-size: clamp(2.75rem, 5vw, 4.5rem);
             font-weight: 800;
             line-height: 1.15;
             color: #fff;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
         }
 
         .left h1 span {
@@ -173,21 +180,7 @@
             font-size: 18px;
         }
 
-        /* Right */
-
-        .right {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            animation: float 4s ease-in-out infinite;
-
-        }
-
-        .right img {
-            width: 100%;
-            max-width: 750px;
-            margin-left: 300px;
-        }
+        /* Right image sizing handled under .page-services .hero .right */
 
         /* Animations */
 
@@ -219,55 +212,75 @@
 
         /* Responsive */
 
-        @media(max-width:991px) {
+        @media (max-width: 991px) {
+            .page-services .hero {
+                min-height: 100svh;
+                align-items: center;
+            }
 
-            .hero-content {
+            .page-services .hero-content {
                 flex-direction: column;
+                justify-content: center;
                 text-align: center;
+                gap: clamp(1.25rem, 3vh, 2rem);
             }
 
-            .left h1 {
-                font-size: 52px;
-            }
-
-            .buttons {
-                justify-content: center;
-            }
-
-            .clients {
-                justify-content: center;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-        }
-
-        @media(max-width:600px) {
-
-            .left h1 {
-                font-size: 40px;
-            }
-
-            .left p {
-                font-size: 16px;
-            }
-
-            .buttons {
-                flex-direction: column;
-            }
-
-            .primary-btn,
-            .secondary-btn {
+            .page-services .hero .left,
+            .page-services .hero .right {
+                flex: 0 1 auto;
+                max-width: 100%;
                 width: 100%;
             }
 
+            .page-services .hero .left {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .page-services .hero .left p {
+                max-width: 36ch;
+            }
+
+            .page-services .left h1 {
+                font-size: clamp(2.25rem, 7vw, 3.25rem);
+            }
+
+            .page-services .buttons,
+            .page-services .clients {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-services .hero {
+                --hero-pad-y: clamp(1.25rem, 3vh, 2rem);
+            }
+
+            .page-services .left h1 {
+                font-size: clamp(2rem, 8vw, 2.5rem);
+            }
+
+            .page-services .left p {
+                font-size: 1rem;
+            }
+
+            .page-services .buttons {
+                flex-direction: column;
+                width: min(100%, 22rem);
+            }
+
+            .page-services .primary-btn,
+            .page-services .secondary-btn {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         .dp-section {
             background: #f5f5f5;
-            padding: 100px 7%;
+            padding-top: 100px;
+            padding-bottom: 100px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -436,7 +449,8 @@
         }
 
         .deliver {
-            padding: 90px 6%;
+            padding-top: 90px;
+            padding-bottom: 90px;
         }
 
         .deliver-container {
@@ -611,7 +625,8 @@
 
         .ux-journey {
             background: #f3f3f3;
-            padding: 90px 6%;
+            padding-top: 90px;
+            padding-bottom: 90px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -849,7 +864,7 @@
         .comparison-container {
 
             width: 90%;
-            max-width: 1600px;
+            max-width: 1500px;
 
             margin: auto;
 
@@ -1156,15 +1171,15 @@
         /* Main Section */
 
         .stats-section {
-            width: 100%;
-            max-width: none;
-            margin: 0;
+            width: 90%;
+            max-width: 1500px;
+            margin: 0 auto;
             background: linear-gradient(90deg,
                     #171127 0%,
                     #2a1752 100%);
 
-            border-radius: 0;
-            padding: 45px 80px;
+            border-radius: 28px;
+            padding: 45px 48px;
 
             display: flex;
             justify-content: space-between;
@@ -1330,7 +1345,7 @@
 
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1500px;
             margin: auto;
         }
 
@@ -1651,7 +1666,7 @@
 
         .container {
             width: 90%;
-            max-width: 1550px;
+            max-width: 1500px;
             margin: auto;
         }
 
@@ -1664,26 +1679,19 @@
 
         .system-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            margin-bottom: 80px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: clamp(0.875rem, 2vw, 1.5rem);
+            margin-bottom: clamp(2rem, 5vw, 5rem);
         }
 
         .system-card {
-
             background: white;
-
             border-radius: 24px;
-
-            padding: 28px;
-
+            padding: clamp(1.25rem, 3vw, 1.75rem);
             min-height: 220px;
-
-            transition: .4s;
-
-            animation: fadeUp .8s ease forwards;
-
-            opacity: 0;
+            min-width: 0;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            animation: fadeUp 0.8s ease both;
         }
 
         .system-card:nth-child(1) {
@@ -1929,6 +1937,110 @@
             }
         }
 
+        /* Design system — tablet / mobile */
+        @media (max-width: 1100px) {
+            .page-services .system-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-services .design-system {
+                padding: clamp(3rem, 8vw, 4.5rem) 0;
+            }
+
+            .page-services .design-system .section-title {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+                margin-bottom: 1.75rem;
+                line-height: 1.25;
+                padding-inline: 0.25rem;
+            }
+
+            .page-services .system-grid {
+                grid-template-columns: 1fr;
+                gap: 0.875rem;
+                margin-bottom: 1.75rem;
+            }
+
+            .page-services .system-card {
+                min-height: 0;
+                padding: 1.25rem 1.15rem;
+                border-radius: 18px;
+                box-shadow: 0 8px 24px rgba(84, 58, 156, 0.08);
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+
+            .page-services .system-card:hover {
+                transform: none;
+            }
+
+            .page-services .system-card span {
+                margin-bottom: 1rem;
+            }
+
+            .page-services .colors {
+                grid-template-columns: repeat(4, minmax(0, 2.5rem));
+                gap: 0.65rem;
+                justify-content: start;
+            }
+
+            .page-services .color {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+
+            .page-services .typography h4 {
+                font-size: clamp(2.75rem, 12vw, 3.5rem);
+                line-height: 1;
+                margin: 0 0 0.35rem;
+            }
+
+            .page-services .buttons-demo {
+                display: flex;
+                flex-direction: column;
+                gap: 0.65rem;
+            }
+
+            .page-services .secondary1-btn {
+                margin-top: 0;
+            }
+
+            .page-services .iconography {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1rem;
+                margin-top: 0.5rem;
+                max-width: 16rem;
+            }
+
+            .page-services .cta-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.25rem;
+                padding: 1.5rem 1.25rem;
+                border-radius: 22px;
+            }
+
+            .page-services .cta-content h3 {
+                font-size: clamp(1.35rem, 6vw, 1.75rem);
+                margin-bottom: 0.5rem;
+            }
+
+            .page-services .cta-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.95rem 1.25rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .page-services .system-card {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
         .footer{
 
     background:#120D25;
@@ -1967,7 +2079,7 @@
 .footer-container{
 
     width:90%;
-    max-width:1400px;
+    max-width:1500px;
 
     margin:auto;
 
@@ -2204,27 +2316,31 @@
 
 </head>
 
-<body>
+<body class="page-services" id="top">
+
+    <div id="site-header">
+        <header class="site-header">
+            <nav class="nav" aria-label="Primary">
+                <a class="nav-logo" href="index.html" aria-label="Falcon of Codes — Home">
+                    <img src="images/falcon logo.svg" alt="Falcon of Codes — website builder and managed hosting"
+                        width="160" height="54" />
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" data-nav="home">Home</a>
+                    <a href="services.html" data-nav="services" class="is-active">Services</a>
+                    <a href="about.html" data-nav="about">About</a>
+                    <a href="index.html#projects" data-nav="portfolio">Portfolio</a>
+                    <a href="contact.html" data-nav="contact">Contact</a>
+                </div>
+                <a class="btn btn-nav" href="contact.html">Let's Talk</a>
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </header>
+    </div>
 
     <section class="hero">
-
-        <nav class="navbar">
-
-            <a href="index.html" class="logo" aria-label="Falcon of Codes — Home">
-                <img src="images/falcon logo.svg" alt="Falcon Codes">
-            </a>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="index.html#projects">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-
-            <a href="contact.html" class="talk-btn">Let's Talk →</a>
-
-        </nav>
 
         <div class="hero-content">
 
@@ -2246,8 +2362,8 @@
                 </p>
 
                 <div class="buttons">
-                    <a href="#" class="primary-btn">Start Your Project</a>
-                    <a href="#" class="secondary-btn">View Portfolio</a>
+                    <a href="contact.html" class="primary-btn">Start Your Project</a>
+                    <a href="index.html#projects" class="secondary-btn">View Portfolio</a>
                 </div>
 
                 <div class="clients">
@@ -2693,7 +2809,7 @@
 
                 </div>
 
-                <a href="#" class="cta-btn">
+                <a href="contact.html" class="cta-btn">
                     Start Your Project
                     <span>→</span>
                 </a>
@@ -2715,7 +2831,9 @@
     
                 <div class="footer-logo">
     
-                    <img src="images/falcon logo.svg" alt="Falcon Codes">
+                    <a href="index.html" aria-label="Falcon of Codes — Home">
+                        <img src="images/falcon logo.svg" alt="Falcon Codes">
+                    </a>
     
                 </div>
     
@@ -2751,6 +2869,63 @@
         </div>
     
     </footer>
+
+    <div id="site-mobile-nav">
+        <nav class="mobile-tabbar" aria-label="Mobile navigation">
+            <div class="mobile-tabbar-indicator" aria-hidden="true"></div>
+
+            <a href="index.html" class="mobile-tab" data-page="home" aria-label="Home">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.5z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Home</span>
+            </a>
+
+            <a href="about.html" class="mobile-tab" data-page="about" aria-label="About">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">About</span>
+            </a>
+
+            <a href="services.html" class="mobile-tab is-active" data-page="services" aria-label="Services">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" />
+                        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Services</span>
+            </a>
+
+            <a href="index.html#projects" class="mobile-tab" data-page="portfolio" aria-label="Portfolio">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Portfolio</span>
+            </a>
+
+            <a href="contact.html" class="mobile-tab" data-page="contact" aria-label="Contact">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Contact</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="js/header.js"></script>
 </body>
 
 </html>

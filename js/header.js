@@ -29,13 +29,13 @@
     function initHeaderScroll(header, nav) {
         if (!header) return;
 
-        let lastY = window.scrollY;
+        let lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
         let ticking = false;
         const TOP_OFFSET = 72;
-        const DELTA = 6;
+        const DELTA = 8;
 
         function updateHeader() {
-            const y = window.scrollY;
+            const y = window.pageYOffset || document.documentElement.scrollTop || 0;
 
             if (nav?.classList.contains("nav-open")) {
                 header.classList.remove("is-hidden");
@@ -66,6 +66,9 @@
             },
             { passive: true }
         );
+
+        // Ensure correct state on load / hash jump
+        updateHeader();
     }
 
     function initSmoothScroll(nav, header) {
@@ -84,6 +87,39 @@
         });
     }
 
+    // About / Services: CSS starts transparent (no flash). Only add .nav--solid after hero exits.
+    function initNavTransparency() {
+        const nav = document.querySelector(".site-header .nav");
+        if (!nav) return;
+
+        let hero = null;
+        if (document.body.classList.contains("page-about")) {
+            hero = document.querySelector(".about-hero");
+        } else if (document.body.classList.contains("page-services")) {
+            hero = document.querySelector(".hero");
+        }
+        if (!hero) return;
+
+        const setSolid = (solid) => {
+            nav.classList.toggle("nav--solid", solid);
+        };
+
+        // Mid-page refresh: only solid if hero is already gone
+        setSolid(hero.getBoundingClientRect().bottom <= 48);
+
+        if (!("IntersectionObserver" in window)) return;
+
+        const io = new IntersectionObserver(
+            (entries) => {
+                const entry = entries[0];
+                if (!entry) return;
+                setSolid(!entry.isIntersecting);
+            },
+            { root: null, threshold: 0, rootMargin: "-48px 0px 0px 0px" }
+        );
+        io.observe(hero);
+    }
+
     function initSiteHeader() {
         const header = document.querySelector("#site-header") || document.querySelector(".site-header");
         const nav = document.querySelector(".nav");
@@ -92,6 +128,7 @@
 
         initHeaderNav();
         initHeaderScroll(header, nav);
+        initNavTransparency();
         initSmoothScroll(nav, header);
 
         navToggle?.addEventListener("click", () => {

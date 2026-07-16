@@ -46,6 +46,27 @@ ul {
     background: linear-gradient(320deg, #C5A8E0 0%, #E3DAFE 38%, #F7F3FF 72%, #ffffff 100%);
 }
 
+/* Home: header is a body-level sticky layer (not inside .loader overflow clip) */
+.page-home #site-header {
+    position: sticky;
+    top: 16px;
+    z-index: 100;
+    background: transparent;
+    /* Pull main-hero up so lavender still sits behind the pill */
+    margin-bottom: calc(-1 * var(--header-stack));
+}
+
+.page-home .main-hero {
+    padding-top: 0;
+}
+
+/* Home hero: keep content below floating header */
+.page-home .hero {
+    padding-top: var(--header-clearance);
+    padding-bottom: clamp(2rem, 5vh, 3.5rem);
+    box-sizing: border-box;
+}
+
 /* ===========================
    NAVBAR (extended from falcon-new-design)
    Layer stack: #site-header (top) → hero/content (below)
@@ -60,6 +81,9 @@ ul {
     --nav-header-gutter: 24px;
     --nav-padding-x: 28px;
     --nav-radius-pill: 25px;
+    /* Pill footprint + breathing room so hero copy clears overlay header */
+    --header-stack: calc(16px + 14px + 54px + 14px);
+    --header-clearance: calc(var(--header-stack) + 28px);
 }
 
 /* Sticky layer lives on the wrapper (same idea as falcon-new-design) */
@@ -97,6 +121,43 @@ ul {
     background: linear-gradient(135deg, #533A9C 0%, #9455B7 100%);
     border-radius: var(--nav-radius-pill);
     box-shadow: 0 20px 45px rgba(79, 35, 170, 0.20);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/*
+  About / Services: paint transparent FIRST (no purple flash on load).
+  JS only adds .nav--solid after the hero leaves the viewport.
+*/
+.page-about .site-header .nav,
+.page-services .site-header .nav {
+    background: transparent;
+    box-shadow: none;
+}
+
+.page-about .site-header .nav .btn-nav,
+.page-services .site-header .nav .btn-nav {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: none;
+}
+
+.page-about .site-header .nav .btn-nav:hover,
+.page-services .site-header .nav .btn-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.page-about .site-header .nav.nav--solid,
+.page-services .site-header .nav.nav--solid {
+    background: linear-gradient(135deg, #533A9C 0%, #9455B7 100%);
+    box-shadow: 0 20px 45px rgba(79, 35, 170, 0.20);
+}
+
+.page-about .site-header .nav.nav--solid .btn-nav,
+.page-services .site-header .nav.nav--solid .btn-nav {
+    background: var(--nav-white);
+    color: var(--nav-rebecca);
+    border: 1px solid transparent;
 }
 
 .nav-logo img {
@@ -378,26 +439,26 @@ ul {
 
     color: #818CF8;
 
-    font-size: 14px;
+    font-size: 13px;
 
     letter-spacing: 2px;
 
-    font-weight: 400;
+    font-weight: 600;
 
 
 }
 
 .hero-content h1 {
 
-    font-size: 64px;
+    font-size: clamp(40px, 5vw, 56px);
 
-    line-height: 1.08;
+    line-height: 1.1;
 
     margin-top: 45px;
 
     color: #1A1A1A;
 
-    font-weight: 600;
+    font-weight: 700;
 
 }
 
@@ -408,7 +469,7 @@ ul {
     -webkit-background-clip: text;
 
     -webkit-text-fill-color: transparent;
-    font-size: 64px;
+    font-size: inherit;
 
 }
 
@@ -418,9 +479,9 @@ ul {
 
     color: #6d6d6d;
 
-    font-size: 18px;
+    font-size: 17px;
 
-    line-height: 32px;
+    line-height: 1.65;
 
     max-width: 540px;
 
@@ -888,6 +949,11 @@ ul {
 
 @media (max-width:768px) {
 
+    :root {
+        --header-stack: calc(10px + 8px + 40px + 8px);
+        --header-clearance: calc(var(--header-stack) + 20px);
+    }
+
     body {
         padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
         background: #fff;
@@ -928,10 +994,21 @@ ul {
         margin-bottom: 8px;
     }
 
+    /* Shared mobile header inset — all pages; reinforced later for about/contact/services */
     #site-header {
         top: 8px;
         z-index: 100;
         padding: 10px 16px 0;
+    }
+
+    .page-home #site-header {
+        margin-bottom: calc(-1 * var(--header-stack));
+    }
+
+    /* Match contact mobile text start: pill footprint + 48px air */
+    .page-home .hero {
+        padding-top: calc(var(--header-stack) + 48px) !important;
+        padding-bottom: 1.5rem !important;
     }
 
     .site-header {
@@ -992,19 +1069,22 @@ ul {
         align-items: flex-start;
     }
 
+    /* Home mobile type — close to contact, slightly larger hero voice */
+    .page-home .tag,
     .tag {
         display: inline-block;
-        font-size: 11px;
-        letter-spacing: 1.8px;
+        font-size: 12px;
+        letter-spacing: 2px;
         color: #6B5CE6;
         font-weight: 600;
         text-align: left;
     }
 
+    .page-home .hero-content h1,
     .hero-content h1 {
-        margin-top: 14px;
-        font-size: 30px;
-        line-height: 1.18;
+        margin-top: 12px;
+        font-size: 28px;
+        line-height: 1.2;
         font-weight: 700;
         color: #17141F;
         text-align: left;
@@ -1017,11 +1097,12 @@ ul {
         color: #7B5CFF;
     }
 
+    .page-home .hero-content p,
     .hero-content p {
-        margin-top: 14px;
+        margin-top: 12px;
         margin-left: 0;
         margin-right: 0;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.65;
         color: #6B6680;
         max-width: 34ch;
@@ -4388,37 +4469,85 @@ Navbar
 }
 
 
-/* About / Contact: shared #site-header (same pill dims as home) */
+/* About / Contact / Services: shared #site-header (same sticky layer as home) */
 .page-about,
-.page-contact {
+.page-contact,
+.page-services {
     position: relative;
 }
 
 .page-about #site-header,
-.page-contact #site-header {
+.page-contact #site-header,
+.page-services #site-header {
+    /* top/padding come from shared #site-header (+ mobile overrides) — do not re-set top here */
     position: sticky;
     z-index: 100;
-}
-
-/* About: float home header over hero (same coords as home: top 16px, gutter, 1440 pill) */
-.page-about #site-header {
-    /* Collapse layout space so hero starts under the pill — same idea as falcon-new-design about */
-    margin-bottom: calc(-1 * (16px + 14px + 54px + 14px));
     background: transparent;
 }
 
+/* About + Services: float header over hero; .nav--solid applies purple pill after hero exits */
+.page-about #site-header,
+.page-services #site-header {
+    margin-bottom: calc(-1 * var(--header-stack));
+}
+
 .page-about header.site-header,
-.page-contact header.site-header {
+.page-contact header.site-header,
+.page-services header.site-header {
     position: relative;
     top: auto;
     left: auto;
     width: auto;
+    background: transparent;
 }
 
 @media (max-width: 768px) {
-    /* Match home mobile header height: padding 10 + nav 8+40+8 */
-    .page-about #site-header {
-        margin-bottom: calc(-1 * (10px + 8px + 40px + 8px));
+    /* One mobile header chrome for every page (beats any page-specific top/padding) */
+    .page-home #site-header,
+    .page-about #site-header,
+    .page-contact #site-header,
+    .page-services #site-header {
+        top: 8px;
+        padding: 10px 16px 0;
+    }
+
+    .page-about #site-header,
+    .page-services #site-header {
+        margin-bottom: calc(-1 * var(--header-stack));
+    }
+
+    /* Services hero: keep flex-centered layout; don't inherit home .hero resets */
+    .page-services .hero {
+        min-height: 100svh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding-block: clamp(1.25rem, 3vh, 2rem) !important;
+        padding-inline: max(5%, calc((100% - 1500px) / 2)) !important;
+        background:
+            radial-gradient(circle at top right, #4a22b8 0%, #1b0d4f 40%, #05010f 90%) !important;
+        border-radius: 0 !important;
+    }
+
+    .page-services .hero-content {
+        width: 100% !important;
+        max-width: 1500px !important;
+        margin: var(--header-clearance) 0 auto !important;
+    }
+
+    /* About / Services mobile: clear CTA over hero; solid pill restores white CTA */
+    .page-about .site-header .nav:not(.nav--solid) .btn-nav,
+    .page-services .site-header .nav:not(.nav--solid) .btn-nav {
+        color: #fff !important;
+        background: rgba(255, 255, 255, 0.14) !important;
+        border: 1px solid rgba(255, 255, 255, 0.28) !important;
+    }
+
+    .page-about .site-header .nav.nav--solid .btn-nav,
+    .page-services .site-header .nav.nav--solid .btn-nav {
+        color: #543A9C !important;
+        background: #fff !important;
+        border: 1px solid transparent !important;
     }
 }
 
@@ -4426,10 +4555,14 @@ Navbar
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 100vh;
+    min-height: 100svh;
+    height: auto;
     overflow: hidden;
     display: flex;
     align-items: center;
+    /* Clear floating header; keep full-bleed image behind it */
+    padding: var(--header-clearance) 0 clamp(2.5rem, 6vh, 4rem);
+    box-sizing: border-box;
 }
 
 .about-hero .bg-img {
@@ -4451,22 +4584,21 @@ Navbar
             rgba(38, 20, 95, .65),
             rgba(10, 8, 25, .75));
     z-index: 2;
+
 }
 
 .about-hero .container {
     width: 90%;
     max-width: 1500px;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     z-index: 3;
-    margin-bottom: 100px;
 }
 
 
 .hero-content1 {
     max-width: 620px;
     color: #fff;
-    gap: 6rem;
 }
 
 .section-title {
@@ -4626,14 +4758,14 @@ Responsive
 
 @media(max-width:768px) {
 
-    /* About hero — mobile spacing matches Sandy design (keep shared pill header) */
+    /* About hero — mobile: clear header, left-aligned content */
     .about-hero {
-        height: 100svh;
-        min-height: 640px;
+        min-height: 100svh;
+        height: auto;
         text-align: left;
         align-items: center;
         justify-content: flex-start;
-        padding: 88px 0 40px;
+        padding: var(--header-clearance) 0 2.5rem;
         box-sizing: border-box;
     }
 
@@ -4787,8 +4919,8 @@ Responsive
 @media(max-width:480px) {
 
     .about-hero {
-        min-height: 600px;
-        padding: 80px 0 32px;
+        min-height: 100svh;
+        padding: var(--header-clearance) 0 2rem;
     }
 
     .about-hero .container {
