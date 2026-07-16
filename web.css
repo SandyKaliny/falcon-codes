@@ -18,7 +18,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+body.page-web {
 
     font-family: 'Poppins', sans-serif;
 
@@ -26,8 +26,15 @@ body {
 
     color: #222;
 
-    overflow-x: hidden;
+    overflow-x: clip;
 
+}
+
+/* Don't let page img reset stretch the shared logo */
+.page-web .nav-logo img,
+.page-web .footer-logo img {
+    width: auto;
+    max-width: none;
 }
 
 img {
@@ -64,129 +71,19 @@ ul {
 
 }
 
-/* ===========================
-   NAVBAR
-=========================== */
+/* Legacy navbar styles removed — page uses shared #site-header from style.css */
 
-header {
-
-    padding: 28px 0;
-
-}
-
-.navbar {
-
-    height: 82px;
-
-    background: linear-gradient(90deg, #533A9C, #9455B7);
-
-    border-radius: 22px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 0 40px;
-
-    box-shadow: 0 20px 45px rgba(79, 35, 170, .20);
-
-}
-
-.logo img {
-
-    width: 120px;
-
-}
-
-.nav-menu {
-
-    display: flex;
-
-    gap: 38px;
-
-}
-
-.nav-menu a {
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 500;
-
-    transition: .3s;
-
-}
-
-.nav-menu a:hover {
-
-    color: #d9c8ff;
-
-}
-
-.active {
-
-    position: relative;
-
-}
-
-.active::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 100%;
-
-    height: 2px;
-
-    background: white;
-
-    left: 0;
-
-    bottom: -8px;
-
-}
-
-.nav-btn {
-
-    width: 155px;
-
-    height: 52px;
-
-    border-radius: 60px;
-
-    background: white;
-
-    color: #4F46E5;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-weight: 400;
-
-    transition: .35s;
-
-}
-
-.nav-btn:hover {
-
-    transform: translateY(-5px);
-
-}
 /*=========================================
                 HERO
 =========================================*/
 
-.hero {
+.page-web .hero {
 
-    padding: 0px 0 110px;
-    background: linear-gradient(#f3f0fc, #C6A9E1 );
+    padding: 0 0 110px;
+    background: linear-gradient(#f3f0fc, #C6A9E1);
+    /* Clear floating shared header */
+    padding-top: var(--header-clearance, 140px);
+    box-sizing: border-box;
 
 }
 
@@ -747,171 +644,8 @@ header {
 
 }
 
-/*=========================================
-                CTA
-=========================================*/
+/* Legacy page CTA removed — uses shared .footer-cta-zone from style.css */
 
-.cta {
-
-    padding: 110px 0;
-
-}
-
-.cta-box {
-
-    background: linear-gradient(135deg, #6548F2, #A75FFF);
-
-    border-radius: 35px;
-
-    padding: 70px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    position: relative;
-
-    overflow: hidden;
-   
-
-}
-
-.cta-box::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 320px;
-
-    height: 320px;
-
-    background: rgba(255, 255, 255, .08);
-
-    border-radius: 50%;
-
-    right: -120px;
-
-    top: -120px;
-
-}
-
-.cta-box::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 220px;
-
-    height: 220px;
-
-    background: rgba(255, 255, 255, .05);
-
-    border-radius: 50%;
-
-    left: -70px;
-
-    bottom: -70px;
-
-}
-
-.cta-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 550px;
-
-}
-
-.cta-content h2 {
-
-    color: #fff;
-
-    font-size: 48px;
-font-weight: 600;
-    margin-bottom: 22px;
-
-}
-
-.cta-content p {
-
-    color: rgba(255, 255, 255, .85);
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
-
-}
-
-.cta-content .primary-btn {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 12px;
-    background: #fff;
-    color:#6548F2
-
-}
-
-.cta-icon {
-
-    position: relative;
-
-    z-index: 2;
-
-    width: 170px;
-
-    height: 170px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, .12);
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    backdrop-filter: blur(8px);
-
-}
-
-.cta-icon i {
-
-    font-size: 70px;
-
-    color: #fff;
-
-    animation: floatIcon 4s ease-in-out infinite;
-
-}
-
-@keyframes floatIcon {
-
-    0%,
-    100% {
-
-        transform: translateY(0);
-
-    }
-
-    50% {
-
-        transform: translateY(-12px);
-
-    }
-
-}
 /*=========================================
             RESPONSIVE
 =========================================*/
@@ -964,9 +698,10 @@ font-weight: 600;
 
     }
 
-    .hero {
+    .page-web .hero {
 
-        padding: 150px 0 80px;
+        padding-top: calc(var(--header-clearance, 140px));
+        padding-bottom: 80px;
 
     }
 
@@ -1032,7 +767,7 @@ font-weight: 600;
 
     }
 
-    .cta-box {
+    .legacy-web-cta .cta-box {
 
         flex-direction: column;
 
@@ -1044,7 +779,7 @@ font-weight: 600;
 
     }
 
-    .cta-content {
+    .legacy-web-cta .cta-content {
 
         max-width: 100%;
 
@@ -1100,19 +835,19 @@ font-weight: 600;
 
     }
 
-    .cta-content h2 {
+    .legacy-web-cta .cta-content h2 {
 
         font-size: 34px;
 
     }
 
-    .cta-content p {
+    .legacy-web-cta .cta-content p {
 
         font-size: 16px;
 
     }
 
-    .cta-icon {
+    .legacy-web-cta .cta-icon {
 
         width: 130px;
 
@@ -1120,7 +855,7 @@ font-weight: 600;
 
     }
 
-    .cta-icon i {
+    .legacy-web-cta .cta-icon i {
 
         font-size: 55px;
 
@@ -1136,9 +871,10 @@ font-weight: 600;
 
     }
 
-    .hero {
+    .page-web .hero {
 
-        padding: 130px 0 70px;
+        padding-top: calc(var(--header-stack, 66px) + 48px);
+        padding-bottom: 70px;
 
     }
 
@@ -1172,13 +908,13 @@ font-weight: 600;
 
     }
 
-    .cta {
+    .legacy-web-cta .cta {
 
         padding: 80px 0;
 
     }
 
-    .cta-box {
+    .legacy-web-cta .cta-box {
 
         border-radius: 24px;
 
@@ -1186,7 +922,7 @@ font-weight: 600;
 
     }
 
-    .cta-content h2 {
+    .legacy-web-cta .cta-content h2 {
 
         font-size: 28px;
 

@@ -236,7 +236,7 @@ header:not(.site-header) {
 
     gap: 56px;
 
-    align-items: end;
+    align-items: self-start;
 
     border: none;
 

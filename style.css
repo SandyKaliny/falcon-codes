@@ -60,11 +60,18 @@ ul {
     padding-top: 0;
 }
 
-/* Home hero: keep content below floating header */
+/* Home hero: keep content below floating header (desktop web) */
 .page-home .hero {
     padding-top: var(--header-clearance);
     padding-bottom: clamp(2rem, 5vh, 3.5rem);
     box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+    .page-home .hero {
+        /* Extra whitespace between pill and hero copy on web */
+        padding-top: calc(16px + var(--header-stack) + 64px);
+    }
 }
 
 /* ===========================
@@ -83,7 +90,8 @@ ul {
     --nav-radius-pill: 25px;
     /* Pill footprint + breathing room so hero copy clears overlay header */
     --header-stack: calc(16px + 14px + 54px + 14px);
-    --header-clearance: calc(var(--header-stack) + 28px);
+    /* Include sticky top:16 so clearance matches real pill position on web */
+    --header-clearance: calc(16px + var(--header-stack) + 40px);
 }
 
 /* Sticky layer lives on the wrapper (same idea as falcon-new-design) */
@@ -122,6 +130,8 @@ ul {
     border-radius: var(--nav-radius-pill);
     box-shadow: 0 20px 45px rgba(79, 35, 170, 0.20);
     transition: background 0.2s ease, box-shadow 0.2s ease;
+    /* Same nav type as services (Poppins reads cleaner in the pill) */
+    font-family: "Poppins", sans-serif;
 }
 
 /*
@@ -176,10 +186,13 @@ ul {
 .nav-links a {
     position: relative;
     color: rgba(255, 255, 255, 0.92);
-    font-size: 14px;
+    font-family: inherit;
+    font-size: 15px;
     font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
     padding-bottom: 4px;
-    transition: opacity 0.15s;
+    transition: opacity 0.15s, color 0.15s;
 }
 
 .nav-links a::after {
@@ -211,8 +224,11 @@ ul {
     justify-content: center;
     background: var(--nav-white);
     color: var(--nav-rebecca);
+    font-family: inherit;
     font-weight: 600;
     font-size: 14px;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
     padding: 10px 22px;
     border-radius: var(--nav-radius-pill);
     white-space: nowrap;
@@ -4469,16 +4485,18 @@ Navbar
 }
 
 
-/* About / Contact / Services: shared #site-header (same sticky layer as home) */
+/* About / Contact / Services / Web: shared #site-header (same sticky layer as home) */
 .page-about,
 .page-contact,
-.page-services {
+.page-services,
+.page-web {
     position: relative;
 }
 
 .page-about #site-header,
 .page-contact #site-header,
-.page-services #site-header {
+.page-services #site-header,
+.page-web #site-header {
     /* top/padding come from shared #site-header (+ mobile overrides) — do not re-set top here */
     position: sticky;
     z-index: 100;
@@ -4491,9 +4509,15 @@ Navbar
     margin-bottom: calc(-1 * var(--header-stack));
 }
 
+/* Web service page: same overlay header over lavender hero (solid purple pill) */
+.page-web #site-header {
+    margin-bottom: calc(-1 * var(--header-stack));
+}
+
 .page-about header.site-header,
 .page-contact header.site-header,
-.page-services header.site-header {
+.page-services header.site-header,
+.page-web header.site-header {
     position: relative;
     top: auto;
     left: auto;
@@ -4501,19 +4525,29 @@ Navbar
     background: transparent;
 }
 
+.page-web .footer-cta-zone {
+    background: #f8f6fe !important;
+}
+
 @media (max-width: 768px) {
     /* One mobile header chrome for every page (beats any page-specific top/padding) */
     .page-home #site-header,
     .page-about #site-header,
     .page-contact #site-header,
-    .page-services #site-header {
+    .page-services #site-header,
+    .page-web #site-header {
         top: 8px;
         padding: 10px 16px 0;
     }
 
     .page-about #site-header,
-    .page-services #site-header {
+    .page-services #site-header,
+    .page-web #site-header {
         margin-bottom: calc(-1 * var(--header-stack));
+    }
+
+    .page-web .footer-cta-zone {
+        background: #f8f6fe !important;
     }
 
     /* Services hero: keep flex-centered layout; don't inherit home .hero resets */
@@ -4795,6 +4829,7 @@ Responsive
         width: 100%;
         text-align: left;
         margin: 0;
+        gap: 5rem;
     }
 
     /* Small gap: label → headline */

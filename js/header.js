@@ -3,7 +3,7 @@
     function getCurrentNavPage() {
         const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
         if (file.includes("contact")) return "contact";
-        if (file.includes("service")) return "services";
+        if (file.includes("service") || file === "web.html") return "services";
         if (file.includes("about")) return "about";
         if (file === "index.html" || file === "falcon.html" || file === "" || file === "header.html") return "home";
         return "home";
@@ -159,7 +159,7 @@
         const file = (path.split("/").pop() || "index.html").toLowerCase();
         let activePage = "home";
         if (file.includes("contact")) activePage = "contact";
-        else if (file.includes("service")) activePage = "services";
+        else if (file.includes("service") || file === "web.html") activePage = "services";
         else if (file.includes("about")) activePage = "about";
         else if (window.location.hash === "#projects") activePage = "portfolio";
 
