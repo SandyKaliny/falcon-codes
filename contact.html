@@ -2,511 +2,362 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Falcon Codes | Contact</title>
 
-    <!-- Google Font -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Font Awesome -->
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
-
 </head>
 
-<body>
+<body class="page-contact" id="top">
 
-    <!--==============================
-            HEADER
-================================-->
-
-    <div class="loader">
-        <!-- ================= NAVBAR ================= -->
-    
-        <header>
-    
-            <div class="container">
-    
-                <nav class="navbar">
-    
-                    <div class="logo">
-    
-                        <img src="images/falcon logo.svg" alt="Logo">
-    
-                    </div>
-    
-                    <ul class="nav-menu">
-    
-                        <li><a  href="#">Home</a></li>
-    
-                        <li><a href="#">Services</a></li>
-    
-                        <li><a href="#">About</a></li>
-    
-                        <li><a href="#">Portfolio</a></li>
-    
-                        <li><a class="active" href="#">Contact</a></li>
-    
-                    </ul>
-    
-                    <a href="#" class="nav-btn">
-    
-                        Let's Talk
-    
-                    </a>
-    
-                </nav>
-    
-            </div>
-    
+    <div id="site-header">
+        <header class="site-header">
+            <nav class="nav" aria-label="Primary">
+                <a class="nav-logo" href="index.html" aria-label="Falcon of Codes — Home">
+                    <img src="images/falcon logo.svg" alt="Falcon of Codes — website builder and managed hosting"
+                        width="160" height="54" />
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" data-nav="home">Home</a>
+                    <a href="services.html" data-nav="services">Services</a>
+                    <a href="about.html" data-nav="about">About</a>
+                    <a href="index.html#projects" data-nav="portfolio">Portfolio</a>
+                    <a href="contact.html" data-nav="contact" class="is-active">Contact</a>
+                </div>
+                <a class="btn btn-nav" href="contact.html">Let's Talk</a>
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
         </header>
+    </div>
 
+    <main class="contact-page">
 
-    <!--==============================
-        CONTACT SECTION
-================================-->
-
-    <section class="contact-section">
-
-        <div class="container">
-
-            <div class="contact-wrapper">
-
-                <!--==============================
-        LEFT SIDE
-================================-->
+        <section class="contact" aria-labelledby="contact-heading">
+            <div class="container contact-container">
 
                 <div class="contact-left">
+                    <span class="section-subtitle">CONTACT US</span>
 
-                    <span class="section-title">
-
-                        CONTACT US
-
-                    </span>
-
-                    <h2>
-
-                        Let's Build Something
-
-                        <span>
-
-                            Amazing Together
-
-                        </span>
-
-                    </h2>
-
-                    <img src="images/arrow.png" class="contact-arrow" alt="Arrow">
-
-                    <!--==============================
-        CALL CARD
-================================-->
-
-                    <div class="contact-card">
-
-                        <div class="card-icon">
-
-                            <i class="fa-solid fa-phone"></i>
-
-                        </div>
-
-                        <div class="card-content">
-
-                            <h3>
-
-                                Call Us
-
-                            </h3>
-
-                            <p>
-
-                                +20 10 8030 3330
-
-                            </p>
-
-                            <span>
-
-                                Sun - Thu | 9:00 AM - 6:00 PM
-
-                            </span>
-
-                        </div>
-
-                        <div class="card-arrow">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                        </div>
-
+                    <div class="contact-heading">
+                        <h1 id="contact-heading">
+                            <span class="title-line">Let's Build Something</span>
+                            <span class="title-accent">Amazing Together</span>
+                        </h1>
+                        <img src="images/contact-us-shape.png" class="arrow" alt="" aria-hidden="true">
                     </div>
 
-                    <!--==============================
-        EMAIL CARD
-================================-->
-
-                    <div class="contact-card">
-
-                        <div class="card-icon">
-
-                            <i class="fa-solid fa-envelope"></i>
-
-                        </div>
-
-                        <div class="card-content">
-
-                            <h3>
-
-                                Email Us
-
-                            </h3>
-
-                            <p>
-
-                                contact@falconcodes.com
-
-                            </p>
-
-                            <span>
-
-                                We reply within 24 hours
-
-                            </span>
-
-                        </div>
-
-                        <div class="card-arrow">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                        </div>
-
-                    </div>
-
-                    <!--==============================
-        ADDRESS CARD
-================================-->
-
-                    <div class="contact-card">
-
-                        <div class="card-icon">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                        </div>
-
-                        <div class="card-content">
-
-                            <h3>
-
-                                Visit Us
-
-                            </h3>
-
-                            <p>
-
-                                Street 9, Maadi
-
-                            </p>
-
-                            <span>
-
-                                Maadi, Cairo, Egypt
-
-                            </span>
-
-                        </div>
-
-                        <div class="card-arrow">
-
-                            <i class="fa-solid fa-chevron-right"></i>
-
-                        </div>
-
-                    </div>
-
-                </div>
-                <!--==============================
-                        RIGHT SIDE
-                ================================-->
-                
-                <div class="contact-right">
-                
-                    <div class="contact-form">
-                
-                        <h2>Let's Get in Touch</h2>
-                
-                        <p>You can reach us anytime</p>
-                
-                        <form action="#">
-                
-                            <div class="input-row">
-                
-                                <div class="input-box">
-                
-                                    <i class="fa-solid fa-user"></i>
-                
-                                    <input type="text" placeholder="Full Name" required>
-                
-                                </div>
-                
-                                <div class="input-box">
-                
-                                    <i class="fa-solid fa-phone"></i>
-                
-                                    <input type="tel" placeholder="Phone Number" required>
-                
-                                </div>
-                
+                    <div class="contact-info-cards" role="list">
+                        <button type="button" class="contact-info-card is-active" data-panel="form" data-action="call"
+                            role="listitem" aria-controls="contactPanelForm">
+                            <div class="icon" aria-hidden="true">
+                                <i class="fa-solid fa-phone"></i>
                             </div>
-                
-                            <div class="input-box full">
-                
+                            <div class="info">
+                                <h3>Call Us</h3>
+                                <p>+20 10 8030 3330</p>
+                                <small>Sun - Thu | 9:00 AM - 6:00 PM</small>
+                            </div>
+                            <div class="arrow-icon" aria-hidden="true">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </button>
+
+                        <button type="button" class="contact-info-card" data-panel="form" data-action="email"
+                            role="listitem" aria-controls="contactPanelForm">
+                            <div class="icon" aria-hidden="true">
                                 <i class="fa-solid fa-envelope"></i>
-                
-                                <input type="email" placeholder="Your Email" required>
-                
                             </div>
-                
-                            <div class="input-box full">
-                
-                                <i class="fa-solid fa-globe"></i>
-                
-                                <input type="text" placeholder="Website (Optional)">
-                
+                            <div class="info">
+                                <h3>Email Us</h3>
+                                <p>contact@falconofcodes.com</p>
+                                <small>We reply within 24 hours</small>
                             </div>
-                
-                            <div class="input-box textarea">
-                
-                                <i class="fa-solid fa-comment-dots"></i>
-                
-                                <textarea placeholder="Tell us about your project or inquiry ?" required></textarea>
-                
+                            <div class="arrow-icon" aria-hidden="true">
+                                <i class="fa-solid fa-chevron-right"></i>
                             </div>
-                
-                            <button class="send-btn">
-                
-                                Send Message
-                
-                                <i class="fa-solid fa-arrow-right"></i>
-                
-                            </button>
-                
-                            <span class="form-note">
-                
-                                Your information is secure and will never be shared.
-                
-                            </span>
-                
-                        </form>
-                
+                        </button>
+
+                        <button type="button" class="contact-info-card" data-panel="map" data-action="visit"
+                            role="listitem" aria-controls="contactPanelMap">
+                            <div class="icon" aria-hidden="true">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="info">
+                                <h3>Visit Us</h3>
+                                <p dir="rtl" lang="ar">شارع 9 عمارة 101 الجديدة، المعادي - القاهرة، مصر</p>
+                                <small>Maadi, Cairo, Egypt</small>
+                            </div>
+                            <div class="arrow-icon" aria-hidden="true">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </button>
                     </div>
-                
                 </div>
-                
-                </div>
-                
-                </div>
-                
-                </section>
-                
-                <!--==============================
-                        STATS
-                ================================-->
-                
-                <section class="contact-stats">
-                
-                    <div class="container">
-                
-                        <div class="stats-wrapper">
-                
-                            <div class="stat-box">
-                
-                                <div class="stat-icon">
-                
-                                    <i class="fa-solid fa-rocket"></i>
-                
+
+                <div class="contact-right">
+                    <div class="contact-panel is-active" id="contactPanelForm" data-panel="form">
+                        <div class="contact-form">
+                            <h2>Let's Get in Touch</h2>
+                            <p>You can reach us anytime</p>
+
+                            <form action="#" method="post">
+                                <div class="two-input">
+                                    <div class="input-box">
+                                        <i class="fa-solid fa-user" aria-hidden="true"></i>
+                                        <input type="text" name="name" placeholder="Full name" required autocomplete="name">
+                                    </div>
+                                    <div class="input-box">
+                                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                        <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel">
+                                    </div>
                                 </div>
-                
-                                <div>
-                
-                                    <h2>50+</h2>
-                
-                                    <p>Projects Delivered</p>
-                
+
+                                <div class="input-box">
+                                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                    <input type="email" name="email" placeholder="Your email" required autocomplete="email">
                                 </div>
-                
-                            </div>
-                
-                            <div class="stat-box">
-                
-                                <div class="stat-icon">
-                
-                                    <i class="fa-solid fa-face-smile"></i>
-                
+
+                                <div class="input-box phone-prefix">
+                                    <span class="dial-code">+20</span>
+                                    <input type="tel" name="phone_eg" placeholder="Phone number" autocomplete="tel-national">
                                 </div>
-                
-                                <div>
-                
-                                    <h2>98%</h2>
-                
-                                    <p>Client Satisfaction</p>
-                
+
+                                <div class="input-box textarea">
+                                    <i class="fa-solid fa-comment" aria-hidden="true"></i>
+                                    <textarea name="message" placeholder="Tell us about your project or inquiry ?"
+                                        required></textarea>
                                 </div>
-                
-                            </div>
-                
-                            <div class="stat-box">
-                
-                                <div class="stat-icon">
-                
-                                    <i class="fa-solid fa-briefcase"></i>
-                
-                                </div>
-                
-                                <div>
-                
-                                    <h2>10+</h2>
-                
-                                    <p>Industries Served</p>
-                
-                                </div>
-                
-                            </div>
-                
-                            <div class="stat-box">
-                
-                                <div class="stat-icon">
-                
-                                    <i class="fa-solid fa-award"></i>
-                
-                                </div>
-                
-                                <div>
-                
-                                    <h2>5+</h2>
-                
-                                    <p>Years Experience</p>
-                
-                                </div>
-                
-                            </div>
-                
+
+                                <button type="submit">Send Message</button>
+                                <span class="secure">Your information is secure and will never be shared</span>
+                            </form>
                         </div>
-                
                     </div>
-                
-                </section>
-                
-                <script src="contact.js">
-                    /*==========================
-            STICKY NAVBAR
-    ==========================*/
 
-                        const header = document.querySelector("header");
+                    <div class="contact-panel" id="contactPanelMap" data-panel="map" hidden>
+                        <div class="contact-map">
+                            <iframe
+                                title="Falcon of Codes location — Maadi, Cairo"
+                                src="https://www.google.com/maps?q=Street+9,+Maadi,+Cairo,+Egypt&output=embed"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
 
-                        window.addEventListener("scroll", () => {
+            </div>
+        </section>
 
-                            if (window.scrollY > 70) {
+        <section class="contact-stats" aria-label="Company highlights">
+            <div class="container">
+                <div class="contact-stats-grid">
+                    <div class="contact-stat">
+                        <div class="contact-stat-icon" aria-hidden="true">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div class="contact-stat-text">
+                            <strong>50+</strong>
+                            <span>Projects Delivered</span>
+                        </div>
+                    </div>
+                    <div class="contact-stat">
+                        <div class="contact-stat-icon" aria-hidden="true">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                        <div class="contact-stat-text">
+                            <strong>98%</strong>
+                            <span>Client Satisfaction</span>
+                        </div>
+                    </div>
+                    <div class="contact-stat">
+                        <div class="contact-stat-icon" aria-hidden="true">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div class="contact-stat-text">
+                            <strong>10+</strong>
+                            <span>Industries Served</span>
+                        </div>
+                    </div>
+                    <div class="contact-stat">
+                        <div class="contact-stat-icon" aria-hidden="true">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div class="contact-stat-text">
+                            <strong>5+</strong>
+                            <span>Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                                header.classList.add("sticky");
+        <footer class="contact-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <a href="index.html" class="footer-logo" aria-label="Falcon of Codes — Home">
+                        <img src="images/falcon logo.svg" alt="Falcon of Codes">
+                    </a>
+                    <nav class="social-links" aria-label="Social links">
+                        <a href="#">Dribbble</a>
+                        <a href="#">Behance</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter (X)</a>
+                    </nav>
+                </div>
+                <hr>
+                <div class="footer-bottom">
+                    <p>© 2024 Falcon of Codes. All rights reserved.</p>
+                    <nav class="footer-legal" aria-label="Legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
 
-                            } else {
+    </main>
 
-                                header.classList.remove("sticky");
+    <div id="site-mobile-nav">
+        <nav class="mobile-tabbar" aria-label="Mobile navigation">
+            <div class="mobile-tabbar-indicator" aria-hidden="true"></div>
 
-                            }
+            <a href="index.html" class="mobile-tab" data-page="home" aria-label="Home">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.5z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Home</span>
+            </a>
 
-                        });
+            <a href="about.html" class="mobile-tab" data-page="about" aria-label="About">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">About</span>
+            </a>
 
+            <a href="services.html" class="mobile-tab" data-page="services" aria-label="Services">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" />
+                        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Services</span>
+            </a>
 
-                        /*==========================
-                                SCROLL REVEAL
-                        ==========================*/
+            <a href="index.html#projects" class="mobile-tab" data-page="portfolio" aria-label="Portfolio">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Portfolio</span>
+            </a>
 
-                        const observer = new IntersectionObserver((entries) => {
+            <a href="contact.html" class="mobile-tab is-active" data-page="contact" aria-label="Contact">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Contact</span>
+            </a>
+        </nav>
+    </div>
 
-                            entries.forEach(entry => {
+    <script src="js/header.js"></script>
+    <script>
+        (function () {
+            const revealElements = document.querySelectorAll(
+                ".contact-left,.contact-form,.contact-map,.contact-stats-grid"
+            );
 
-                                if (entry.isIntersecting) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
+                });
+            }, { threshold: 0.2 });
 
-                                    entry.target.classList.add("show");
+            revealElements.forEach((el) => observer.observe(el));
 
-                                }
+            /* Info cards: form by default; Visit Us shows map */
+            const cards = [...document.querySelectorAll(".contact-info-card[data-panel]")];
+            const panels = [...document.querySelectorAll(".contact-right .contact-panel")];
 
-                            });
+            function activateCard(card) {
+                if (!card) return;
+                const name = card.dataset.panel || "form";
+                panels.forEach((panel) => {
+                    const active = panel.dataset.panel === name;
+                    panel.classList.toggle("is-active", active);
+                    panel.hidden = !active;
+                });
+                cards.forEach((c) => c.classList.toggle("is-active", c === card));
+            }
 
-                        }, {
-                            threshold: .2
-                        });
+            const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-                        document.querySelectorAll(
+            cards.forEach((card) => {
+                if (canHover) {
+                    card.addEventListener("mouseenter", () => activateCard(card));
+                }
+                card.addEventListener("focus", () => activateCard(card));
+                card.addEventListener("click", () => {
+                    const alreadyActive = card.classList.contains("is-active");
+                    activateCard(card);
 
-                            ".contact-left,.contact-form,.contact-card,.stat-box"
+                    // Mobile: first tap switches panel; second tap opens call/email
+                    if (!alreadyActive) return;
+                    if (card.dataset.action === "call") {
+                        window.location.href = "tel:+201080303330";
+                    } else if (card.dataset.action === "email") {
+                        window.location.href = "mailto:contact@falconofcodes.com";
+                    }
+                });
+            });
 
-                        ).forEach(el => {
+            activateCard(cards.find((c) => c.dataset.action === "call") || cards[0]);
 
-                            el.classList.add("fade-up");
+            const button = document.querySelector(".contact-form button[type='submit']");
+            if (button) {
+                button.addEventListener("click", (e) => {
+                    const circle = document.createElement("span");
+                    const size = Math.max(button.clientWidth, button.clientHeight);
+                    const rect = button.getBoundingClientRect();
 
-                            observer.observe(el);
+                    circle.style.width = size + "px";
+                    circle.style.height = size + "px";
+                    circle.style.left = (e.clientX - rect.left - size / 2) + "px";
+                    circle.style.top = (e.clientY - rect.top - size / 2) + "px";
+                    circle.classList.add("ripple");
 
-                        });
+                    button.appendChild(circle);
+                    setTimeout(() => circle.remove(), 600);
+                });
+            }
+        })();
+    </script>
 
+</body>
 
-                        /*==========================
-                                RIPPLE BUTTON
-                        ==========================*/
-
-                        const btn = document.querySelector(".send-btn");
-
-                        btn.addEventListener("click", function (e) {
-
-                            let x = e.clientX - btn.offsetLeft;
-
-                            let y = e.clientY - btn.offsetTop;
-
-                            let ripple = document.createElement("span");
-
-                            ripple.style.left = x + "px";
-
-                            ripple.style.top = y + "px";
-
-                            btn.appendChild(ripple);
-
-                            setTimeout(() => {
-
-                                ripple.remove();
-
-                            }, 600);
-
-                        });
-
-
-                        /*==========================
-                                MOBILE MENU
-                        ==========================*/
-
-                        const menu = document.querySelector(".menu-btn");
-
-                        const nav = document.querySelector(".nav-links");
-
-                        menu.addEventListener("click", () => {
-
-                            nav.classList.toggle("show");
-
-                        });
-                </script>
-                
-                </body>
-                
-                </html>
+</html>

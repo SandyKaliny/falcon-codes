@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -21,45 +21,31 @@
 
 </head>
 
-<body>
+<body class="page-about" id="top">
 
-    <header class="header1">
-
-        <div class="container1">
-
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <img src="images/falcon logo.svg" alt="Falcon Codes">
-            </a>
-
-            <!-- Navigation -->
-            <nav class="navbar1">
-
-                <a href="falcon.html">Home</a>
-
-                <a href="services.html">Services</a>
-
-                <a href="about.html" class="active">About</a>
-
-                <a href="portfolio.html">Portfolio</a>
-
-                <a href="contact.html">Contact</a>
-
+    <!-- ================= NAVBAR (same shared header as home / contact) ================= -->
+    <div id="site-header">
+        <header class="site-header">
+            <nav class="nav" aria-label="Primary">
+                <a class="nav-logo" href="index.html" aria-label="Falcon of Codes — Home">
+                    <img src="images/falcon logo.svg" alt="Falcon of Codes — website builder and managed hosting"
+                        width="160" height="54" />
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" data-nav="home">Home</a>
+                    <a href="services.html" data-nav="services">Services</a>
+                    <a href="about.html" data-nav="about" class="is-active">About</a>
+                    <a href="index.html#projects" data-nav="portfolio">Portfolio</a>
+                    <a href="contact.html" data-nav="contact">Contact</a>
+                </div>
+                <a class="btn btn-nav" href="contact.html">Let's Talk</a>
+                <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
             </nav>
+        </header>
+    </div>
 
-            <!-- Button -->
-            <a href="#" class="talk-btn1">
-                Let's Talk
-            </a>
-
-            <!-- Mobile Menu -->
-            <div class="menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-
-        </div>
-
-    </header>
     <section class="about-hero">
 
 
@@ -76,25 +62,27 @@
                     ABOUT FALCON CODES
                 </span>
 
-                <h1>
-                    Building Digital <br>
-                    Solutions With <br>
-                    <span>Purpose.</span>
-                </h1>
+                <div>
+                    <h1>
+                        Building Digital <br>
+                        Solutions With <br>
+                        <span>Purpose.</span>
+                    </h1>
 
-                <p>
-                    We're a team of thinkers, designers, and developers helping
-                    businesses turn ideas into powerful digital products.
-                </p>
+                    <p>
+                        We're a team of thinkers, designers, and developers helping
+                        businesses turn ideas into powerful digital products.
+                    </p>
+                </div>
 
                 <div class="hero-buttons">
 
-                    <a href="#" class="btn-primary1">
+                    <a href="#journey" class="btn-primary1">
                         Our Journey
                         <i class="fa-solid fa-circle-arrow-right"></i>
                     </a>
 
-                    <a href="#" class="btn-secondary1">
+                    <a href="index.html#projects" class="btn-secondary1">
                         See Our Work
                         <i class="fa-solid fa-play"></i>
                     </a>
@@ -106,7 +94,7 @@
         </div>
 
     </section>
-    <section class="about">
+    <section class="about" id="journey">
 
         <div class="container about-container1">
 
@@ -167,7 +155,8 @@
             <span class="section-subtitle">OUR CORE VALUES</span>
 
             <h2 class="section-title2">
-                Building Digital Success <span>Beyond Code.</span>
+                Building Digital Success
+                <span>Beyond Code.</span>
             </h2>
 
             <div class="values-grid">
@@ -267,12 +256,12 @@
     <section class="our-process">
         <div class="process-section">
             <div class="eyebrow">OUR PROCESS</div>
-            <h2 class="heading">From Idea To Online Success</h2>
+            <h2 class="heading">From Idea To Online <span>Success</span></h2>
 
             <div class="steps">
 
                 <div class="step">
-                    <div class="icon-circle">
+                    <div class="icon-circle" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
                             <circle cx="12" cy="12" r="3"></circle>
@@ -281,15 +270,17 @@
                             </path>
                         </svg>
                     </div>
-                    <div class="step-number">01</div>
-                    <div class="step-title">Discover</div>
-                    <div class="step-desc">We understand your business, goals, and target audience.</div>
+                    <div class="step-body">
+                        <div class="step-number">01</div>
+                        <div class="step-title">Discover</div>
+                        <div class="step-desc">We understand your business, goals, and target audience.</div>
+                    </div>
                 </div>
 
-                <div class="connector"></div>
+                <div class="connector" aria-hidden="true"></div>
 
                 <div class="step">
-                    <div class="icon-circle">
+                    <div class="icon-circle" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -298,47 +289,50 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                         </svg>
                     </div>
-                    <div class="step-number">02</div>
-                    <div class="step-title">Strategy</div>
-                    <div class="step-desc">We research and plan the best strategy to achieve results.</div>
+                    <div class="step-body">
+                        <div class="step-number">02</div>
+                        <div class="step-title">Strategy</div>
+                        <div class="step-desc">We research and plan the best strategy to achieve results.</div>
+                    </div>
                 </div>
 
-                <div class="connector"></div>
+                <div class="connector" aria-hidden="true"></div>
 
                 <div class="step">
-                    <div class="icon-circle">
+                    <div class="icon-circle" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
                             <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"></path>
                         </svg>
                     </div>
-                    <div class="step-number">03</div>
-                    <div class="step-title">Design</div>
-                    <div class="step-desc">We craft stunning, UX/UI designs that align with your brand.</div>
+                    <div class="step-body">
+                        <div class="step-number">03</div>
+                        <div class="step-title">Design</div>
+                        <div class="step-desc">We craft stunning, UX/UI designs that align with your brand.</div>
+                    </div>
                 </div>
 
-                <div class="connector"></div>
+                <div class="connector" aria-hidden="true"></div>
 
                 <div class="step">
-                    <div class="icon-circle">
+                    <div class="icon-circle" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
                         </svg>
                     </div>
-                    <div class="step-number">04</div>
-                    <div class="step-title">Develop</div>
-                    <div class="step-desc">We build fast, secure, and scalable websites using modern tech.</div>
+                    <div class="step-body">
+                        <div class="step-number">04</div>
+                        <div class="step-title">Develop</div>
+                        <div class="step-desc">We build fast, secure, and scalable websites using modern tech.</div>
+                    </div>
                 </div>
 
-                <div class="connector"></div>
+                <div class="connector" aria-hidden="true"></div>
 
                 <div class="step">
-                    <div class="icon-circle">
+                    <div class="icon-circle" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
                             <path
@@ -351,24 +345,28 @@
                             <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
                         </svg>
                     </div>
-                    <div class="step-number">05</div>
-                    <div class="step-title">Launch</div>
-                    <div class="step-desc">We test, optimize and launch with confidence.</div>
+                    <div class="step-body">
+                        <div class="step-number">05</div>
+                        <div class="step-title">Launch</div>
+                        <div class="step-desc">We test, optimize and launch with confidence.</div>
+                    </div>
                 </div>
 
-                <div class="connector"></div>
+                <div class="connector" aria-hidden="true"></div>
 
                 <div class="step">
-                    <div class="icon-circle">
+                    <div class="icon-circle" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
                             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                             <polyline points="17 6 23 6 23 12"></polyline>
                         </svg>
                     </div>
-                    <div class="step-number">06</div>
-                    <div class="step-title">Grow</div>
-                    <div class="step-desc">We monitor, analyze and improve continuously to grow your business.</div>
+                    <div class="step-body">
+                        <div class="step-number">06</div>
+                        <div class="step-title">Grow</div>
+                        <div class="step-desc">We monitor, analyze and improve continuously to grow your business.</div>
+                    </div>
                 </div>
 
             </div>
@@ -381,7 +379,7 @@
         
                 <div class="header">
                     <div class="eyebrow">WHY CHOOSE FALCON CODES</div>
-                    <div class="subtitle">We're more than just developers , We're your growth partners.</div>
+                    <div class="subtitle">We're more than just developers, We're your growth partners.</div>
                 </div>
         
                 <div class="cards-grid">
@@ -484,8 +482,8 @@
                 </div>
         
                 <div class="comparison">
-        
-                    <div class="compare-col">
+
+                    <div class="compare-col compare-col--traditional">
                         <h4>Traditional Websites</h4>
                         <ul>
                             <li><span class="mark bad"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round">
@@ -510,10 +508,10 @@
                                     </svg></span>Low Conversion Rate</li>
                         </ul>
                     </div>
-        
+
                     <div class="vs-badge">VS</div>
-        
-                    <div class="compare-col">
+
+                    <div class="compare-col compare-col--falcon">
                         <h4>Falcon Websites</h4>
                         <ul>
                             <li><span class="mark good"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round"
@@ -538,7 +536,7 @@
                                     </svg></span>Conversions Focused</li>
                         </ul>
                     </div>
-        
+
                 </div>
         
             </div>
@@ -762,129 +760,152 @@
     
     </section>
     <!--======================
-                    CTA
-            =======================-->
-    
-    <section class="cta1">
-    
-        <div class="container">
-    
-            <div class="cta-box">
-    
-                <div class="cta-left">
-    
-                    <div class="cta-icon">
-    
-                        <i class="fa-solid fa-rocket"></i>
-    
+            CTA + FOOTER (overlapping zone — same as home)
+    =======================-->
+
+    <div class="footer-cta-zone">
+
+        <section class="cta cta1" id="start" aria-labelledby="about-cta-heading">
+
+            <div class="container">
+
+                <div class="cta-box">
+
+                    <div class="cta-left">
+
+                        <div class="cta-icon" aria-hidden="true">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+
+                        <div class="cta-text">
+
+                            <h2 id="about-cta-heading">
+                                Ready To Build A Website That Works As Hard As You Do?
+                            </h2>
+
+                            <p>
+                                Let's build something amazing together. From idea to online success, we're your partner in growth.
+                            </p>
+
+                        </div>
+
                     </div>
-    
-                    <div>
-    
-                        <h2>
-    
-                            Ready To Build A Website
-                            <br>
-                            That Works As Hard As You Do?
-    
-                        </h2>
-    
-                        <p>
-    
-                            Let's build something amazing together.
-                            From idea to online success, we're your partner.
-    
-                        </p>
-    
-                    </div>
-    
+
+                    <a href="contact.html" class="cta-btn">
+                        Start Your Project
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
                 </div>
-    
-                <a href="#" class="cta-btn">
-    
-                    Start Your Project
-    
-                    <i class="fa-solid fa-arrow-right"></i>
-    
-                </a>
-    
+
             </div>
-    
-        </div>
-    
-    </section>
-    
-    <!--======================
-                    FOOTER
-            =======================-->
-    
-    <footer>
-        
-        <div class="container">
-    
-            <div class="footer-top">
-    
-                <img src="images/falcon logo.svg" alt="Logo">
-    
-                <div class="social-links">
-    
-                    <a href="#">Dribbble</a>
-    
-                    <a href="#">Behance</a>
-    
-                    <a href="#">LinkedIn</a>
-    
-                    <a href="#">Instagram</a>
-    
-                    <a href="#">Twitter (X)</a>
-    
+
+        </section>
+
+        <footer>
+
+            <div class="container">
+
+                <div class="footer-top">
+
+                    <a href="index.html" class="footer-logo" aria-label="Falcon of Codes — Home">
+                        <img src="images/falcon logo.svg" alt="Falcon of Codes">
+                    </a>
+
+                    <nav class="social-links" aria-label="Social links">
+                        <a href="#">Dribbble</a>
+                        <a href="#">Behance</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter (X)</a>
+                    </nav>
+
                 </div>
-    
-            </div>
-    
-            <hr>
-    
-            <div class="footer-bottom">
-    
-                <p>
-    
-                    © 2024 Falcon of Codes.
-                    All rights reserved.
-    
-                </p>
-    
-                <div>
-    
-                    <a href="#">Privacy Policy</a>
-    
-                    <a href="#">Terms of Service</a>
-    
+
+                <hr>
+
+                <div class="footer-bottom">
+
+                    <p>© 2024 Falcon of Codes. All rights reserved.</p>
+
+                    <nav class="footer-legal" aria-label="Legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </nav>
+
                 </div>
-    
+
             </div>
-    
-        </div>
-    
-    </footer>
 
-    
-   
+        </footer>
 
-</body>
+    </div>
 
-</html>
+    <!-- ================= MOBILE NAV ================= -->
+    <div id="site-mobile-nav">
+        <nav class="mobile-tabbar" aria-label="Mobile navigation">
+            <div class="mobile-tabbar-indicator" aria-hidden="true"></div>
 
+            <a href="index.html" class="mobile-tab" data-page="home" aria-label="Home">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1V9.5z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Home</span>
+            </a>
 
-<script>
+            <a href="about.html" class="mobile-tab is-active" data-page="about" aria-label="About">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">About</span>
+            </a>
+
+            <a href="services.html" class="mobile-tab" data-page="services" aria-label="Services">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" />
+                        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Services</span>
+            </a>
+
+            <a href="index.html#projects" class="mobile-tab" data-page="portfolio" aria-label="Portfolio">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Portfolio</span>
+            </a>
+
+            <a href="contact.html" class="mobile-tab" data-page="contact" aria-label="Contact">
+                <span class="mobile-tab-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                    </svg>
+                </span>
+                <span class="mobile-tab-label">Contact</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="js/header.js"></script>
+    <script>
     // =========================
     // Hero Animation
     // =========================
 
-    // Fade when page loads
     window.addEventListener("load", () => {
-        document.querySelector(".hero-content").classList.add("show");
+        document.querySelector(".hero-content1")?.classList.add("show");
     });
-
 
     // =========================
     // Mouse Parallax Effect
@@ -893,94 +914,54 @@
     const hero = document.querySelector(".about-hero");
     const bg = document.querySelector(".bg-img");
 
-    hero.addEventListener("mousemove", (e) => {
+    if (hero && bg) {
+        hero.addEventListener("mousemove", (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            bg.style.transform = `scale(1.08) translate(${x}px, ${y}px)`;
+        });
 
-        const x = (e.clientX / window.innerWidth - 0.5) * 20;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        hero.addEventListener("mouseleave", () => {
+            bg.style.transform = "scale(1.08) translate(0px,0px)";
+        });
 
-        bg.style.transform = `scale(1.08) translate(${x}px, ${y}px)`;
-
-    });
-
-    hero.addEventListener("mouseleave", () => {
-
-        bg.style.transform = "scale(1.08) translate(0px,0px)";
-
-    });
-
-
-    // =========================
-    // Scroll Parallax
-    // =========================
-
-    window.addEventListener("scroll", () => {
-
-        const scroll = window.pageYOffset;
-
-        bg.style.top = scroll * 0.3 + "px";
-
-    });
-
+        window.addEventListener("scroll", () => {
+            bg.style.top = window.pageYOffset * 0.3 + "px";
+        });
+    }
 
     // =========================
     // Button Hover Effect
     // =========================
 
-    const buttons = document.querySelectorAll(".hero-buttons a");
-
-    buttons.forEach(btn => {
-
+    document.querySelectorAll(".hero-buttons a").forEach((btn) => {
         btn.addEventListener("mouseenter", () => {
-
             btn.style.transition = ".4s";
             btn.style.transform = "translateY(-6px) scale(1.04)";
-
         });
 
         btn.addEventListener("mouseleave", () => {
-
             btn.style.transform = "translateY(0) scale(1)";
-
         });
-
     });
-    const menuBtn = document.querySelector(".menu-btn");
-    const navbar = document.querySelector(".navbar");
 
-    menuBtn.onclick = () => {
-
-        navbar.classList.toggle("active");
-
+    if (typeof AOS !== "undefined") {
+        AOS.init({
+            duration: 900,
+            once: true,
+            offset: 120
+        });
     }
-    AOS.init({
-        duration: 900,
-        once: true,
-        offset: 120
-    });
+
     const cards = document.querySelectorAll(".tech-card");
-
     const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
         });
+    }, { threshold: .2 });
 
-    }, {
-        threshold: .2
-    });
-
-    cards.forEach(card => {
-
-        observer.observe(card);
-
-    });
-</script>
+    cards.forEach((card) => observer.observe(card));
+    </script>
 </body>
 
 </html>
