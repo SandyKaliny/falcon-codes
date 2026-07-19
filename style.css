@@ -3912,7 +3912,7 @@ ul {
 .cta-box h2,
 .cta-text h2 {
     font-size: clamp(22px, 2.4vw, 28px);
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.25;
     margin: 0 0 8px;
     color: #fff;
@@ -4193,6 +4193,8 @@ footer hr {
     background-size: 400% 400%;
 
     animation: gradientMove 8s ease infinite;
+    z-index: -1;
+    
 
 }
 
@@ -4632,7 +4634,7 @@ Navbar
 }
 
 .section-title {
-    display: flex;
+  
     align-items: center;
     gap: 12px;
     color: #8D6BFF;

@@ -24,9 +24,10 @@ body.page-web {
 
     background: linear-gradient(135deg, #F8F5FF 0%, #EFE7FF 55%, #E8DBFF 100%);
 
-    color: #222;
+    color: #4F46E5;
 
     overflow-x: clip;
+   
 
 }
 
@@ -38,7 +39,7 @@ body.page-web {
 }
 
 img {
-    width: 100%;
+ 
     display: block;
 }
 
@@ -147,6 +148,9 @@ ul {
 
     font-weight: 600;
 
+}
+.breadcrumb strong{
+    font-weight: 500;
 }
 
 /*==========================
@@ -331,9 +335,9 @@ ul {
 
     position: absolute;
 
-    width: 420px;
+    width: 220px;
 
-    height: 420px;
+    height: 6\220px;
 
     background: linear-gradient(135deg,
             rgba(167, 95, 255, .15),
@@ -353,7 +357,7 @@ ul {
 
     width: 100%;
 
-    max-width: 520px;
+    max-width:1000px;
 
     object-fit: contain;
 
@@ -523,7 +527,7 @@ ul {
         margin: auto auto 25px;
 
     }
-
+       
     .hero-text p {
 
         margin: 0 auto 35px;
@@ -745,7 +749,7 @@ ul {
 
 .section-title h2 {
 
-    font-size: 46px;
+    font-size: 30px;
 
     font-weight: 600;
 
@@ -937,7 +941,7 @@ ul {
 
     height: 2px;
 
-    background: #D8CFFF;
+    background: #746a9dFF;
 
 }
 
@@ -1003,7 +1007,7 @@ ul {
 
     margin-top: 20px;
 
-    font-size: 18px;
+    font-size: 15px;
 
     color: #222;
 
@@ -1020,92 +1024,575 @@ ul {
     line-height: 1.7;
 
 }
+
+
 /*=========================================
         TECHNOLOGIES
-=========================================*/
+==========================================*/
 
 .technologies {
-
-    padding: 110px 0;
-
-    background: #F8F7FE;
-
+    padding: 65px 0 70px;
+    background: linear-gradient(135deg,
+            #f5f2ff 0%,
+            #eee8ff 50%,
+            #e5d9f7 100%);
+    overflow: hidden;
 }
 
+
+/*=========================================
+        SECTION TITLE
+==========================================*/
+
+.technologies .section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.technologies .section-title h2 {
+    margin: 0;
+
+    color: #16162b;
+
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.technologies .line {
+    width: 38px;
+    height: 2px;
+
+    margin: 9px auto 0;
+
+    border-radius: 20px;
+
+    background: linear-gradient(90deg,
+            #6d4aff,
+            #a34cff);
+}
+
+
+/*=========================================
+        TECH GRID
+==========================================*/
+
 .tech-grid {
+    width: 100%;
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 
-    gap: 30px;
+    gap: 14px;
 
-    margin-top: 60px;
-
+    align-items: stretch;
 }
+
+
+/*=========================================
+        TECH CARD
+==========================================*/
 
 .tech-item {
+    min-width: 0;
+    height: 108px;
 
-    background: #fff;
+    padding: 15px 8px 10px;
 
-    border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-    padding: 35px;
+    position: relative;
 
-    text-align: center;
+    border-radius: 14px;
 
-    border: 1px solid #F1EEFF;
+    background: rgba(255, 255, 255, 0.88);
 
-    box-shadow: 0 15px 40px rgba(108, 76, 241, .08);
+    border: 1px solid rgba(112, 78, 255, 0.08);
 
-    transition: .4s;
+    box-shadow:
+        0 8px 22px rgba(85, 55, 180, 0.06);
 
-    cursor: pointer;
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    opacity: 0;
+
+    animation: techCardReveal 0.7s ease forwards;
+}
+
+
+/*=========================================
+        STAGGER ANIMATION
+==========================================*/
+
+.tech-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.tech-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.tech-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.tech-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.tech-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.tech-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+
+@keyframes techCardReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 
 }
+
+
+/*=========================================
+        HOVER EFFECT
+==========================================*/
 
 .tech-item:hover {
 
-    transform: translateY(-12px);
+    transform: translateY(-9px) scale(1.04);
 
-    box-shadow: 0 25px 60px rgba(108, 76, 241, .18);
+    border-color: rgba(112, 78, 255, 0.35);
+
+    box-shadow:
+        0 16px 32px rgba(91, 62, 220, 0.18),
+        0 0 0 4px rgba(112, 78, 255, 0.06);
 
 }
+
+
+/*=========================================
+        ICON
+==========================================*/
 
 .tech-item img {
 
-    width: 70px;
-
-    height: 70px;
+    width: 34px;
+    height: 34px;
 
     object-fit: contain;
 
-    margin: auto;
-
-    transition: .4s;
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.45s ease;
 
 }
+
 
 .tech-item:hover img {
 
-    transform: scale(1.12) rotate(5deg);
+    transform: translateY(-4px) scale(1.15) rotate(-4deg);
+
+    filter:
+        drop-shadow(0 6px 8px rgba(104, 70, 240, 0.2));
 
 }
+
+
+/*=========================================
+        TEXT
+==========================================*/
 
 .tech-item span {
 
-    display: block;
+    width: 100%;
 
-    margin-top: 22px;
+    color: #6f6b7d;
 
     font-size: 18px;
+    font-weight: 500;
 
-    font-weight: 600;
+    text-align: center;
 
-    color: #222;
+    white-space: nowrap;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 
 }
 
+
+.tech-item:hover span {
+
+    color: #6745e8;
+
+    transform: translateY(2px);
+
+}
+
+
+/*=========================================
+        GLOW EFFECT
+==========================================*/
+
+.tech-item::before {
+
+    content: "";
+
+    width: 55px;
+    height: 55px;
+
+    position: absolute;
+
+    top: -25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: rgba(111, 76, 255, 0.12);
+
+    filter: blur(22px);
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+}
+
+
+.tech-item:hover::before {
+
+    opacity: 1;
+
+}
+
+
+/*=========================================
+        RESPONSIVE
+==========================================*/
+
+@media (max-width: 900px) {
+
+    .tech-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .technologies {
+
+        padding: 50px 0;
+
+    }
+
+    .tech-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+
+    }
+
+    .tech-item {
+
+        height: 105px;
+
+    }
+
+}
+
+
+/* =========================
+   RANKING CTA SECTION
+========================= */
+
+.ranking-cta {
+    width: calc(100% - 120px);
+    max-width: 1200px;
+    min-height: 122px;
+    margin: 0 auto 24px;
+
+    padding: 22px 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: linear-gradient(110deg,
+            #7658f4 0%,
+            #8057f5 50%,
+            #a44ce8 100%);
+
+    box-sizing: border-box;
+
+    animation: ctaFadeUp 0.8s ease forwards;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+}
+
+.cta-content h2 {
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.cta-content p {
+    max-width: 380px;
+    margin: 0 0 14px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 8px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.cta-btn {
+    width: 76px;
+    height: 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: #6848e9;
+
+    text-decoration: none;
+
+    font-size: 7px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.cta-btn span {
+    font-size: 11px;
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.cta-btn:hover span {
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   PEN IMAGE
+========================= */
+
+.cta-visual {
+    position: absolute;
+
+    right: 92px;
+    top: 75%;
+
+    width: 145px;
+    height: 145px;
+
+    transform: translateY(-70%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1;
+}
+
+.cta-visual img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 10px 10px rgba(40, 0, 100, 0.2));
+
+    animation: penFloat 4s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes ctaFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes penFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.ranking-cta::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: 80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    transition: all 0.5s ease;
+}
+
+.ranking-cta:hover::before {
+    transform: scale(1.5);
+    background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .ranking-cta {
+        width: calc(100% - 40px);
+        min-height: 170px;
+
+        padding: 25px 22px;
+    }
+
+    .cta-content {
+        max-width: 60%;
+    }
+
+    .cta-content h2 {
+        font-size: 17px;
+    }
+
+    .cta-content p {
+        font-size: 8px;
+    }
+
+    .cta-visual {
+        right: 0;
+        width: 125px;
+        height: 125px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .ranking-cta {
+        width: calc(100% - 24px);
+
+        min-height: 190px;
+
+        padding: 24px 18px;
+
+        align-items: flex-start;
+    }
+
+    .cta-content {
+        max-width: 70%;
+    }
+
+    .cta-content h2 {
+        font-size: 16px;
+    }
+
+    .cta-content p {
+        font-size: 7px;
+        max-width: 190px;
+    }
+
+    .cta-visual {
+        right: -15px;
+        bottom: -5px;
+        top: auto;
+
+        width: 120px;
+        height: 120px;
+
+        transform: none;
+    }
+}
 /* Legacy page CTA removed — uses shared .footer-cta-zone from style.css */
 
 /*=========================================
