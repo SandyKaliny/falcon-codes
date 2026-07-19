@@ -2100,8 +2100,8 @@ ul {
 
 .grow {
     position: absolute;
-    top: -42px;
-    right: -36px;
+    top: -32px;
+    right: -180px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
