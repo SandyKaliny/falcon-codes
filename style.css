@@ -1348,18 +1348,13 @@ ul {
         font-size: 12px;
     }
 
-    .grow {
+   .grow {
         position: absolute;
-        top: -46px;
-        right: max(8px, calc(50% - 148px));
-        left: auto;
-        margin: 0;
-        order: 0;
-        transform: rotate(-14deg);
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 2px;
-        pointer-events: none;
+            
+            gap: 2px;
+            transform: rotate(-12deg);
+            pointer-events: none;
+            z-index: 2;
     }
 
     .grow span {
@@ -1368,6 +1363,7 @@ ul {
         font-weight: 600;
         color: #7B5CFF;
         white-space: nowrap;
+        
     }
 
     .grow img {

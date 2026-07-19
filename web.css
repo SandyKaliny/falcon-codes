@@ -171,13 +171,13 @@ ul {
 
 .hero-text h1 {
 
-    font-size: 64px;
+    font-size: 60px;
 
     line-height: 1.18;
 
     color: #222;
 
-    font-weight: 800;
+    font-weight: 700;
 
     margin-bottom: 30px;
 
@@ -669,6 +669,7 @@ ul {
     .hero-text h1 {
 
         font-size: 34px;
+       
 
     }
 
@@ -752,19 +753,7 @@ ul {
 
 }
 
-.section-title .line {
 
-    width: 80px;
-
-    height: 4px;
-
-    margin: 18px auto 0;
-
-    border-radius: 50px;
-
-    background: linear-gradient(90deg, #6C4CF1, #A45DFF);
-
-}
 
 /*==========================
         GRID

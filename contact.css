@@ -22,9 +22,7 @@ body.page-contact {
 
     font-family: 'Poppins', sans-serif;
 
-    background: linear-gradient(180deg, #F7F3FF 0%, #EEE6FF 42%, #E8DEFF 100%);
-
-    color: #1A1A1A;
+background: linear-gradient(135deg, #E4DBFF, #C6A9E1 100%);
 
     overflow-x: clip;
 
@@ -32,6 +30,7 @@ body.page-contact {
 
 .page-contact .contact-page {
     min-height: 100vh;
+    margin-bottom: 40px;
 }
 
 img {
@@ -114,7 +113,7 @@ header:not(.site-header) {
 
     border-radius: 22px;
 
-    background: linear-gradient(90deg, #6542EA, #A45CFF);
+    background: linear-gradient(90deg, #533A9C, #9455B7);
 
     display: flex;
 
@@ -222,7 +221,7 @@ header:not(.site-header) {
 
 .contact {
 
-    padding-top: 140px;
+    padding-top: 80px;
 
     padding-bottom: 48px;
 
@@ -481,7 +480,7 @@ header:not(.site-header) {
 
     border-radius: 16px;
 
-    background: linear-gradient(135deg, #5B3DE8, #8B5CFF);
+    background: linear-gradient(135deg, #533A9C, #9455B7);
 
     display: flex;
     align-items: center;
@@ -809,7 +808,7 @@ header:not(.site-header) {
 
     border-radius: 50px;
 
-    background: linear-gradient(90deg, #6C4CF1, #A25DFF);
+    background: linear-gradient(135deg, #533A9C, #9455B7);
 
     color: #fff;
 
@@ -844,89 +843,271 @@ header:not(.site-header) {
     font-size: 13px;
 
 }
-/*======================================
-            CONTACT STATS (scoped — not home .stat-box)
-======================================*/
+/*=========================================
+            STATISTICS
+=========================================*/
 
-.page-contact .contact-stats {
-    padding: 12px 0 64px;
+.contact-stats {
+
+    padding: 40px 0 90px;
+
 }
 
-.page-contact .contact-stats-grid {
+.stats-wrapper {
+
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: stretch;
-    gap: 0;
-    padding: 28px 20px;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    background: rgba(255, 255, 255, .35);
+
     border-radius: 28px;
-    background: #F7F3FF;
-    border: 1px solid rgba(125, 90, 255, 0.22);
-    box-shadow: 0 12px 32px rgba(108, 76, 241, 0.08);
+
+    padding: 10px;
+
+    box-shadow: 0 25px 60px rgba(108, 76, 241, .08);
+
 }
 
-.page-contact .contact-stat {
+.stat-box {
+
     display: flex;
-    flex-direction: column;
+
     align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    gap: 8px;
-    padding: 8px 12px;
-    position: relative;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    animation: none !important;
-    box-shadow: none;
-    min-width: 0;
-    float: none;
-    width: auto;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    border-radius: 22px;
+
+    transition: .35s;
+
 }
 
-.page-contact .contact-stat:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 18%;
-    bottom: 18%;
-    width: 1px;
-    background: rgba(123, 92, 255, 0.28);
+.stat-box:hover {
+
+    transform: translateY(-8px);
+
+    background: #F8F6FF;
+
 }
 
-.page-contact .contact-stat-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #6B4EFF, #9B6CFF);
+.stat-icon {
+
+    width: 68px;
+
+    height: 68px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(135deg, #533A9C, #9455B7);
+
     color: #fff;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
-    font-size: 22px;
-    flex-shrink: 0;
+
+    font-size: 26px;
+
+    transition: .35s;
+
 }
 
-.page-contact .contact-stat-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-    min-width: 0;
+.stat-box:hover .stat-icon {
+
+    transform: rotate(-8deg) scale(1.08);
+
 }
 
-.page-contact .contact-stat-text strong {
-    font-size: 28px;
-    line-height: 1.1;
-    font-weight: 800;
-    color: #17141F;
+.stat-box h2 {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #1E1E1E;
+
+    margin-bottom: 5px;
+
 }
 
-.page-contact .contact-stat-text span {
-    font-size: 13px;
-    line-height: 1.3;
-    color: #8B8798;
+.stat-box p {
+
+    color: #777;
+
+    font-size: 15px;
+
 }
 
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:1100px) {
+
+    .contact-wrapper {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+    }
+
+    .contact-left {
+
+        text-align: center;
+
+    }
+
+    .contact-left h1 {
+
+        margin: auto;
+
+    }
+
+    .contact-arrow {
+
+        display: none;
+
+    }
+
+    .input-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .stats-wrapper {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .nav-links {
+
+        display: none;
+
+    }
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+    .talk-btn {
+
+        display: none;
+
+    }
+
+    .contact-section {
+
+        padding-top: 120px;
+
+    }
+
+    .contact-left h1 {
+
+        font-size: 42px;
+
+    }
+
+    .contact-form {
+
+        padding: 28px;
+
+    }
+
+    .contact-form h2 {
+
+        font-size: 30px;
+
+    }
+
+    .send-btn {
+
+        width: 100%;
+
+    }
+
+    .stats-wrapper {
+
+        grid-template-columns: 1fr;
+
+        padding: 25px;
+
+    }
+
+    .stat-box {
+
+        padding: 18px;
+
+    }
+
+}
+
+@media(max-width:480px) {
+
+    .container {
+
+        width: 92%;
+
+    }
+
+    .contact-left h1 {
+
+        font-size: 34px;
+
+        line-height: 1.3;
+
+    }
+
+    .contact-form {
+
+        padding: 22px;
+
+    }
+
+    .input-box input {
+
+        height: 56px;
+
+    }
+
+    .textarea textarea {
+
+        height: 130px;
+
+    }
+
+    .stat-icon {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 22px;
+
+    }
+
+    .stat-box h2 {
+
+        font-size: 28px;
+
+    }
+
+}
 /* Contact page footer (uses shared footer styles from style.css) */
 .page-contact .contact-footer {
     position: relative;
@@ -1356,7 +1537,7 @@ header:not(.site-header) {
         max-width: none !important;
         float: none !important;
     }
-
+}
     .page-contact .contact-stat:not(:last-child)::after {
         content: "" !important;
         display: block !important;
@@ -1415,7 +1596,7 @@ header:not(.site-header) {
         font-size: 12px;
     }
 
-}
+
 
 @media(max-width:480px) {
 
