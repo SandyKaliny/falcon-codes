@@ -1620,21 +1620,23 @@ a {
     font-size: 28px;
 
     font-weight: 500;
-   
+
 
 }
-.process-container h2{
-   
-        text-align: center;
-    
-        color: #f4f3f8;
-    
-        font-size: 28px;
-    
-        font-weight: 500;
-        margin-top: 50px;
+
+.process-container h2 {
+
+    text-align: center;
+
+    color: #f4f3f8;
+
+    font-size: 28px;
+
     font-weight: 500;
-    
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: 500;
+
 }
 
 
@@ -1645,10 +1647,10 @@ a {
 .why-choose-container {
 
     width: 95%;
-    
-        max-width: 1700px;
-    
-        margin: 0 auto;
+
+    max-width: 1700px;
+
+    margin: 0 auto;
 
 }
 
@@ -1944,19 +1946,21 @@ a {
     font-size: 18px;
 
     font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 
 
 .process-step p {
 
-    max-width: 150px;
+   
 
     margin: 0;
 
     color: #aaa8ba;
 
-    font-size: 13px;
+    font-size: 18px;
 
     line-height: 1.35;
 

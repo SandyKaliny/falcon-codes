@@ -351,6 +351,7 @@ ul {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .mobile-tabbar-indicator,
     .mobile-tab-icon {
         transition: none;
@@ -918,7 +919,7 @@ ul {
     }
 
     .hero-content p {
-        max-width: 650px;        
+        max-width: 650px;
     }
 
     .hero-buttons,
@@ -1348,13 +1349,13 @@ ul {
         font-size: 12px;
     }
 
-   .grow {
+    .grow {
         position: absolute;
-            
-            gap: 2px;
-            transform: rotate(-12deg);
-            pointer-events: none;
-            z-index: 2;
+
+        gap: 2px;
+        transform: rotate(-12deg);
+        pointer-events: none;
+        z-index: 2;
     }
 
     .grow span {
@@ -1363,7 +1364,7 @@ ul {
         font-weight: 600;
         color: #7B5CFF;
         white-space: nowrap;
-        
+
     }
 
     .grow img {
@@ -1561,7 +1562,7 @@ ul {
         text-align: left;
     }
 
-    .projects-header > div {
+    .projects-header>div {
         width: 100%;
         text-align: left;
     }
@@ -1701,7 +1702,7 @@ ul {
         text-align: left;
     }
 
-    .testimonial-header > div {
+    .testimonial-header>div {
         width: 100%;
         text-align: left;
     }
@@ -2741,7 +2742,7 @@ ul {
     line-height: 32px;
     font-size: 18px;
     margin-top: 18px;
-    max-width: 540px;
+
 
 }
 
@@ -2910,7 +2911,7 @@ ul {
     gap: 12px;
 
     color: #fff;
-    font-weight: 600;
+    font-weight: 500;
 
     transition: .4s;
 
@@ -4194,7 +4195,7 @@ footer hr {
 
     animation: gradientMove 8s ease infinite;
     z-index: -1;
-    
+
 
 }
 
@@ -4528,6 +4529,7 @@ Navbar
 }
 
 @media (max-width: 768px) {
+
     /* One mobile header chrome for every page (beats any page-specific top/padding) */
     .page-home #site-header,
     .page-about #site-header,
@@ -4634,7 +4636,7 @@ Navbar
 }
 
 .section-title {
-  
+
     align-items: center;
     gap: 12px;
     color: #8D6BFF;
@@ -4802,12 +4804,10 @@ Responsive
     }
 
     .about-hero .overlay {
-        background: linear-gradient(
-            180deg,
-            rgba(16, 10, 45, 0.50) 0%,
-            rgba(16, 10, 45, 0.70) 40%,
-            rgba(10, 8, 30, 0.90) 100%
-        );
+        background: linear-gradient(180deg,
+                rgba(16, 10, 45, 0.50) 0%,
+                rgba(16, 10, 45, 0.70) 40%,
+                rgba(10, 8, 30, 0.90) 100%);
     }
 
     .about-hero .container {
@@ -5368,7 +5368,7 @@ Responsive
         font-size: 15px;
         line-height: 1.7;
         color: #7d7d7d;
-        max-width: 36ch;
+        max-width: 45ch;
         margin: 0 auto;
     }
 
@@ -5417,7 +5417,7 @@ Responsive
 
 .container {
     max-width: 1500px;
-    
+
 }
 
 .section-subtitle {
@@ -5453,7 +5453,7 @@ Responsive
     width: 150%;
 }
 
-.icon-box1{
+.icon-box1 {
     width: 100px;
     height: 100px;
     margin: auto;
@@ -5466,10 +5466,10 @@ Responsive
     margin-bottom: 25px;
 }
 
-.icon-box1 img{
+.icon-box1 img {
     color: #7a6bff;
     width: 50px;
-        height: 60px;
+    height: 60px;
 }
 
 .number {
@@ -5641,9 +5641,10 @@ Responsive
         height: 48px;
         margin: 2px 0 0;
         border-radius: 12px;
-        border: none;
-        background: #181138;
+
+        background: #130D44;
         align-self: start;
+        border: #6336E4;
     }
 
     .core-values .icon-box1::before {
@@ -5659,7 +5660,7 @@ Responsive
         width: 24px;
         height: 24px;
         object-fit: contain;
-        filter: brightness(0) invert(1);
+
     }
 
     .core-values .number {
@@ -5837,7 +5838,7 @@ Responsive
     }
 
     .our-process .heading {
-        font-size: 20px;
+        font-size: 28px;
         font-weight: 800;
         line-height: 1.2;
         color: #111;
@@ -5914,7 +5915,7 @@ Responsive
     .our-process .step-body {
         display: block;
         text-align: left;
-        background: linear-gradient(135deg, #6B4EFF 0%, #8B5CF6 45%, #818CF8 100%);
+        background: linear-gradient(135deg, #A855F7 0%, #818CF8 100%);
         border-radius: 18px;
         padding: 18px 20px;
         box-shadow: 0 12px 28px rgba(84, 58, 156, 0.22);
@@ -5928,7 +5929,7 @@ Responsive
     .our-process .step-title {
         font-size: 16px;
         font-weight: 700;
-        color: #fff;
+
         margin: 0 0 6px;
     }
 
@@ -6237,8 +6238,8 @@ Responsive
 
     .why-choose .icon-box {
         flex-shrink: 0;
-        width: 48px;
-        height: 48px;
+        width: 58px;
+        height: 58px;
         background: #F3EEFF;
         border: 1.5px solid #C4B5FD;
         border-radius: 12px;
@@ -6283,7 +6284,7 @@ Responsive
         position: absolute;
         right: 14px;
         top: 10px;
-        font-size: 40px;
+
         font-weight: 800;
         line-height: 1;
         color: #E8E4F5;
@@ -6322,7 +6323,7 @@ Responsive
         background: #fff;
         border-radius: 18px;
         padding: 24px 22px 22px;
-        box-shadow: 0 12px 32px rgba(84, 58, 156, 0.10);
+        box-shadow: 0 12px 32px rgb(132 119 167 / 52%);
         text-align: left;
     }
 
@@ -6379,7 +6380,7 @@ Responsive
         position: relative;
         font-size: 15px;
         letter-spacing: 1px;
-        background: linear-gradient(135deg, #818CF8 0%, #6B4EFF 55%, #9354B7 100%);
+        background: linear-gradient(135deg, #A659F7, #828BF8);
         box-shadow: 0 10px 28px rgba(107, 78, 255, 0.40);
         flex-shrink: 0;
     }
@@ -6428,39 +6429,29 @@ Section Header
 }
 
 .section-tag {
-
-    display: inline-block;
-
-    color: #663EEF;
-
-    font-size: 15px;
-
-    font-weight: 400;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 18px;
-
-    position: relative;
-
+display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    color: #6B4EFF;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    opacity: 1;
+    margin-bottom: 14px;
 }
 
+.section-tag::before,
 .section-tag::after {
-
     content: "";
-
-    width: 55px;
-    height: 3px;
-
-    border-radius: 50px;
-
-    background: #6C4DFF;
-
-    display: block;
-
-    margin: 15px auto 0;
-
+    width: 28px;
+    height: 1.5px;
+    background: #6B4EFF;
+    border-radius: 2px;
 }
+
+
 
 .section-header h2 {
 
@@ -6481,6 +6472,7 @@ Section Header
     color: #6C4DFF;
 
 }
+
 /* About page: same overlapping CTA/footer as home, bg matches Technologies */
 .page-about .footer-cta-zone {
     background: #F8F7FF;
@@ -6615,7 +6607,9 @@ Card
 
     background: #7B5CFF;
 
-}/*==================================
+}
+
+/*==================================
 Background Glow
 ==================================*/
 
@@ -6867,6 +6861,7 @@ Keyframes
     }
 
 }
+
 /*==============================
 Responsive
 ==============================*/
@@ -7174,8 +7169,8 @@ Responsive
         text-align: left !important;
     }
 
-    .projects-header > div,
-    .testimonial-header > div {
+    .projects-header>div,
+    .testimonial-header>div {
         text-align: left !important;
         width: 100% !important;
     }
