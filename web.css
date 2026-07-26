@@ -1081,13 +1081,15 @@ ul {
 ==========================================*/
 
 .tech-grid {
+    width: 100%;
+
     display: grid;
-        grid-template-columns: repeat(5, minmax(220px, 1fr));
-        gap: 24px;
-        justify-content: center;
-        align-items: stretch;
-        max-width: 1400px;
-        margin: 0 auto;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 14px;
+
+    align-items: stretch;
 }
 
 
@@ -1096,27 +1098,75 @@ ul {
 ==========================================*/
 
 .tech-item {
+    min-width: 0;
+    height: 108px;
+
+    padding: 15px 8px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    position: relative;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(112, 78, 255, 0.08);
+
+    box-shadow:
+        0 8px 22px rgba(85, 55, 180, 0.06);
+
+    transition:
+        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+
+    opacity: 0;
+
+    animation: techCardReveal 0.7s ease forwards;
+}
+
+
+.tech-grid1 {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(220px, 1fr));
+    gap: 24px;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+/*=========================================
+        TECH CARD
+==========================================*/
+
+.tech-item1 {
 
     background: #fff;
-        border: 1px solid #ece7ff;
-        border-radius: 20px;
-    
-        min-height: 170px;
-        /* خليهم كلهم نفس الارتفاع */
-        padding: 28px 20px;
-    
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    
+    border: 1px solid #ece7ff;
+    border-radius: 20px;
+
+    min-height: 170px;
+    /* خليهم كلهم نفس الارتفاع */
+    padding: 28px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
     min-width: 0;
     height: 108px;
 
     align-items: center;
-   
+
     gap: 9px;
 
     position: relative;
@@ -1129,7 +1179,6 @@ ul {
     opacity: 0;
     animation: techCardReveal 0.7s ease forwards;
 }
-
 
 /*=========================================
         STAGGER ANIMATION
@@ -2009,9 +2058,9 @@ ul {
 
 
 
-.tech-item h3{
+.tech-item1 h3{
     color: #6848e9;
 }
-.tech-item p{
+.tech-item1 p{
     color: #6D6D6D;
 }
