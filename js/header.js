@@ -1,5 +1,6 @@
 // Site header + mobile tab bar (adapted for Sandy's pages; home = index.html)
 (function () {
+    // Decide which nav item should be active based on the current page file name
     function getCurrentNavPage() {
         const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
         if (file.includes("contact")) return "contact";
@@ -9,6 +10,7 @@
         return "home";
     }
 
+    // Mark the correct top navigation item as active for the current page
     function initHeaderNav() {
         const links = document.querySelectorAll(".nav-links a[data-nav]");
         if (!links.length) return;
@@ -26,6 +28,7 @@
         if (portfolioLink) portfolioLink.setAttribute("href", "#projects");
     }
 
+    // Hide or show the header when the user scrolls up or down
     function initHeaderScroll(header, nav) {
         if (!header) return;
 
@@ -71,6 +74,7 @@
         updateHeader();
     }
 
+    // Smoothly scroll to page sections when anchor links are clicked
     function initSmoothScroll(nav, header) {
         document.querySelectorAll('a[href^="#"]').forEach((a) => {
             a.addEventListener("click", (e) => {
@@ -88,6 +92,7 @@
     }
 
     // About / Services: CSS starts transparent (no flash). Only add .nav--solid after hero exits.
+    // Make the navbar transparent on the hero section and solid after scrolling past it
     function initNavTransparency() {
         const nav = document.querySelector(".site-header .nav");
         if (!nav) return;
@@ -120,6 +125,7 @@
         io.observe(hero);
     }
 
+    // Initialize the header navigation, scroll behavior, and menu button
     function initSiteHeader() {
         const header = document.querySelector("#site-header") || document.querySelector(".site-header");
         const nav = document.querySelector(".nav");
@@ -147,6 +153,7 @@
         });
     }
 
+    // Initialize the mobile bottom tab bar and the active tab indicator
     function initMobileTabBar() {
         const bar = document.querySelector(".mobile-tabbar");
         if (!bar) return;
