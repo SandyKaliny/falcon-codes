@@ -12,6 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  
 }
 
 html {
@@ -30,6 +31,7 @@ body.page-web {
    
 
 }
+
 
 /* Don't let page img reset stretch the shared logo */
 .page-web .nav-logo img,
@@ -1034,7 +1036,7 @@ ul {
 ==========================================*/
 
 .technologies {
-    padding: 65px 0 70px;
+   
     background: linear-gradient(135deg,
             #f5f2ff 0%,
             #eee8ff 50%,
@@ -1179,6 +1181,7 @@ ul {
     opacity: 0;
     animation: techCardReveal 0.7s ease forwards;
 }
+
 
 /*=========================================
         STAGGER ANIMATION

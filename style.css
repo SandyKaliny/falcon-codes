@@ -3849,9 +3849,9 @@ ul {
     isolation: isolate;
     overflow: visible;
     margin-top: 0;
-    padding-top: 24px;
+    padding-top: 0px;
     /* Match testimonials section background above */
-    background: #F8F7FD;
+    background: linear-gradient(135deg, #F1EEFF 0%,#E8E0FA 50%, #E3D7F6 100%);
 }
 
 .cta {
@@ -3860,7 +3860,7 @@ ul {
     margin: 0 0 -110px;
     padding: 0;
     background: transparent;
-    pointer-events: none;
+   
 }
 
 .cta .container {
@@ -4524,9 +4524,7 @@ Navbar
     background: transparent;
 }
 
-.page-web .footer-cta-zone {
-    background: #f8f6fe !important;
-}
+
 
 @media (max-width: 768px) {
 
