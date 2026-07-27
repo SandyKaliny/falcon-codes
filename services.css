@@ -2222,7 +2222,7 @@ a {
     overflow: visible;
     margin-top: 0;
     padding-top: 0px;
-background: #3C2B51;
+    background: #3C2B51;
 }
 
 .cta {
@@ -2239,30 +2239,31 @@ background: #3C2B51;
 }
 
 .cta-box {
-   
+
     z-index: 10;
     pointer-events: auto;
     background: linear-gradient(135deg, #24165E 0%, #6B4EFF 55%, #A04EFF 100%);
     border-radius: 28px;
     padding: 45px 48px;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 28px;
     color: white;
     box-shadow: 0 20px 60px rgba(84, 58, 156, 0.35);
-max-width: 1650px;
-margin-left: 1%;
-margin-top: 80px;
+    max-width: 1650px;
+    margin-left: 1%;
+    margin-top: 80px;
 }
 
-.container{
+.container {
     max-width: 1650px;
     justify-content: space-between;
-        align-items: center;
+    align-items: center;
 
-        margin-left: 4%;
+    margin-left: 4%;
 }
+
 .cta-left {
     display: flex;
     align-items: center;
