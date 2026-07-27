@@ -3851,7 +3851,7 @@ ul {
     margin-top: 0;
     padding-top: 0px;
     /* Match testimonials section background above */
-    background: linear-gradient(135deg, #F1EEFF 0%,#E8E0FA 50%, #E3D7F6 100%);
+    background: linear-gradient(135deg, #F1EEFF 0%, #E8E0FA 50%, #E3D7F6 100%);
 }
 
 .cta {
@@ -3860,7 +3860,7 @@ ul {
     margin: 0 0 -110px;
     padding: 0;
     background: transparent;
-   
+
 }
 
 .cta .container {
@@ -6427,7 +6427,7 @@ Section Header
 }
 
 .section-tag {
-display: inline-flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
