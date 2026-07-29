@@ -5096,7 +5096,7 @@ Responsive
 
 }
 
-.about-tag1 {
+.heading-sub-title-tag {
 
     color: #6230EC;
 
@@ -5345,7 +5345,7 @@ Responsive
         gap: 36px;
     }
 
-    .about-tag1 {
+    .heading-sub-title-tag {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -5357,8 +5357,8 @@ Responsive
         text-transform: uppercase;
     }
 
-    .about-tag1::before,
-    .about-tag1::after {
+    .heading-sub-title-tag::before,
+    .heading-sub-title-tag::after {
         content: "";
         width: 28px;
         height: 2px;
@@ -5371,7 +5371,7 @@ Responsive
         font-size: clamp(28px, 7vw, 36px);
         font-weight: 800;
         line-height: 1.2;
-        margin: 16px 0 18px;
+        margin: 0 0 28px;
         color: #111;
     }
 
@@ -5412,7 +5412,7 @@ Responsive
         font-size: 28px;
     }
 
-    .about-tag1 {
+    .heading-sub-title-tag {
         font-size: 14px;
         letter-spacing: 2px;
         margin-bottom: 16px;
