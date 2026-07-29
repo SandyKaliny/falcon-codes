@@ -5096,7 +5096,7 @@ Responsive
 
 }
 
-.heading-sub-title-tag {
+.about-tag1 {
 
     color: #6230EC;
 
@@ -5345,7 +5345,7 @@ Responsive
         gap: 36px;
     }
 
-    .heading-sub-title-tag {
+    .about-tag1 {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -5357,8 +5357,8 @@ Responsive
         text-transform: uppercase;
     }
 
-    .heading-sub-title-tag::before,
-    .heading-sub-title-tag::after {
+    .about-tag1::before,
+    .about-tag1::after {
         content: "";
         width: 28px;
         height: 2px;
@@ -5412,7 +5412,7 @@ Responsive
         font-size: 28px;
     }
 
-    .heading-sub-title-tag {
+    .about-tag1 {
         font-size: 14px;
         letter-spacing: 2px;
         margin-bottom: 16px;
