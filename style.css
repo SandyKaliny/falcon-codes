@@ -5413,8 +5413,9 @@ Responsive
     }
 
     .about-tag1 {
-        font-size: 11px;
+        font-size: 14px;
         letter-spacing: 2px;
+        margin-bottom: 16px;
     }
 
     .about-content1 p {
@@ -5592,7 +5593,7 @@ Responsive
         justify-content: center;
         gap: 12px;
         color: #6B4EFF;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 700;
         letter-spacing: 2.2px;
         margin-bottom: 14px;
@@ -5609,7 +5610,7 @@ Responsive
     }
 
     .core-values .section-title2 {
-        font-size: clamp(26px, 7vw, 32px);
+        font-size: 28px;
         font-weight: 800;
         line-height: 1.2;
         color: #111;
@@ -6199,7 +6200,7 @@ Responsive
         gap: 12px;
         width: 100%;
         color: #5B3FD6;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 700;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -6296,7 +6297,7 @@ Responsive
     }
 
     .why-choose .card-text p {
-        font-size: 12.5px;
+        font-size: 13px;
         line-height: 1.5;
         color: #8b8797;
         margin: 0;
@@ -6900,7 +6901,7 @@ Responsive
 @media (max-width:992px) {
 
     .technologies {
-        padding: 90px 0;
+        padding: 55px 0;
     }
 
     .section-header h2 {
