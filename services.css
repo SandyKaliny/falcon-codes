@@ -1049,6 +1049,7 @@ a {
         align-items: flex-start;
         width: 100%;
         text-align: left;
+        margin-bottom: 10px;
     }
 
     .stat-info strong,
