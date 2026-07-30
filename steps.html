@@ -75,11 +75,12 @@
         */
         .page-services .hero {
             --hero-pad-y: clamp(1.5rem, 4vh, 3rem);
-            min-height: 100svh;
+            min-height: auto;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            padding: var(--hero-pad-y) var(--svc-inline);
+            /* Same text-start Y as home / contact / about / web */
+            padding: var(--header-clearance) var(--svc-inline) var(--hero-pad-y);
             box-sizing: border-box;
             position: relative;
             overflow: hidden;
@@ -235,13 +236,14 @@
 
         @media (max-width: 991px) {
             .page-services .hero {
-                min-height: 100svh;
-                align-items: center;
+                min-height: auto;
+                align-items: flex-start;
+                padding-top: var(--header-clearance);
             }
 
             .page-services .hero-content {
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 text-align: center;
                 gap: clamp(1.25rem, 3vh, 2rem);
             }

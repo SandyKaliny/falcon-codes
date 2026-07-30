@@ -3,7 +3,18 @@
     function getCurrentNavPage() {
         const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
         if (file.includes("contact")) return "contact";
-        if (file.includes("service") || file === "web.html") return "services";
+        if (
+            file.includes("service") ||
+            file === "web.html" ||
+            file === "seo.html" ||
+            file === "ui.html" ||
+            file === "paid.html" ||
+            file === "cash.html" ||
+            file === "e-commerce.html" ||
+            file === "steps.html"
+        ) {
+            return "services";
+        }
         if (file.includes("about")) return "about";
         if (file === "index.html" || file === "falcon.html" || file === "" || file === "header.html") return "home";
         return "home";
@@ -96,7 +107,7 @@
         if (document.body.classList.contains("page-about")) {
             hero = document.querySelector(".about-hero");
         } else if (document.body.classList.contains("page-services")) {
-            hero = document.querySelector(".hero");
+            hero = document.querySelector(".services-hero") || document.querySelector(".hero");
         }
         if (!hero) return;
 
@@ -157,9 +168,21 @@
 
         const path = window.location.pathname;
         const file = (path.split("/").pop() || "index.html").toLowerCase();
+        const serviceFiles = new Set([
+            "services.html",
+            "web.html",
+            "seo.html",
+            "ui.html",
+            "paid.html",
+            "cash.html",
+            "e-commerce.html",
+            "steps.html",
+            "service-template.html",
+        ]);
+
         let activePage = "home";
         if (file.includes("contact")) activePage = "contact";
-        else if (file.includes("service") || file === "web.html") activePage = "services";
+        else if (file.includes("service") || serviceFiles.has(file)) activePage = "services";
         else if (file.includes("about")) activePage = "about";
         else if (window.location.hash === "#projects") activePage = "portfolio";
 
@@ -168,28 +191,57 @@
         activeTab.classList.add("is-active");
 
         function moveIndicator(tab, animate = true) {
-            const barRect = bar.getBoundingClientRect();
-            const icon = tab.querySelector(".mobile-tab-icon");
-            const iconRect = (icon || tab).getBoundingClientRect();
-            const x = iconRect.left - barRect.left + (iconRect.width - indicator.offsetWidth) / 2;
-            indicator.style.transition = animate ? "" : "none";
-            indicator.style.transform = `translateX(${x}px)`;
-            if (!animate) requestAnimationFrame(() => { indicator.style.transition = ""; });
+            if (!tab || getComputedStyle(bar).display === "none") {
+                return;
+            }
+
+            const icon = tab.querySelector(".mobile-tab-icon") || tab;
+            // offset* stays stable even when page content uses transform/filter animations
+            const x =
+                tab.offsetLeft +
+                icon.offsetLeft +
+                (icon.offsetWidth - indicator.offsetWidth) / 2;
+
+            if (!animate) {
+                indicator.style.transition = "none";
+                indicator.style.transform = `translate3d(${Math.round(x)}px, 0, 0)`;
+                // Force reflow, then restore transition for later clicks
+                void indicator.offsetWidth;
+                indicator.style.transition = "";
+                return;
+            }
+
+            indicator.style.transition = "";
+            indicator.style.transform = `translate3d(${Math.round(x)}px, 0, 0)`;
         }
 
-        moveIndicator(activeTab, false);
+        function syncIndicator(animate = false) {
+            const current = bar.querySelector(".mobile-tab.is-active") || activeTab;
+            moveIndicator(current, animate);
+        }
+
+        // Layout may still be settling (fonts, mobile MQ, late CSS) — sync a few times
+        syncIndicator(false);
+        requestAnimationFrame(() => {
+            syncIndicator(false);
+            requestAnimationFrame(() => syncIndicator(false));
+        });
+        window.addEventListener("load", () => syncIndicator(false), { once: true });
+        if (document.fonts?.ready) {
+            document.fonts.ready.then(() => syncIndicator(false)).catch(() => {});
+        }
 
         tabs.forEach((tab) => {
             tab.addEventListener("click", () => {
                 tabs.forEach((t) => t.classList.remove("is-active"));
                 tab.classList.add("is-active");
-                moveIndicator(tab);
+                moveIndicator(tab, true);
             });
         });
 
-        window.addEventListener("resize", () => {
-            const current = bar.querySelector(".mobile-tab.is-active") || tabs[0];
-            moveIndicator(current, false);
+        window.addEventListener("resize", () => syncIndicator(false));
+        window.addEventListener("orientationchange", () => {
+            setTimeout(() => syncIndicator(false), 50);
         });
     }
 

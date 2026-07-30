@@ -68,18 +68,11 @@ ul {
     padding-top: 0;
 }
 
-/* Home hero: keep content below floating header (desktop web) */
+/* Home hero: same shared --header-clearance as about / services / web */
 .page-home .hero {
     padding-top: var(--header-clearance);
     padding-bottom: clamp(2rem, 5vh, 3.5rem);
     box-sizing: border-box;
-}
-
-@media (min-width: 769px) {
-    .page-home .hero {
-        /* Extra whitespace between pill and hero copy on web */
-        padding-top: calc(16px + var(--header-stack) + 64px);
-    }
 }
 
 /* ===========================
@@ -96,10 +89,10 @@ ul {
     --nav-header-gutter: 24px;
     --nav-padding-x: 28px;
     --nav-radius-pill: 25px;
-    /* Pill footprint + breathing room so hero copy clears overlay header */
+    /* Pill footprint + shared air so EVERY page’s hero copy starts at the same Y */
     --header-stack: calc(16px + 14px + 54px + 14px);
-    /* Include sticky top:16 so clearance matches real pill position on web */
-    --header-clearance: calc(16px + var(--header-stack) + 40px);
+    /* Desktop = sticky top 16 + stack + 64px air (matches home / contact) */
+    --header-clearance: calc(16px + var(--header-stack) + 64px);
 }
 
 /* Sticky layer lives on the wrapper (same idea as falcon-new-design) */
@@ -266,7 +259,18 @@ ul {
     border-radius: 2px;
 }
 
-/* Mobile bottom tab bar */
+/* Mobile bottom tab bar — own layer so page transform/filter animations don't jank it */
+#site-mobile-nav {
+    position: relative;
+    z-index: 200;
+    isolation: isolate;
+    pointer-events: none;
+}
+
+#site-mobile-nav .mobile-tabbar {
+    pointer-events: auto;
+}
+
 .mobile-tabbar {
     display: none;
     position: fixed;
@@ -286,6 +290,9 @@ ul {
     border-top: 1px solid rgba(147, 84, 183, 0.08);
     border-radius: 24px 24px 0 0;
     box-shadow: 0 -8px 32px rgba(84, 58, 156, 0.1);
+    /* Promote to compositor; ignore ancestor visual effects */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .mobile-tabbar-indicator {
@@ -300,6 +307,8 @@ ul {
     transition: transform 0.38s cubic-bezier(0.34, 1.4, 0.64, 1);
     pointer-events: none;
     z-index: 0;
+    will-change: transform;
+    transform: translateZ(0);
 }
 
 .mobile-tabbar::after {
@@ -977,7 +986,10 @@ ul {
 
     :root {
         --header-stack: calc(10px + 8px + 40px + 8px);
-        --header-clearance: calc(var(--header-stack) + 20px);
+        /* Mobile = stack + 48px air (matches home / contact) */
+        --header-clearance: calc(var(--header-stack) + 48px);
+        /* One shared hero content rail on every page */
+        --mobile-hero-rail: min(92%, 420px);
     }
 
     body {
@@ -1031,12 +1043,6 @@ ul {
         margin-bottom: calc(-1 * var(--header-stack));
     }
 
-    /* Match contact mobile text start: pill footprint + 48px air */
-    .page-home .hero {
-        padding-top: calc(var(--header-stack) + 48px) !important;
-        padding-bottom: 1.5rem !important;
-    }
-
     .site-header {
         padding: 0;
     }
@@ -1072,16 +1078,45 @@ ul {
         height: 40px;
     }
 
-    /* Hero sits on the shared purple background */
-    .hero {
-        padding: 36px 0 8px;
+    /* Hero shell — home only (don't reset other pages' .hero padding) */
+    .page-home .hero {
+        padding-top: var(--header-clearance) !important;
+        padding-bottom: 1.5rem !important;
+        padding-inline: 0 !important;
         background: transparent;
         border-radius: 0;
         margin-bottom: 0;
     }
 
-    .hero .container {
-        width: min(92%, 420px);
+    /*
+      Unified mobile hero rail (same width / centering as home).
+      Replaces the old global `.hero .container { min(92%, 420px) }` which
+      only matched some templates and left about/contact/services misaligned.
+    */
+    .page-home .hero .container,
+    .page-home .hero-wrapper,
+    .page-about .about-hero .container,
+    .page-web .hero .container,
+    .page-contact .contact > .container,
+    .page-contact .contact-page > .container {
+        width: var(--mobile-hero-rail) !important;
+        max-width: var(--mobile-hero-rail) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .page-services .services-hero {
+        width: var(--mobile-hero-rail) !important;
+        max-width: var(--mobile-hero-rail) !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: var(--header-clearance) !important;
+        box-sizing: border-box;
     }
 
     .hero-wrapper {
@@ -4539,7 +4574,14 @@ Navbar
     background: transparent;
 }
 
+/* Services list page: same light CTA band as home / about */
+.page-services .footer-cta-zone {
+    background: #F8F7FD !important;
+}
 
+.page-web .footer-cta-zone {
+    background: #f8f6fe !important;
+}
 
 @media (max-width: 768px) {
 
@@ -4563,23 +4605,29 @@ Navbar
         background: #f8f6fe !important;
     }
 
-    /* Services hero: keep flex-centered layout; don't inherit home .hero resets */
+    .page-services .footer-cta-zone {
+        background: #F8F7FD !important;
+    }
+
+    /* Steps / legacy .hero on services body: same text-start Y as home */
     .page-services .hero {
-        min-height: 100svh !important;
+        min-height: auto !important;
         display: flex !important;
-        align-items: center !important;
+        align-items: flex-start !important;
         justify-content: center !important;
-        padding-block: clamp(1.25rem, 3vh, 2rem) !important;
+        padding-top: var(--header-clearance) !important;
+        padding-bottom: clamp(1.25rem, 3vh, 2rem) !important;
         padding-inline: var(--site-container-inline-padding) !important;
         background:
             radial-gradient(circle at top right, #4a22b8 0%, #1b0d4f 40%, #05010f 90%) !important;
         border-radius: 0 !important;
+        box-sizing: border-box !important;
     }
 
     .page-services .hero-content {
         width: 100% !important;
         max-width: var(--site-container-max-width) !important;
-        margin: var(--header-clearance) 0 auto !important;
+        margin: 0 auto !important;
     }
 
     /* About / Services mobile: clear CTA over hero; solid pill restores white CTA */
@@ -4606,7 +4654,8 @@ Navbar
     height: auto;
     overflow: hidden;
     display: flex;
-    align-items: center;
+    /* Top-align like home — do NOT vertically center (that shifts copy down) */
+    align-items: flex-start;
     /* Clear floating header; keep full-bleed image behind it */
     padding: var(--header-clearance) 0 clamp(2.5rem, 6vh, 4rem);
     box-sizing: border-box;
@@ -4806,13 +4855,13 @@ Responsive
 
 @media(max-width:768px) {
 
-    /* About hero — mobile: clear header, left-aligned content */
+    /* About hero — mobile: text block sits mid-viewport, left-aligned copy */
     .about-hero {
         min-height: 100svh;
         height: auto;
         text-align: left;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         padding: var(--header-clearance) 0 2.5rem;
         box-sizing: border-box;
     }
@@ -4825,11 +4874,8 @@ Responsive
     }
 
     .about-hero .container {
-        width: 100%;
-        max-width: 480px;
-        margin: 0 auto;
+        /* width/padding set by shared --mobile-hero-rail rules above */
         margin-bottom: 0;
-        padding: 0 24px;
         box-sizing: border-box;
     }
 
@@ -4841,10 +4887,9 @@ Responsive
         width: 100%;
         text-align: left;
         margin: 0;
-        gap: 5rem;
+        gap: 1.5rem;
     }
 
-    /* Small gap: label → headline */
     .about-hero .section-title {
         display: flex;
         align-items: center;
@@ -4855,7 +4900,7 @@ Responsive
         font-weight: 500;
         letter-spacing: 2.4px;
         text-transform: uppercase;
-        margin: 0 0 14px;
+        margin: 0;
         animation: none;
     }
 
@@ -4866,13 +4911,12 @@ Responsive
         flex-shrink: 0;
     }
 
-    /* Medium gap: headline → paragraph — keep 3-line breaks from HTML */
     .about-hero .hero-content1 h1 {
         font-size: clamp(34px, 9.2vw, 40px);
         line-height: 1.12;
         font-weight: 800;
         letter-spacing: -0.02em;
-        margin: 0 0 22px;
+        margin: 0 0 16px;
         color: #fff;
         animation: none;
     }
@@ -4886,13 +4930,12 @@ Responsive
         display: inline;
     }
 
-    /* Large gap: paragraph → buttons */
     .about-hero .hero-content1 p {
         color: rgba(255, 255, 255, 0.90);
         font-size: 15px;
-        line-height: 1.7;
+        line-height: 1.65;
         max-width: 34ch;
-        margin: 0 0 36px;
+        margin: 0;
         animation: none;
     }
 
@@ -4967,30 +5010,37 @@ Responsive
 
     .about-hero {
         min-height: 100svh;
+        align-items: center;
+        justify-content: center;
         padding: var(--header-clearance) 0 2rem;
     }
 
     .about-hero .container {
-        padding: 0 20px;
+        /* keep shared --mobile-hero-rail */
+        box-sizing: border-box;
+    }
+
+    .about-hero .hero-content1 {
+        gap: 1.5rem;
     }
 
     .about-hero .section-title {
         font-size: 11px;
         letter-spacing: 2px;
-        margin-bottom: 12px;
+        margin-bottom: 0;
     }
 
     .about-hero .hero-content1 h1 {
-        font-size: 42px;
+        font-size: 36px;
         line-height: 1.12;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .about-hero .hero-content1 p {
-        font-size: 16px;
-        line-height: 1.7;
-        max-width: 32ch;
-        margin-bottom: 34px;
+        font-size: 15px;
+        line-height: 1.65;
+        max-width: 34ch;
+        margin-bottom: 0;
     }
 
     .about-hero .hero-buttons {
@@ -7176,15 +7226,19 @@ Responsive
         box-shadow: none !important;
     }
 
-    /* Home mobile type scale lock (matches design screenshots) */
-    .tag,
-    .about-tag,
-    .section-tag,
-    .section-title,
-    .services .section-tag,
-    .projects .section-title,
-    .testimonials .section-title {
-        font-size: 14px !important;
+    /*
+      Home mobile eyebrow/label scale only.
+      Do NOT target bare `.section-title` — on services that class is an h2 (~28px).
+    */
+    .page-home .tag,
+    .page-home .about-tag,
+    .page-home .section-tag,
+    .page-home .services .section-tag,
+    .page-home .projects .section-title,
+    .page-home .testimonials .section-title,
+    .page-home .projects-header .section-title,
+    .page-home .testimonial-header .section-title {
+        font-size: 12px !important;
         letter-spacing: 2.2px !important;
         font-weight: 600 !important;
     }
@@ -7246,9 +7300,9 @@ Responsive
     }
 
     .about-content h2,
-    .services-header h2,
-    .projects-header h2,
-    .testimonial-header h2 {
+    .page-home .services-header h2,
+    .page-home .projects-header h2,
+    .page-home .testimonial-header h2 {
         font-size: 26px !important;
         line-height: 1.22 !important;
         font-weight: 700 !important;
@@ -7256,15 +7310,15 @@ Responsive
 
     .hero-content p,
     .about-content p,
-    .services-lede,
-    .service-card p,
+    .page-home .services-lede,
+    .page-home .service-card p,
     .project-content p,
     .testimonial-card p {
         font-size: 18px !important;
         line-height: 1.65 !important;
     }
 
-    .service-card h3,
+    .page-home .service-card h3,
     .project-content h3 {
         font-size: 18px !important;
         font-weight: 700 !important;

@@ -1227,11 +1227,13 @@ header:not(.site-header) {
         transform: none !important;
     }
 
-    .page-contact .container {
-        width: 100%;
-        max-width: var(--site-container-max-width);
-        padding: 0 var(--site-container-inline-padding);
-        margin: 0 auto;
+    .page-contact .contact > .container,
+    .page-contact .contact-page > .contact > .container {
+        width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        max-width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-inline: auto;
     }
 
     /*
@@ -1608,9 +1610,20 @@ header:not(.site-header) {
 
 @media(max-width:480px) {
 
+    /* Non-hero containers: full width + site padding.
+       Hero keeps --mobile-hero-rail (reinforced below). */
     .page-contact .container {
         width: 100%;
         padding: 0 var(--site-container-inline-padding);
+    }
+
+    .page-contact .contact > .container,
+    .page-contact .contact-page > .container {
+        width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        max-width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        margin-inline: auto !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .contact-left,

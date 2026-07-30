@@ -91,8 +91,8 @@ ul {
 
     padding: 0 0 110px;
     background: linear-gradient(#f3f0fc, #C6A9E1);
-    /* Clear floating shared header */
-    padding-top: var(--header-clearance, 140px);
+    /* Same text-start Y as home / contact / about / services */
+    padding-top: var(--header-clearance);
     box-sizing: border-box;
 
 }
@@ -667,6 +667,15 @@ ul {
         width: 100%;
         padding: 0 var(--site-container-inline-padding);
 
+    }
+
+    .page-web .hero .container {
+        width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        max-width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        margin-inline: auto;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
     }
 
     .hero-text h1 {
@@ -1705,9 +1714,19 @@ ul {
 
     .page-web .hero {
 
-        padding-top: calc(var(--header-clearance, 140px));
+        padding-top: var(--header-clearance);
         padding-bottom: 80px;
+        padding-inline: 0;
 
+    }
+
+    .page-web .hero .container {
+        width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        max-width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        margin-inline: auto;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
     }
 
     .hero-content {
@@ -1887,9 +1906,18 @@ ul {
 
     .page-web .hero {
 
-        padding-top: calc(var(--header-stack, 66px) + 48px);
+        padding-top: var(--header-clearance);
         padding-bottom: 70px;
+        padding-inline: 0;
+    }
 
+    .page-web .hero .container {
+        width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        max-width: var(--mobile-hero-rail, min(92%, 420px)) !important;
+        margin-inline: auto;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box;
     }
 
     .hero-text h1 {
