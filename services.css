@@ -1091,6 +1091,7 @@ a {
     width: 100%;
     padding: 48px 0;
     overflow: hidden;
+    scroll-margin-top: 96px;
 }
 
 

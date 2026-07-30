@@ -26,7 +26,7 @@
         }
       ],
       "extraImages": [
-        "images/services/ideas-innovation-graphic-inspiration-artistic-concept.jpg"
+        "images/Web Development.png"
       ],
       "featuresSectionTitle": "What We Build",
       "features": [
@@ -127,7 +127,21 @@
       "ctaSupport": "Let's build something amazing together. From idea to online success, we're your partner in growth.",
       "ctaImage": "images/Modern Solutions.png",
       "cardImage": "images/web developmenttt.png",
-      "heroImage": "images/ويب.png"
+      "heroImage": "images/ويب.png",
+      "relatedServices": [
+        "uiux",
+        "ecommerce",
+        "mobile"
+      ],
+      "otherServices": [
+        "seo",
+        "financial-reporting",
+        "legal-consulting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6
     },
     {
       "id": "uiux",
@@ -248,7 +262,21 @@
       "ctaSupport": "Great designs are just the start. Let's create something amazing together.",
       "ctaImage": "images/UI:UX Design فوتر.png",
       "cardImage": "images/ديزاين.png",
-      "heroImage": "images/UI:UX Design.png"
+      "heroImage": "images/UI:UX Design.png",
+      "relatedServices": [
+        "web-dev",
+        "ecommerce",
+        "mobile"
+      ],
+      "otherServices": [
+        "social-media",
+        "cashflow",
+        "compliance"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6
     },
     {
       "id": "seo",
@@ -271,7 +299,9 @@
           "description": "We implement proven strategies for search engine optimization that help your website rank higher in search results and attract qualified visitors. Our SEO approach includes technical optimization, on-page SEO, content optimization, link building, and local SEO strategies."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/SEO Reports.png"
+      ],
       "featuresSectionTitle": "Our SEO Services",
       "features": [
         {
@@ -362,7 +392,22 @@
       "slogan": "Ready To Rank Higher And Grow Faster?",
       "ctaSupport": "Let's build something amazing together. From idea to online success, we're your partner in growth.",
       "cardImage": "images/seoservices.png",
-      "heroImage": "images/SEO Services.png"
+      "heroImage": "images/SEO Services.png",
+      "relatedServices": [
+        "paid-ads",
+        "social-media",
+        "content"
+      ],
+      "otherServices": [
+        "ecommerce",
+        "cost-accounting",
+        "dispute-resolution"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "ctaImage": "images/SEO Services فوتر.png"
     },
     {
       "id": "paid-ads",
@@ -385,7 +430,9 @@
           "description": "We create and manage targeted advertising campaigns on Facebook, Instagram, Google, and TikTok to reach your ideal customers and drive conversions. Our team specializes in campaign strategy, ad creation, audience targeting, bid management, and performance optimization."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Performance reporting.png"
+      ],
       "featuresSectionTitle": "Our Paid Ads Services",
       "features": [
         {
@@ -448,19 +495,24 @@
       "toolsSectionTitle": "Key Metrics We Focus On",
       "tools": [
         {
-          "name": "ROAS"
+          "name": "Google Ads",
+          "image": "images/Google ADS.png"
         },
         {
-          "name": "CTR"
+          "name": "Meta Ads",
+          "image": "images/Meta ADS.png"
         },
         {
-          "name": "CPC"
+          "name": "TikTok Ads",
+          "image": "images/Tiktok ADS.png"
         },
         {
-          "name": "CPA"
+          "name": "Analytics",
+          "image": "images/Analytics.png"
         },
         {
-          "name": "Conversion Rate"
+          "name": "Reporting",
+          "image": "images/Performance reporting.png"
         }
       ],
       "tagline": "Maximizing ROI through strategic paid advertising",
@@ -468,7 +520,21 @@
       "ctaSupport": "Great designs are just the start. Let's create something amazing together.",
       "ctaImage": "images/Paid AdS footer.png",
       "cardImage": "images/paid advertising.png",
-      "heroImage": "images/Paid AdS.png"
+      "heroImage": "images/Paid AdS.png",
+      "relatedServices": [
+        "seo",
+        "social-media",
+        "content"
+      ],
+      "otherServices": [
+        "ecommerce",
+        "financial-reporting",
+        "compliance"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid1",
+      "toolsGridColumns": 5
     },
     {
       "id": "cashflow",
@@ -491,7 +557,9 @@
           "description": "We provide comprehensive financial forecasting and strategic budget planning that helps you manage your finances effectively and plan for the future. Our services include cash flow analysis, budget preparation, variance analysis, and financial forecasting to help you anticipate financial needs and make proactive decisions."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Budget Planning.png"
+      ],
       "featuresSectionTitle": "What We Build",
       "features": [
         {
@@ -554,36 +622,28 @@
       "toolsSectionTitle": "Technologies We Use",
       "tools": [
         {
-          "name": "HTML5",
-          "image": "images/كود.png"
+          "name": "Cash Flow",
+          "image": "images/Cash Flow Tracking.png"
         },
         {
-          "name": "CSS3",
-          "image": "images/css.png"
+          "name": "Budgeting",
+          "image": "images/Budget Planning.png"
         },
         {
-          "name": "JavaScript",
-          "image": "images/javascript.png"
+          "name": "Forecasting",
+          "image": "images/Forecasting.png"
         },
         {
-          "name": "React",
-          "image": "images/reactt.png"
+          "name": "Expense Control",
+          "image": "images/Expense Control.png"
         },
         {
-          "name": "Next.js",
-          "image": "images/next.js.png"
+          "name": "Analytics",
+          "image": "images/Analytics.png"
         },
         {
-          "name": "Node.js",
-          "image": "images/nodejss.png"
-        },
-        {
-          "name": "PHP",
-          "image": "images/php.png"
-        },
-        {
-          "name": "WordPress",
-          "image": "images/wordpress.png"
+          "name": "Reporting",
+          "image": "images/reporting.png"
         }
       ],
       "tagline": "Maintaining healthy cash flow for sustainable growth",
@@ -591,7 +651,21 @@
       "ctaSupport": "Let's build something amazing together. From idea to online success, we're your partner in growth.",
       "ctaImage": "images/Modern Solutions.png",
       "cardImage": "images/cash flow.png",
-      "heroImage": "images/Cash Flow Page.png"
+      "heroImage": "images/Cash Flow Page.png",
+      "relatedServices": [
+        "cost-accounting",
+        "auditing",
+        "financial-reporting"
+      ],
+      "otherServices": [
+        "web-dev",
+        "content",
+        "legal-consulting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6
     },
     {
       "id": "cost-accounting",
@@ -605,7 +679,7 @@
         "accent": "Grow Your Margin."
       },
       "images": [
-        "images/services/cropped-image-businessman-using-laptop-desk.jpg",
+        "images/حسابات.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
@@ -614,7 +688,9 @@
           "description": "We provide comprehensive cost tracking, pricing analysis, and profitability management that helps you understand the true cost of your products and services. Our cost accounting services include activity-based costing, job costing, process costing, and standard costing to give you accurate insights into your cost structure."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Expense Control.png"
+      ],
       "featuresSectionTitle": "What We Cover",
       "features": [
         {
@@ -705,7 +781,22 @@
       "slogan": "Ready To Take Control Of Your Costs?",
       "ctaSupport": "Build a cost system that makes profitability visible and manageable.",
       "cardImage": "images/حسابات.png",
-      "heroImage": "images/services/cropped-image-businessman-using-laptop-desk.jpg"
+      "heroImage": "images/حسابات.png",
+      "relatedServices": [
+        "cashflow",
+        "auditing",
+        "financial-reporting"
+      ],
+      "otherServices": [
+        "mobile",
+        "seo",
+        "legal-consulting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "ctaImage": "images/Modern Solutions.png"
     },
     {
       "id": "ecommerce",
@@ -733,7 +824,7 @@
         }
       ],
       "extraImages": [
-        "images/services/business-women-with-laptop-smartphone-mobile-coin-money-business-office-blurred-background.jpg"
+        "images/E-Commerce Solutions.png"
       ],
       "featuresSectionTitle": "What We Offer",
       "features": [
@@ -826,9 +917,23 @@
       "ctaSupport": "Let's build something amazing together. From idea to online success, we're your partner in growth.",
       "ctaImage": "images/تجاره فوتر.png",
       "cardImage": "images/e-commerce.png",
-      "heroImage": "images/تجاره.png"
+      "heroImage": "images/تجاره.png",
+      "relatedServices": [
+        "web-dev",
+        "uiux",
+        "mobile"
+      ],
+      "otherServices": [
+        "content",
+        "financial-reporting",
+        "legal-consulting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6
     },
-        {
+    {
       "id": "legal-consulting",
       "slug": "service-legal-consulting",
       "category": "legal-services",
@@ -840,7 +945,8 @@
         "accent": "For Growing Teams"
       },
       "images": [
-        "images/strategyyy.png"
+        "images/strategyyy.png",
+        "images/Modern Solutions.png"
       ],
       "extraContent": [
         {
@@ -848,7 +954,9 @@
           "description": "We provide comprehensive legal analysis, risk assessment, and advisory services that help you make informed decisions and protect your business interests. Our legal consultants bring deep expertise across various areas of law, including corporate law, contract law, employment law, intellectual property, and regulatory compliance."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Strategic Approach.png"
+      ],
       "featuresSectionTitle": "How We Help",
       "features": [
         {
@@ -911,60 +1019,79 @@
       "toolsSectionTitle": "Tools We Use",
       "tools": [
         {
-          "name": "Figma",
-          "image": "images/Figma.png"
+          "name": "Strategy",
+          "image": "images/Strategy.png"
         },
         {
-          "name": "Adobe XD",
-          "image": "images/adobe xd.png"
+          "name": "Planning",
+          "image": "images/Planning.png"
         },
         {
-          "name": "Sketch",
-          "image": "images/sketch.png"
+          "name": "Analysis",
+          "image": "images/Analysis.png"
         },
         {
-          "name": "Photoshop",
-          "image": "images/photoshop.png"
+          "name": "Growth",
+          "image": "images/Growth.png"
         },
         {
-          "name": "Illustrator",
-          "image": "images/illasstrator.png"
+          "name": "Quality",
+          "image": "images/Quality First.png"
         },
         {
-          "name": "InVision",
-          "image": "images/invision.png"
+          "name": "Support",
+          "image": "images/Reliable Support.png"
         }
       ],
       "tagline": "Navigating legal challenges with expert guidance",
       "slogan": "Ready For Legal Guidance That Moves With You?",
-      "ctaSupport": "Get practical counsel that protects the business while keeping growth on track."
+      "ctaSupport": "Get practical counsel that protects the business while keeping growth on track.",
+      "relatedServices": [
+        "contract-drafting",
+        "compliance",
+        "dispute-resolution"
+      ],
+      "otherServices": [
+        "web-dev",
+        "content",
+        "financial-reporting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/strategyyy.png",
+      "cardImage": "images/Strategy.png",
+      "ctaImage": "images/Modern Solutions.png"
     },
     {
       "id": "mobile",
       "slug": "service-mobile",
       "category": "software-web-development",
       "title": "Mobile Apps Development",
-      "description": "Bring your business to the palm of your customers' hands with our expert mobile app development services. We design applications (mirror/Native) programming for Android and iOS, featuring a professional UI/UX that is consistent with the brand identity, integration of phone features (camera, location, notifications), electronic payment capabilities, a control panel (administration portal) for controlling application content, and testing on different devices before launch. We create native and cross-platform mobile applications using Kotlin, Swift, Flutter, and React Native. Our mobile apps are designed with user experience at the forefront, ensuring intuitive navigation, fast performance, and beautiful interfaces.",
-      "lede": "We design fast, reliable mobile apps for iOS and Android that customers love to use.",
+      "description": "Bring your business to your customers' hands with expert mobile app development. We design and build native and cross-platform applications for Android and iOS with brand-aligned UI/UX, integration of phone features such as camera, location, and notifications, secure electronic payments, and an administration portal to manage app content after launch. Using Kotlin, Swift, Flutter, and React Native, we create products that feel fast, intuitive, and ready for the App Store and Google Play. Our process covers discovery, UX architecture, clean development, device testing, store submission, and post-launch support. Whether you need a customer-facing app or an internal mobile tool, we deliver scalable solutions focused on performance, usability, and measurable business outcomes.",
+      "lede": "We build fast, reliable apps for iOS and Android.",
       "headline": {
         "before": "Apps That Feel",
         "accent": "Native Everywhere"
       },
       "images": [
-        "images/services/mobile-phone-background-images.jpg",
+        "images/mobile app.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
         {
           "title": "Native & Cross-Platform",
-          "description": "We create native and cross-platform mobile applications using Kotlin, Swift, Flutter, and React Native. Our mobile apps are designed with user experience at the forefront, ensuring intuitive navigation, fast performance, and beautiful interfaces."
+          "description": "Bring your business to your customers' hands with expert mobile app development. We design and build native and cross-platform applications for Android and iOS with brand-aligned UI/UX, integration of phone features such as camera, location, and notifications, secure electronic payments, and an administration portal to manage app content after launch."
         },
         {
           "title": "From Concept to Deployment",
           "description": "We guide you through every stage of the development process, including testing, optimization, and ongoing support. Our mobile solutions help you connect with your audience, increase engagement, and drive business growth through innovative mobile experiences."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/flutter.png"
+      ],
       "featuresSectionTitle": "What We Build",
       "features": [
         {
@@ -1053,30 +1180,49 @@
       ],
       "tagline": "Bringing your business to the palm of your customers' hands",
       "slogan": "Ready To Launch An App Your Users Love?",
-      "ctaSupport": "From idea to App Store — we build mobile products that perform and convert."
+      "ctaSupport": "From idea to App Store — we build mobile products that perform and convert.",
+      "relatedServices": [
+        "web-dev",
+        "uiux",
+        "ecommerce"
+      ],
+      "otherServices": [
+        "seo",
+        "cashflow",
+        "contract-drafting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/mobile app.png",
+      "cardImage": "images/mobile app.png",
+      "ctaImage": "images/Modern Solutions.png"
     },
     {
       "id": "social-media",
       "slug": "service-social-media",
       "category": "digital-solutions",
       "title": "Social Media Management",
-      "description": "Elevate your brand's online presence with our comprehensive social media management services. We provide daily management through posting content and responding to comments and messages, publishing strategy through planning weekly/monthly content according to the characteristics of each platform and its audience, and performance analysis through monitoring interaction and growth rates to improve the strategy. We develop and execute strategic social media campaigns that engage your audience, build brand awareness, and drive conversions. We are creating an interactive digital community for you. We turn your followers into loyal customers.",
-      "lede": "We grow your brand across social platforms with strategy, content and campaigns that turn attention into engagement.",
+      "description": "Elevate your brand's online presence with comprehensive social media management. We handle daily publishing and community replies, plan weekly and monthly content calendars tuned to each platform and audience, and analyze engagement and growth so the strategy keeps improving. Our team develops campaigns that raise awareness, spark conversation, and turn followers into loyal customers. From content pillars and creative production to social advertising and transparent reporting, we build an active digital community around your brand. The result is a consistent, on-message presence that stays relevant, earns attention, and supports your wider marketing goals across Facebook, Instagram, TikTok, LinkedIn, and more.",
+      "lede": "Grow your brand on social with strategy and content.",
       "headline": {
         "before": "Grow Your Brand",
         "accent": "On Every Feed"
       },
       "images": [
-        "images/services/pile-popular-social-media-logos.jpg",
-        "images/Modern Solutions.png"
+        "images/Paid AdS.png",
+        "images/Paid AdS footer.png"
       ],
       "extraContent": [
         {
           "title": "Strategic Campaigns",
-          "description": "We develop and execute strategic social media campaigns that engage your audience, build brand awareness, and drive conversions. Our team creates compelling content, manages your social media accounts, and monitors engagement to ensure your brand stays relevant and connected with your target audience."
+          "description": "Elevate your brand's online presence with comprehensive social media management. We handle daily publishing and community replies, plan weekly and monthly content calendars tuned to each platform and audience, and analyze engagement and growth so the strategy keeps improving."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Meta ADS.png"
+      ],
       "featuresSectionTitle": "What We Manage",
       "features": [
         {
@@ -1165,30 +1311,49 @@
       ],
       "tagline": "Elevating your brand's online presence with strategic social media",
       "slogan": "Ready To Make Your Brand Impossible To Ignore?",
-      "ctaSupport": "Let’s build a social presence that engages your audience and grows with your business."
+      "ctaSupport": "Let’s build a social presence that engages your audience and grows with your business.",
+      "relatedServices": [
+        "seo",
+        "paid-ads",
+        "content"
+      ],
+      "otherServices": [
+        "mobile",
+        "auditing",
+        "dispute-resolution"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/Paid AdS.png",
+      "cardImage": "images/paid advertising.png",
+      "ctaImage": "images/Paid AdS footer.png"
     },
     {
       "id": "content",
       "slug": "service-content",
       "category": "digital-solutions",
       "title": "Content Creation",
-      "description": "Tell your brand's story with our professional content creation services. We produce high-quality content including copywriting, graphic design, and video production that resonates with your audience and drives engagement. Our content creators are skilled in crafting compelling narratives, designing eye-catching visuals, and producing professional videos that capture attention and communicate your message effectively. Whether you need blog posts, social media content, marketing materials, or video content, we deliver creative solutions that align with your brand voice and marketing objectives. We understand that great content is more than just words and images—it's about creating meaningful connections with your audience. Our team works closely with you to understand your brand, your goals, and your audience, ensuring that every piece of content we create serves a purpose and delivers value.",
-      "lede": "We create copy, visuals and stories that make your brand clear, memorable and ready to convert.",
+      "description": "Tell your brand's story with professional content creation across copywriting, graphic design, and video production. We craft compelling narratives, on-brand visuals, and short-form video that capture attention and communicate your offer clearly. Whether you need website pages, social posts, campaign creatives, blogs, or brand storytelling assets, every piece is aligned with your voice and marketing objectives. Great content is more than words and images — it creates meaningful connections with the people you want to reach. We work closely with you to understand your brand, audience, and goals, then deliver publish-ready assets that build trust, improve consistency, and support conversion across every channel.",
+      "lede": "Create copy and visuals that make your brand memorable.",
       "headline": {
         "before": "Content That",
         "accent": "Connects & Converts"
       },
       "images": [
-        "images/services/close-up-man-hand-holding-tablet-with-group-businesspeople-with-creative-smartphone-hologram-blue-red-hearts-blue-background-social-media-likes-digital-marketing-concept.jpg",
+        "images/Content SEO.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
         {
           "title": "Professional Content Production",
-          "description": "We produce high-quality content including copywriting, graphic design, and video production that resonates with your audience and drives engagement. Our content creators are skilled in crafting compelling narratives, designing eye-catching visuals, and producing professional videos that capture attention and communicate your message effectively."
+          "description": "Tell your brand's story with professional content creation across copywriting, graphic design, and video production. We craft compelling narratives, on-brand visuals, and short-form video that capture attention and communicate your offer clearly."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Design.png"
+      ],
       "featuresSectionTitle": "What We Create",
       "features": [
         {
@@ -1255,14 +1420,6 @@
           "image": "images/Figma.png"
         },
         {
-          "name": "Adobe XD",
-          "image": "images/adobe xd.png"
-        },
-        {
-          "name": "Sketch",
-          "image": "images/sketch.png"
-        },
-        {
           "name": "Photoshop",
           "image": "images/photoshop.png"
         },
@@ -1271,36 +1428,63 @@
           "image": "images/illasstrator.png"
         },
         {
-          "name": "InVision",
-          "image": "images/invision.png"
+          "name": "Content SEO",
+          "image": "images/Content SEO.png"
+        },
+        {
+          "name": "Design",
+          "image": "images/Design.png"
+        },
+        {
+          "name": "Analytics",
+          "image": "images/Analytics.png"
         }
       ],
       "tagline": "Creating meaningful connections through compelling content",
       "slogan": "Ready To Tell A Story Worth Sharing?",
-      "ctaSupport": "From words to visuals — we craft content that builds trust and drives action."
+      "ctaSupport": "From words to visuals — we craft content that builds trust and drives action.",
+      "relatedServices": [
+        "seo",
+        "paid-ads",
+        "social-media"
+      ],
+      "otherServices": [
+        "web-dev",
+        "cashflow",
+        "legal-consulting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/Content SEO.png",
+      "cardImage": "images/Content SEO.png",
+      "ctaImage": "images/Modern Solutions.png"
     },
     {
       "id": "auditing",
       "slug": "service-auditing",
       "category": "financial-accounting",
       "title": "Auditing",
-      "description": "Ensure financial accuracy and regulatory compliance with our comprehensive auditing services. We provide both external and internal financial auditing that helps organizations maintain transparency, identify risks, and improve financial processes. Our auditing team follows international standards and best practices to deliver thorough, objective assessments of your financial records, internal controls, and compliance with applicable regulations. We work closely with your team to understand your business operations, identify areas for improvement, and provide actionable recommendations. Our audit reports are detailed, clear, and designed to help you make informed decisions about your financial management. Whether you need annual audits, internal audits, or specialized compliance audits, we deliver services that meet the highest professional standards and help you build trust with stakeholders.",
-      "lede": "We deliver clear audits that strengthen financial accuracy, controls and stakeholder confidence.",
+      "description": "Ensure financial accuracy and regulatory confidence with comprehensive auditing services. We provide external and internal financial audits that strengthen transparency, identify risks, and improve financial processes. Our team follows international standards and best practices to assess records, internal controls, and compliance with applicable regulations. We work with your team to understand operations, surface gaps, and provide actionable recommendations leadership can use. Audit reports are detailed, clear, and designed for informed decisions and stakeholder trust. Whether you need annual audits, internal reviews, or specialized compliance audits, we deliver professional work that protects the business and supports stronger financial governance as you grow.",
+      "lede": "Clear audits that strengthen accuracy and confidence.",
       "headline": {
         "before": "Clear Audits.",
         "accent": "Confident Decisions."
       },
       "images": [
-        "images/services/business-man-working-office-2desktop.jpg",
+        "images/audit.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
         {
           "title": "Comprehensive Auditing Services",
-          "description": "We provide both external and internal financial auditing that helps organizations maintain transparency, identify risks, and improve financial processes. Our auditing team follows international standards and best practices to deliver thorough, objective assessments of your financial records, internal controls, and compliance with applicable regulations."
+          "description": "Ensure financial accuracy and regulatory confidence with comprehensive auditing services. We provide external and internal financial audits that strengthen transparency, identify risks, and improve financial processes."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Analysis.png"
+      ],
       "featuresSectionTitle": "What We Audit",
       "features": [
         {
@@ -1389,30 +1573,49 @@
       ],
       "tagline": "Ensuring financial accuracy and regulatory compliance",
       "slogan": "Ready For An Audit You Can Trust?",
-      "ctaSupport": "Get transparent findings and actionable next steps that protect your business."
+      "ctaSupport": "Get transparent findings and actionable next steps that protect your business.",
+      "relatedServices": [
+        "cashflow",
+        "cost-accounting",
+        "financial-reporting"
+      ],
+      "otherServices": [
+        "web-dev",
+        "seo",
+        "dispute-resolution"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/audit.png",
+      "cardImage": "images/audit.png",
+      "ctaImage": "images/Modern Solutions.png"
     },
     {
       "id": "financial-reporting",
       "slug": "service-financial-reporting",
       "category": "financial-accounting",
       "title": "Financial Reporting",
-      "description": "Transform complex financial data into clear, actionable insights with our professional financial reporting services. We prepare comprehensive financial statements including income statements, balance sheets, and cash flow reports that comply with accounting standards and provide a clear picture of your financial health. Our team ensures accuracy, timeliness, and compliance with all relevant regulations. We help you understand your financial performance, identify trends, and make data-driven decisions. Our financial reports are designed to be accessible to both financial professionals and stakeholders, providing the information you need to manage your business effectively. From monthly financial statements to annual reports, we deliver high-quality financial reporting that supports your business objectives and regulatory requirements.",
-      "lede": "We turn complex financial data into clear reports leaders can use to plan and grow with confidence.",
+      "description": "Transform complex financial data into clear, actionable insights with professional financial reporting. We prepare income statements, balance sheets, cash flow reports, and management packs that comply with accounting standards and show a true picture of financial health. Our team focuses on accuracy, timeliness, and clarity for both finance professionals and wider stakeholders. Reports help you understand performance, spot trends, and make data-driven decisions about budgets, pricing, and growth. From monthly closes to annual statements, we deliver high-quality reporting that supports operations, board updates, and regulatory needs — turning numbers into a reliable rhythm for planning and control.",
+      "lede": "Turn financial data into clear reports you can act on.",
       "headline": {
         "before": "Reports That",
         "accent": "Drive Clarity"
       },
       "images": [
-        "images/services/money-around-world.jpg",
-        "images/Modern Solutions.png"
+        "images/Financial Reporting.png",
+        "images/Performance reporting.png"
       ],
       "extraContent": [
         {
           "title": "Comprehensive Financial Statements",
-          "description": "We prepare comprehensive financial statements including income statements, balance sheets, and cash flow reports that comply with accounting standards and provide a clear picture of your financial health. Our team ensures accuracy, timeliness, and compliance with all relevant regulations."
+          "description": "Transform complex financial data into clear, actionable insights with professional financial reporting. We prepare income statements, balance sheets, cash flow reports, and management packs that comply with accounting standards and show a true picture of financial health."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/SEO Reports.png"
+      ],
       "featuresSectionTitle": "What We Deliver",
       "features": [
         {
@@ -1501,30 +1704,49 @@
       ],
       "tagline": "Transforming financial data into actionable insights",
       "slogan": "Ready For Financial Clarity Every Month?",
-      "ctaSupport": "We package the numbers so your team can move faster with fewer surprises."
+      "ctaSupport": "We package the numbers so your team can move faster with fewer surprises.",
+      "relatedServices": [
+        "cashflow",
+        "cost-accounting",
+        "auditing"
+      ],
+      "otherServices": [
+        "ecommerce",
+        "seo",
+        "legal-consulting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/Financial Reporting.png",
+      "cardImage": "images/reporting.png",
+      "ctaImage": "images/Performance reporting.png"
     },
     {
       "id": "contract-drafting",
       "slug": "service-contract-drafting",
       "category": "legal-services",
       "title": "Contract Drafting",
-      "description": "Protect your business interests with precise, comprehensive contract drafting and review services. We draft and review all types of legal agreements including employment contracts, service agreements, partnership agreements, vendor contracts, and commercial leases. Our contract drafting services ensure that your agreements are clear, legally sound, and protect your interests while minimizing risk. We work with you to understand your business needs, identify key terms and conditions, and draft contracts that reflect your objectives. Our contract review services help you understand existing contracts, identify potential issues, and negotiate favorable terms. Whether you're entering into a new business relationship, renewing an existing agreement, or need to modify a contract, our services ensure that your legal documents are well-drafted and serve your business interests effectively.",
-      "lede": "We draft and review contracts that protect your interests with clear language and fewer loopholes.",
+      "description": "Protect your business interests with precise contract drafting and review. We prepare and refine employment contracts, service agreements, partnership documents, vendor terms, NDAs, and commercial leases so your agreements are clear, legally sound, and aligned with your objectives. Drafting work captures the real commercial terms up front; review work helps you understand existing papers, identify weak clauses, and negotiate more favorable language. Whether you are entering a new relationship, renewing an agreement, or updating older documents, we deliver contracts that reduce exposure and keep deals moving. The goal is simple: professional, readable documents that protect the business without slowing growth.",
+      "lede": "Draft and review contracts that protect your interests.",
       "headline": {
         "before": "Contracts That",
         "accent": "Protect Your Business"
       },
       "images": [
-        "images/services/photo-realistic-certificate-handshake-symbolizing-formal-thanks-with-space-text-adobe-sto.jpg",
+        "images/strategyyy.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
         {
           "title": "Precise Contract Services",
-          "description": "We draft and review all types of legal agreements including employment contracts, service agreements, partnership agreements, vendor contracts, and commercial leases. Our contract drafting services ensure that your agreements are clear, legally sound, and protect your interests while minimizing risk."
+          "description": "Protect your business interests with precise contract drafting and review. We prepare and refine employment contracts, service agreements, partnership documents, vendor terms, NDAs, and commercial leases so your agreements are clear, legally sound, and aligned with your objectives."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Planning.png"
+      ],
       "featuresSectionTitle": "What We Draft",
       "features": [
         {
@@ -1587,56 +1809,75 @@
       "toolsSectionTitle": "Tools We Use",
       "tools": [
         {
-          "name": "Figma",
-          "image": "images/Figma.png"
+          "name": "Strategy",
+          "image": "images/Strategy.png"
         },
         {
-          "name": "Adobe XD",
-          "image": "images/adobe xd.png"
+          "name": "Planning",
+          "image": "images/Planning.png"
         },
         {
-          "name": "Sketch",
-          "image": "images/sketch.png"
+          "name": "Analysis",
+          "image": "images/Analysis.png"
         },
         {
-          "name": "Photoshop",
-          "image": "images/photoshop.png"
+          "name": "Quality",
+          "image": "images/Quality First.png"
         },
         {
-          "name": "Illustrator",
-          "image": "images/illasstrator.png"
+          "name": "Support",
+          "image": "images/Reliable Support.png"
         },
         {
-          "name": "InVision",
-          "image": "images/invision.png"
+          "name": "Results",
+          "image": "images/Results Focused.png"
         }
       ],
       "tagline": "Protecting your business interests with precise legal documents",
       "slogan": "Ready To Sign With Confidence?",
-      "ctaSupport": "Protect every deal with documents that are precise, fair and business-ready."
+      "ctaSupport": "Protect every deal with documents that are precise, fair and business-ready.",
+      "relatedServices": [
+        "legal-consulting",
+        "compliance",
+        "dispute-resolution"
+      ],
+      "otherServices": [
+        "uiux",
+        "paid-ads",
+        "financial-reporting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/strategyyy.png",
+      "cardImage": "images/Strategy.png",
+      "ctaImage": "images/Modern Solutions.png"
     },
     {
       "id": "compliance",
       "slug": "service-compliance",
       "category": "legal-services",
       "title": "Compliance",
-      "description": "Ensure your business meets all regulatory requirements with our comprehensive compliance services. We help organizations navigate complex regulatory landscapes and ensure adherence to local and international regulations across various industries. Our compliance services include regulatory analysis, compliance assessments, policy development, training, and ongoing monitoring to help you maintain compliance and avoid costly penalties. We work with you to understand applicable regulations, identify compliance gaps, and develop strategies to address those gaps. Our team stays updated with regulatory changes and helps you adapt your practices accordingly. Whether you need help with industry-specific regulations, data protection compliance, employment law compliance, or general business regulations, our services provide the expertise and support you need to maintain compliance and protect your business.",
-      "lede": "We help you meet regulatory requirements with practical policies, assessments and ongoing monitoring.",
+      "description": "Ensure your business meets regulatory requirements with practical compliance services. We help organizations navigate complex local and international rules through regulatory analysis, gap assessments, policy development, training, and ongoing monitoring. Together we identify applicable obligations, find where current practices fall short, and build workflows your team can actually follow day to day. As regulations change, we help you adapt practices without freezing operations. Whether you need industry-specific support, data protection readiness, employment compliance, or general business controls, you get clear guidance that reduces penalty risk and turns compliance into a steady operating strength rather than a last-minute scramble.",
+      "lede": "Meet regulations with practical policies and monitoring.",
       "headline": {
         "before": "Stay Compliant.",
         "accent": "Stay Confident."
       },
       "images": [
-        "images/services/people-working-table.jpg",
+        "images/Strategy.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
         {
           "title": "Regulatory Compliance",
-          "description": "We help organizations navigate complex regulatory landscapes and ensure adherence to local and international regulations across various industries. Our compliance services include regulatory analysis, compliance assessments, policy development, training, and ongoing monitoring to help you maintain compliance and avoid costly penalties."
+          "description": "Ensure your business meets regulatory requirements with practical compliance services. We help organizations navigate complex local and international rules through regulatory analysis, gap assessments, policy development, training, and ongoing monitoring."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Monitoring.png"
+      ],
       "featuresSectionTitle": "What We Cover",
       "features": [
         {
@@ -1725,30 +1966,49 @@
       ],
       "tagline": "Ensuring regulatory compliance across all industries",
       "slogan": "Ready To Make Compliance A Strength?",
-      "ctaSupport": "Build a compliance system that protects the business without slowing it down."
+      "ctaSupport": "Build a compliance system that protects the business without slowing it down.",
+      "relatedServices": [
+        "legal-consulting",
+        "contract-drafting",
+        "dispute-resolution"
+      ],
+      "otherServices": [
+        "web-dev",
+        "seo",
+        "financial-reporting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/Strategy.png",
+      "cardImage": "images/strategyyy.png",
+      "ctaImage": "images/Modern Solutions.png"
     },
     {
       "id": "dispute-resolution",
       "slug": "service-dispute-resolution",
       "category": "legal-services",
       "title": "Dispute Resolution",
-      "description": "Resolve business disputes efficiently and effectively with our professional dispute resolution services. We provide representation in litigations and settlement negotiations, helping you achieve favorable outcomes while minimizing costs and business disruption. Our dispute resolution services include negotiation, mediation, arbitration, and litigation support across various types of business disputes including contract disputes, employment disputes, commercial disputes, and regulatory matters. We work with you to understand your objectives, assess your position, and develop strategies to resolve disputes in your favor. Our team has extensive experience in dispute resolution and understands the importance of protecting your business interests while seeking practical solutions. Whether you're facing a potential dispute, need to resolve an existing conflict, or want to prevent future disputes, our services provide the legal expertise and strategic guidance you need to protect your business and achieve resolution.",
-      "lede": "We resolve business disputes efficiently through negotiation, mediation and structured support.",
+      "description": "Resolve business disputes efficiently and effectively with professional dispute resolution support. We assist with negotiation, mediation, arbitration, and litigation coordination across contract, employment, commercial, and regulatory matters. Starting from your objectives and leverage, we assess the position, choose a path that fits the stakes, and pursue practical outcomes that limit cost and disruption. Our approach balances protecting your interests with seeking workable solutions that let the business move forward. Whether you face a potential conflict, an active claim, or want to reduce future exposure, you get clear strategy, structured communication, and documentation that helps close the issue and prevent repeat problems.",
+      "lede": "Resolve business disputes efficiently and with clarity.",
       "headline": {
         "before": "Resolve Disputes",
         "accent": "With Confidence"
       },
       "images": [
-        "images/services/business-man-working-office-desktop.jpg",
+        "images/strategyyy.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
         {
           "title": "Professional Dispute Resolution",
-          "description": "We provide representation in litigations and settlement negotiations, helping you achieve favorable outcomes while minimizing costs and business disruption. Our dispute resolution services include negotiation, mediation, arbitration, and litigation support across various types of business disputes including contract disputes, employment disputes, commercial disputes, and regulatory matters."
+          "description": "Resolve business disputes efficiently and effectively with professional dispute resolution support. We assist with negotiation, mediation, arbitration, and litigation coordination across contract, employment, commercial, and regulatory matters."
         }
       ],
-      "extraImages": [],
+      "extraImages": [
+        "images/Results Focused.png"
+      ],
       "featuresSectionTitle": "How We Resolve",
       "features": [
         {
@@ -1811,33 +2071,50 @@
       "toolsSectionTitle": "Tools We Use",
       "tools": [
         {
-          "name": "Figma",
-          "image": "images/Figma.png"
+          "name": "Strategy",
+          "image": "images/Strategy.png"
         },
         {
-          "name": "Adobe XD",
-          "image": "images/adobe xd.png"
+          "name": "Analysis",
+          "image": "images/Analysis.png"
         },
         {
-          "name": "Sketch",
-          "image": "images/sketch.png"
+          "name": "Planning",
+          "image": "images/Planning.png"
         },
         {
-          "name": "Photoshop",
-          "image": "images/photoshop.png"
+          "name": "Results",
+          "image": "images/Results Focused.png"
         },
         {
-          "name": "Illustrator",
-          "image": "images/illasstrator.png"
+          "name": "Support",
+          "image": "images/Reliable Support.png"
         },
         {
-          "name": "InVision",
-          "image": "images/invision.png"
+          "name": "Quality",
+          "image": "images/Quality First.png"
         }
       ],
       "tagline": "Resolving disputes efficiently while protecting your business",
       "slogan": "Ready To Resolve This And Move Forward?",
-      "ctaSupport": "Get a clear path to resolution that protects your time, reputation and results."
+      "ctaSupport": "Get a clear path to resolution that protects your time, reputation and results.",
+      "relatedServices": [
+        "legal-consulting",
+        "contract-drafting",
+        "compliance"
+      ],
+      "otherServices": [
+        "uiux",
+        "social-media",
+        "financial-reporting"
+      ],
+      "relatedSectionTitle": "Related Services",
+      "otherSectionTitle": "Other Services",
+      "toolsGridClass": "tech-grid",
+      "toolsGridColumns": 6,
+      "heroImage": "images/strategyyy.png",
+      "cardImage": "images/Strategy.png",
+      "ctaImage": "images/Modern Solutions.png"
     }
   ]
 }

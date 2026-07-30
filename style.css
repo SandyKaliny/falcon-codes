@@ -3928,7 +3928,7 @@ ul {
     align-items: center;
     gap: 28px;
     color: white;
-    box-shadow: 0 20px 60px rgba(84, 58, 156, 0.35);
+    box-shadow: 0 20px 60px rgba(84, 58, 156, 0.15);
 }
 
 .cta-left {

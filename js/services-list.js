@@ -24,7 +24,11 @@ function cardHtml(service) {
   const href = getServiceLink(service);
   const title = service.title || "Service";
   const description = service.lede || service.description || "";
-  const image = service.cardImage || service.heroImage || (service.images && service.images[0]) || "images/services.svg";
+  const image =
+    service.cardImage ||
+    service.heroImage ||
+    (service.images && service.images[0]) ||
+    "images/Modern Solutions.png";
 
   return `
     <div class="service-card">

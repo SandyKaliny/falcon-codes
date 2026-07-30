@@ -58,9 +58,39 @@ body.page-web {
     color: #fff;
 }
 
-.page-web .cta-btn {
-    color: #6B4EFF;
+/* Shared footer CTA button — match home (do not use ranking-cta tiny button) */
+.page-web .footer-cta-zone .cta-btn,
+.page-service .footer-cta-zone .cta-btn {
+    width: auto;
+    height: auto;
+    min-height: 52px;
+    padding: 16px 28px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     background: #fff;
+    color: #6B4EFF;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(84, 58, 156, 0.18);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.page-web .footer-cta-zone .cta-btn:hover,
+.page-service .footer-cta-zone .cta-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(84, 58, 156, 0.28);
+}
+
+.page-web .footer-cta-zone .cta-btn i,
+.page-service .footer-cta-zone .cta-btn i {
+    font-size: 14px;
 }
 
 .page-web footer {
@@ -548,8 +578,6 @@ ul {
     .hero-text h1 {
 
         font-size: 48px;
-
-        margin: auto auto 25px;
 
     }
 
@@ -1122,7 +1150,7 @@ ul {
 
     display: grid;
 
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(var(--tools-cols, 6), minmax(0, 1fr));
 
     gap: 14px;
 
@@ -1169,14 +1197,19 @@ ul {
 
 
 .tech-grid1 {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, minmax(220px, 1fr));
+    grid-template-columns: repeat(var(--tools-cols, 5), minmax(0, 1fr));
     gap: 24px;
     justify-content: center;
     align-items: stretch;
-    max-width: var(--site-container-max-width);
-    padding: 0 var(--site-container-inline-padding);
     margin: 0 auto;
+}
+
+/* Inside service template container — no extra page padding */
+.page-service .tech-grid1 {
+    max-width: none;
+    padding: 0;
 }
 
 
@@ -1483,10 +1516,10 @@ ul {
 
 
 /* =========================
-   BUTTON
+   BUTTON (legacy ranking-cta only — not footer CTA)
 ========================= */
 
-.cta-btn {
+.ranking-cta .cta-btn {
     width: 76px;
     height: 25px;
 
@@ -1508,20 +1541,20 @@ ul {
     transition: all 0.3s ease;
 }
 
-.cta-btn span {
+.ranking-cta .cta-btn span {
     font-size: 11px;
     line-height: 1;
 
     transition: transform 0.3s ease;
 }
 
-.cta-btn:hover {
+.ranking-cta .cta-btn:hover {
     transform: translateY(-3px);
 
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
-.cta-btn:hover span {
+.ranking-cta .cta-btn:hover span {
     transform: translateX(4px);
 }
 
@@ -2141,6 +2174,299 @@ ul {
 
 
 
+
+/*=========================================
+   DYNAMIC SERVICE TEMPLATE (.page-service)
+=========================================*/
+
+/* Soft lavender band behind overlapping CTA — template pages only */
+.page-service .footer-cta-zone {
+    background: #f8f7fe;
+}
+
+.page-service .cta-visual {
+    display: none !important;
+}
+
+/* Related + Other — one section, 50% / 50%, couple cards each */
+.page-service .svc-more {
+    padding: 72px 0 48px;
+    background: #f8f7fe;
+}
+
+.page-service .svc-more-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: start;
+    /*border-radius: 24px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(108, 76, 241, 0.1);*/
+    overflow: hidden;
+}
+
+.page-service .svc-more-pane {
+    padding: 28px 28px 32px;
+    min-width: 0;
+}
+
+/* If one pane is empty/hidden, the other fills the section */
+.page-service .svc-more-pane[hidden] + .svc-more-pane,
+.page-service .svc-more-split:has(.svc-more-pane[hidden]) {
+    grid-template-columns: 1fr;
+}
+
+.page-service .svc-more-header {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.page-service .svc-more-header h2 {
+    margin: 0 0 6px;
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 700;
+    color: #17141F;
+    letter-spacing: -0.02em;
+}
+
+.page-service .svc-more-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #7A7689;
+}
+
+.page-service .svc-more-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* Original vertical card shape */
+.page-service .svc-more-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(108, 76, 241, 0.12);
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.page-service .svc-more-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(108, 76, 241, 0.28);
+    box-shadow: 0 16px 36px rgba(84, 58, 156, 0.12);
+}
+
+.page-service .svc-more-card-media {
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ece6ff;
+}
+
+.page-service .svc-more-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-service .svc-more-card-body {
+    min-width: 0;
+}
+
+.page-service .svc-more-card-body h3 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #17141F;
+}
+
+.page-service .svc-more-card-body p {
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #6B6680;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.page-service .svc-more-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6B4EFF;
+}
+
+.page-service .svc-more-card-link i {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+.page-service .svc-more-card:hover .svc-more-card-link i {
+    transform: translateX(4px);
+}
+
+@media (max-width: 991px) {
+    /* Keep breadcrumb left on single service template (hero is text-align:center) */
+    .page-service .breadcrumb {
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        margin-inline: 0;
+    }
+
+    .page-service .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .page-service .hero-text .breadcrumb {
+        align-self: flex-start;
+    }
+}
+
+/* Service template tools — compact dense grid on mobile (JSON class still applies) */
+@media (max-width: 768px) {
+    .page-service .technologies {
+        padding: 48px 0 40px;
+    }
+
+    .page-service .tech-grid,
+    .page-service .tech-grid1 {
+        grid-template-columns: repeat(var(--tools-cols-mobile, 4), minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .page-service .tech-grid1 {
+        gap: 10px !important;
+    }
+
+    .page-service .tech-item,
+    .page-service .tech-item1 {
+        height: auto !important;
+        min-height: 0;
+        min-width: 0;
+        padding: 10px 6px !important;
+        gap: 6px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(85, 55, 180, 0.05);
+        animation: none;
+        opacity: 1;
+    }
+
+    .page-service .tech-item1 {
+        padding: 12px 8px !important;
+    }
+
+    .page-service .tech-item1 h3 {
+        font-size: 11px;
+        margin: 0;
+        line-height: 1.25;
+        color: #6f6b7d;
+        font-weight: 500;
+    }
+
+    .page-service .tech-item::before {
+        display: none;
+    }
+
+    .page-service .tech-item img,
+    .page-service .tech-item1 img {
+        width: 26px !important;
+        height: 26px !important;
+    }
+
+    .page-service .tech-item span,
+    .page-service .tech-item .tool-label {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1.2;
+        white-space: normal;
+        text-align: center;
+        color: #6f6b7d;
+    }
+
+    .page-service .tech-item:hover,
+    .page-service .tech-item1:hover {
+        transform: none;
+        box-shadow: 0 4px 12px rgba(85, 55, 180, 0.05);
+    }
+
+    .page-service .tech-item:hover img,
+    .page-service .tech-item1:hover img {
+        transform: none;
+        filter: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .page-service .tech-grid,
+    .page-service .tech-grid1 {
+        --tools-cols-mobile: 3;
+        gap: 7px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.page-service {
+        padding-bottom: 20px;
+    }
+
+    .page-service .footer-cta-zone {
+        background: #f8f7fe;
+        padding-top: 28px;
+        overflow-x: clip;
+    }
+
+    /* Match home: hide CTA button on mobile (card is text-only) */
+    .page-web .footer-cta-zone .cta-btn,
+    .page-service .footer-cta-zone .cta-btn {
+        display: none !important;
+    }
+
+    .page-service .svc-more {
+        padding: 48px 0 24px;
+    }
+
+    .page-service .svc-more-split {
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+    }
+
+    .page-service .svc-more-pane {
+        padding: 22px 18px;
+    }
+
+    .page-service .svc-more-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .page-service .svc-more-card {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .page-service .svc-more-card-body h3 {
+        font-size: 15px;
+    }
+
+    .page-service .svc-more-card-body p {
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+}
 
 .tech-item1 h3 {
     color: #6848e9;

@@ -1,16 +1,15 @@
 /**
- * Simple service page loader for service-template.html.
- * Loads the service data from JSON and fills the page.
+ * Service detail page loader for service-template.html.
+ * Loads data/services-details.json and fills hero, features, process, tools,
+ * related services, and other services from the mapped JSON fields.
  */
 
 const DATA_URL = "data/services-details.json";
 
-// Read the service id from the URL query string, e.g. ?id=web-dev
 function getServiceId() {
   return new URLSearchParams(window.location.search).get("id");
 }
 
-// Safely convert text to HTML-safe content before adding to the page
 function escapeHtml(value) {
   return String(value || "")
     .replace(/&/g, "&amp;")
@@ -19,14 +18,12 @@ function escapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
-// Set text content for every element matching the selector
 function setText(selector, value) {
   document.querySelectorAll(selector).forEach((el) => {
     el.textContent = value || "";
   });
 }
 
-// Set image source and alt text for matching image elements
 function setImg(selector, src, alt) {
   if (!src) return;
   document.querySelectorAll(selector).forEach((el) => {
@@ -35,7 +32,10 @@ function setImg(selector, src, alt) {
   });
 }
 
-// Show the service headline with an accented word or phrase
+function getServiceLink(service) {
+  return `service-template.html?id=${encodeURIComponent(service.id)}`;
+}
+
 function renderHeadline(service) {
   const el = document.querySelector('[data-bind="headline"]');
   if (!el) return;
@@ -46,7 +46,6 @@ function renderHeadline(service) {
   el.innerHTML = `${escapeHtml(before)}${accent ? ` <span>${escapeHtml(accent)}</span>` : ""}`;
 }
 
-// Build the feature cards section for the service page
 function renderFeatures(service) {
   const grid = document.querySelector('[data-bind="features"]');
   if (!grid || !Array.isArray(service.features)) return;
@@ -65,9 +64,10 @@ function renderFeatures(service) {
       const description = escapeHtml(item.description || "");
       const tone = item.tone ? ` ${escapeHtml(item.tone)}` : ` ${tones[index % tones.length]}`;
       const icon = item.icon || icons[index % icons.length];
-      const iconHtml = item.iconType === "img"
-        ? `<img src="${escapeHtml(icon)}" alt="${title}">`
-        : `<i class="${escapeHtml(icon)}"></i>`;
+      const iconHtml =
+        item.iconType === "img"
+          ? `<img src="${escapeHtml(icon)}" alt="${title}">`
+          : `<i class="${escapeHtml(icon)}"></i>`;
 
       return `
         <div class="service-card">
@@ -81,7 +81,6 @@ function renderFeatures(service) {
     .join("");
 }
 
-// Build the process timeline section for the service page
 function renderProcess(service) {
   const root = document.querySelector('[data-bind="process"]');
   if (!root || !Array.isArray(service.process)) return;
@@ -102,10 +101,34 @@ function renderProcess(service) {
   `;
 }
 
-// Build the tools/technology list section for the service page
+/** Allowed grid layout classes driven by JSON `toolsGridClass` */
+const TOOLS_GRID_CLASSES = new Set(["tech-grid", "tech-grid1"]);
+
+function applyToolsGridClass(root, service) {
+  const requested = String(service.toolsGridClass || "tech-grid").trim();
+  const gridClass = TOOLS_GRID_CLASSES.has(requested) ? requested : "tech-grid";
+
+  // Keep data-bind; swap layout class from JSON
+  root.classList.remove("tech-grid", "tech-grid1");
+  root.classList.add(gridClass);
+
+  const cols = Number(service.toolsGridColumns);
+  if (Number.isFinite(cols) && cols > 0) {
+    root.style.setProperty("--tools-cols", String(Math.min(Math.max(cols, 2), 6)));
+  } else {
+    root.style.removeProperty("--tools-cols");
+  }
+
+  root.dataset.toolsGrid = gridClass;
+}
+
 function renderTools(service) {
   const root = document.querySelector('[data-bind="tools"]');
   if (!root || !Array.isArray(service.tools)) return;
+
+  applyToolsGridClass(root, service);
+
+  const itemClass = root.classList.contains("tech-grid1") ? "tech-item1" : "tech-item";
 
   root.innerHTML = service.tools
     .map((tool) => {
@@ -115,27 +138,95 @@ function renderTools(service) {
         ? `<img src="${image}" alt="${name}">`
         : `<span class="tool-label">${name}</span>`;
 
+      // tech-grid1 cards show name under the icon; tech-grid keeps icon-only when image exists
+      if (itemClass === "tech-item1") {
+        return `
+      <div class="${itemClass}">
+        ${visual}
+        <h3>${name}</h3>
+      </div>`;
+      }
+
       return `
-      <div class="tech-item">
+      <div class="${itemClass}">
         ${visual}
       </div>`;
     })
     .join("");
 }
 
-// Show an error message when the requested service cannot be loaded
+/** Build a compact related / other service card */
+function moreCardHtml(service) {
+  const href = getServiceLink(service);
+  const title = escapeHtml(service.title || "Service");
+  const description = escapeHtml(service.lede || service.description || "");
+  const image = escapeHtml(
+    service.cardImage ||
+      service.heroImage ||
+      (service.images && service.images[0]) ||
+      "images/Modern Solutions.png"
+  );
+
+  return `
+    <a class="svc-more-card" href="${escapeHtml(href)}">
+      <div class="svc-more-card-media">
+        <img src="${image}" alt="${title}" loading="lazy">
+      </div>
+      <div class="svc-more-card-body">
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <span class="svc-more-card-link">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
+      </div>
+    </a>`;
+}
+
+/**
+ * Resolve id list from the current service against the full catalog.
+ * relatedServices / otherServices are id arrays mapped in the JSON.
+ */
+function resolveByIds(allServices, ids) {
+  if (!Array.isArray(ids) || !ids.length) return [];
+  const byId = new Map(allServices.map((s) => [s.id, s]));
+  return ids.map((id) => byId.get(id)).filter(Boolean);
+}
+
+/** Show a couple of items per pane (related / others) */
+const MORE_LIMIT = 2;
+
+function renderMoreList(selector, services) {
+  const root = document.querySelector(selector);
+  if (!root) return;
+
+  const pane = root.closest(".svc-more-pane");
+  const couple = services.slice(0, MORE_LIMIT);
+
+  if (!couple.length) {
+    if (pane) pane.hidden = true;
+    root.innerHTML = "";
+    return;
+  }
+
+  if (pane) pane.hidden = false;
+  root.innerHTML = couple.map(moreCardHtml).join("");
+}
+
 function showError(message) {
   setText('[data-bind="title"]', "Service not found");
   setText('[data-bind="description"]', message || "Unable to load this service.");
+  document.body.classList.remove("is-loading");
 }
 
-// Fill the page with the service data from JSON
-function bindService(service) {
+function bindService(service, allServices) {
+  document.title = `${service.title || "Service"} | Falcon Codes`;
+
   setText('[data-bind="title"]', service.title);
   renderHeadline(service);
-  // Show the full description on the service page; fall back to the short lede if description is missing
   setText('[data-bind="description"]', service.description || service.lede || "");
-  setImg('[data-bind="hero-image"]', service.heroImage || service.images?.[0] || "images/ويب.png", service.title);
+  setImg(
+    '[data-bind="hero-image"]',
+    service.heroImage || service.images?.[0] || service.cardImage || "images/Modern Solutions.png",
+    service.title
+  );
 
   setText('[data-bind="features-title"]', service.featuresSectionTitle || "What We Build");
   renderFeatures(service);
@@ -146,16 +237,27 @@ function bindService(service) {
   setText('[data-bind="tools-title"]', service.toolsSectionTitle || "Technologies We Use");
   renderTools(service);
 
-  setText('[data-bind="slogan"]', service.slogan || "Ready To Build A Website That Works As Hard As You Do?");
-  setText('[data-bind="cta-support"]', service.ctaSupport || "Let's build something amazing together.");
-  setImg('[data-bind="cta-image"]', service.ctaImage || service.images?.[1] || service.images?.[0] || "images/Modern Solutions.png", service.title);
+  setText('[data-bind="related-title"]', service.relatedSectionTitle || "Related Services");
+  setText('[data-bind="other-title"]', service.otherSectionTitle || "Other Services");
+  renderMoreList('[data-bind="related"]', resolveByIds(allServices, service.relatedServices));
+  renderMoreList('[data-bind="others"]', resolveByIds(allServices, service.otherServices));
+
+  setText(
+    '[data-bind="slogan"]',
+    service.slogan || "Ready To Build A Website That Works As Hard As You Do?"
+  );
+  setText(
+    '[data-bind="cta-support"]',
+    service.ctaSupport || "Let's build something amazing together."
+  );
+
+  document.body.classList.remove("is-loading");
 }
 
-// Start the service page logic when the page is ready
 function init() {
   const serviceId = getServiceId();
   if (!serviceId) {
-    showError("...");
+    showError("Missing service id. Open this page as service-template.html?id=web-dev");
     return;
   }
 
@@ -168,7 +270,7 @@ function init() {
         showError(`Service '${serviceId}' was not found.`);
         return;
       }
-      bindService(service);
+      bindService(service, services);
     })
     .catch((err) => {
       console.error("Failed to load service data:", err);
@@ -177,4 +279,3 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
-
