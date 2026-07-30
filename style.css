@@ -981,7 +981,7 @@ ul {
     }
 
     body {
-        padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+        padding-bottom: 20px;
         background: #fff;
     }
 
@@ -3865,7 +3865,7 @@ ul {
     margin-top: 0;
     padding-top: 0px;
     /* Match testimonials section background above */
-    background: linear-gradient(135deg, #F1EEFF 0%, #E8E0FA 50%, #E3D7F6 100%);
+    background: #F8F7FD;
 }
 
 .cta {

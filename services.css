@@ -309,22 +309,18 @@ a {
 
 .services-stats {
     display: flex;
-
-    align-items: center;
-
+    align-items: stretch;
     gap: 34px;
 }
 
 .stat-item {
     display: flex;
-
     align-items: center;
-
-    gap: 12px;
-
+    gap: 9px;
     padding-right: 30px;
-
     border-right: 1px solid rgba(124, 80, 180, 0.2);
+    align-items: center;
+    justify-content: start;    
 }
 
 .stat-item:last-child {
@@ -353,9 +349,7 @@ a {
 
 .stat-info {
     display: flex;
-
     flex-direction: column;
-
     gap: 3px;
 }
 
@@ -369,8 +363,8 @@ a {
 
 .stat-info span {
     color: #9291a6;
-
-    font-size: 12px;
+    font-size: 10px;
+    margin: 8px 0;
 }
 
 
@@ -407,13 +401,9 @@ a {
 
 .services-visual img {
     width: 100%;
-    max-width: 780px;
-
     position: relative;
     z-index: 1;
-
     display: block;
-
     object-fit: contain;
 }
 
@@ -849,6 +839,7 @@ a {
     .services-content {
         padding-left: 0;
         text-align: center;
+        
     }
 
     .services-content p {
@@ -907,7 +898,7 @@ a {
     .services-hero {
         width: 100%;
         padding: 0 var(--site-container-inline-padding);
-        margin-top: 0;
+        margin-top: 48px;
     }
 
     .services-content h1 {
@@ -926,7 +917,7 @@ a {
 
     .explore-btn,
     .started-btn {
-        width: 380px;
+        width: 100%;
     }
 
     .services-stats {
@@ -939,7 +930,7 @@ a {
     }
 
     .stat-info strong {
-        font-size: 19px;
+        font-size: 16px;
     }
 
     .services-visual {
@@ -984,19 +975,23 @@ a {
 
     .services-stats {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         gap: 8px;
     }
 
     .stat-item {
-        width: 105px;
-        /* كان أكبر */
-        padding: 14px 10px;
+        width: 29%;
+        /* this affecting I Phone SE 375px width screen ... issue of horizantil scrolling */
         border-radius: 18px;
+        padding: 5px 9px;
+        background: rgba(93, 39, 166, 0.18);
+        flex-direction: column;
+        border: 1px solid rgba(124, 80, 180, 0.2);
     }
 
     .services-visual {
         height: 270px;
+        max-width: 95%;
     }
 
     .featured-image {
@@ -1008,12 +1003,10 @@ a {
     }
 
     .stat-icon {
-        width: 42px;
-        height: 42px;
-        margin-bottom: 10px;
+        width: 32px;
+        height: 32px;
+        margin-top: 10px;
     }
-
-
 }
 
 
@@ -1025,13 +1018,8 @@ a {
 .all-services-section {
 
     width: 100%;
-
-    padding: 30px 0 80px;
-
-
-
+    padding: 30px 0;
     overflow: hidden;
-
 }
 
 
@@ -1325,7 +1313,7 @@ a {
     top: 20px;
     color: #a34cff;
 
-    font-size: 20px;
+    font-size: 16px;
 
     font-weight: 400;
 
@@ -1409,13 +1397,13 @@ a {
 
     .service-card h3 {
 
-        font-size: 15px;
+        font-size: 18px;
 
     }
 
     .service-card p {
 
-        font-size: 11px;
+        font-size: 14px;
 
     }
 
@@ -1648,7 +1636,7 @@ a {
     font-size: 28px;
 
     font-weight: 500;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 50px;
     font-weight: 500;
 
@@ -1977,7 +1965,7 @@ a {
 
     color: #aaa8ba;
 
-    font-size: 18px;
+    font-size: 16px;
 
     line-height: 1.35;
 
@@ -2176,10 +2164,8 @@ a {
 
     .process-steps {
 
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        gap: 30px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
 
     }
 
@@ -2196,7 +2182,7 @@ a {
 
     .why-process-section {
 
-        padding: 30px 0 80px;
+        padding: 30px 0;
 
 
     }
@@ -2240,7 +2226,6 @@ a {
     overflow: visible;
     margin-top: 0;
     padding-top: 0px;
-    background: #3C2B51;
 }
 
 .cta {
@@ -2490,7 +2475,7 @@ footer hr {
 
     .cta-box h2,
     .cta-text h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .cta-box p,
@@ -2525,4 +2510,11 @@ footer hr {
     .cta-visual {
         display: none;
     }
+
+    .process-container {
+
+        padding: 0 var(--site-container-inline-padding);
+        margin: 0 auto;
+    }
+
 }
