@@ -40,9 +40,12 @@ a {
     max-width: none;
 }
 
-/* Match home / about CTA+footer zone (shared styles live in style.css) */
+/*
+  Services-only: strip the shared light zone band (#F8F7FD).
+  Home/about keep it; here the dark page shows through under the CTA card.
+*/
 .page-services .footer-cta-zone {
-    background: #F8F7FD;
+    background: transparent !important;
 }
 
 /* Body `a { color: inherit }` would wash footer links white — restore shared tones */
@@ -103,12 +106,11 @@ a {
         padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
     }
 
+    /* Keep zone transparent on mobile too (beats shared .footer-cta-zone #f8f7fd) */
     .page-services .footer-cta-zone {
-        background: #3f2d53 !important;
-        padding-top: 28px !important;
+        background: transparent !important;
     }
 
-    /* Beat services.css desktop footer duplicates if any remain */
     .page-services .footer-cta-zone footer,
     .page-services footer {
         padding: 72px 0 calc(96px + env(safe-area-inset-bottom, 0px)) !important;
@@ -128,52 +130,6 @@ a {
         width: 100%;
         justify-content: flex-start !important;
         gap: 14px 18px;
-    }
-
-    .page-services .cta {
-        margin: 0 0 -40px !important;
-    }
-
-    .page-services .cta-box {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-        gap: 14px;
-        padding: 22px 18px;
-        border-radius: 20px;
-        margin: 0 auto;
-        max-width: none;
-        width: 100%;
-    }
-
-    .page-services .cta-left {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 14px;
-        width: 100%;
-        text-align: left;
-    }
-
-    .page-services .cta-icon {
-        width: 52px;
-        height: 52px;
-        font-size: 24px;
-    }
-
-    .page-services .cta-box h2,
-    .page-services .cta-text h2 {
-        font-size: 17px;
-        line-height: 1.35;
-        font-weight: 800;
-        margin: 0 0 8px;
-        text-align: left;
-    }
-
-    .page-services .cta-box p,
-    .page-services .cta-text p {
-        font-size: 12px;
-        line-height: 1.5;
-        text-align: left;
     }
 
     .page-services .cta-btn {

@@ -40,6 +40,33 @@ body.page-web {
     max-width: none;
 }
 
+/* Footer/CTA inherit home styles; restore link colors against page text color */
+.page-web .social-links a {
+    color: #BFB8DD;
+}
+
+.page-web .social-links a:hover {
+    color: #fff;
+}
+
+.page-web .footer-bottom p,
+.page-web .footer-bottom a {
+    color: #A7A0C8;
+}
+
+.page-web .footer-bottom a:hover {
+    color: #fff;
+}
+
+.page-web .cta-btn {
+    color: #6B4EFF;
+    background: #fff;
+}
+
+.page-web footer {
+    color: #fff;
+}
+
 img {
 
     display: block;
