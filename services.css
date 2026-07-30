@@ -103,7 +103,7 @@ a {
 
 @media (max-width: 768px) {
     body.page-services {
-        padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+        padding-bottom: 20px;
     }
 
     /* Keep zone transparent on mobile too (beats shared .footer-cta-zone #f8f7fd) */
