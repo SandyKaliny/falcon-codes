@@ -394,8 +394,8 @@ a {
 
     position: absolute;
 
-    width: 480px;
-    height: 480px;
+    width: 380px;
+    height: 380px;
 
     border-radius: 50%;
 
@@ -1830,8 +1830,8 @@ a {
 .process-container {
 
     position: relative;
-
-    margin-top: 5px;
+    max-width: var(--site-container-max-width);
+    margin: 0 auto;
 
 }
 
@@ -2520,11 +2520,6 @@ footer hr {
 
 @media (max-width: 480px) {
     .cta-visual {
-        right: -15px;
-        bottom: -5px;
-        top: auto;
-        width: 120px;
-        height: 120px;
-        transform: none;
+        display: none;
     }
 }
