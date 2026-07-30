@@ -1500,35 +1500,57 @@ ul {
 
 
 /* =========================
-   PEN IMAGE
+   PEN IMAGE (service detail CTA decoration)
 ========================= */
 
-.cta-visual {
+.page-web .cta .container {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-web .cta-visual {
     position: absolute;
-
-    right: 92px;
-    top: 75%;
-
+    right: 24px;
+    top: 50%;
     width: 145px;
     height: 145px;
-
-    transform: translateY(-70%);
-
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
-
     z-index: 1;
+    pointer-events: none;
+    max-width: 28%;
+}
+
+.page-web .cta-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 10px rgba(40, 0, 100, 0.2));
+    animation: penFloat 4s ease-in-out infinite;
+}
+
+/* Legacy ranking-cta pen (if still present) */
+.cta-visual {
+    position: absolute;
+    right: 92px;
+    top: 75%;
+    width: 145px;
+    height: 145px;
+    transform: translateY(-70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .cta-visual img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
-
     filter: drop-shadow(0 10px 10px rgba(40, 0, 100, 0.2));
-
     animation: penFloat 4s ease-in-out infinite;
 }
 
@@ -1600,6 +1622,7 @@ ul {
         min-height: 170px;
 
         padding: 25px 22px;
+        overflow: hidden;
     }
 
     .cta-content {
@@ -1614,10 +1637,17 @@ ul {
         font-size: 8px;
     }
 
+    /* Absolute pen overflows the viewport (was right: 0 / -15px) — hide on mobile */
+    .page-web .cta-visual,
     .cta-visual {
-        right: 0;
-        width: 125px;
-        height: 125px;
+        display: none !important;
+    }
+
+    .page-web .cta,
+    .page-web .cta .container,
+    .page-web .footer-cta-zone {
+        overflow-x: clip;
+        max-width: 100%;
     }
 }
 
@@ -1631,6 +1661,7 @@ ul {
         padding: 24px 18px;
 
         align-items: flex-start;
+        overflow: hidden;
     }
 
     .cta-content {
@@ -1646,15 +1677,9 @@ ul {
         max-width: 190px;
     }
 
+    .page-web .cta-visual,
     .cta-visual {
-        right: -15px;
-        bottom: -5px;
-        top: auto;
-
-        width: 120px;
-        height: 120px;
-
-        transform: none;
+        display: none !important;
     }
 }
 

@@ -1052,7 +1052,7 @@ ul {
         align-items: center;
         max-width: none;
         margin: 0;
-        padding: 8px 14px;
+        padding: 8px;
         gap: 12px;
         border-radius: 22px;
         background: linear-gradient(135deg, #543A9C 0%, #9354B7 100%);
@@ -4592,7 +4592,7 @@ Navbar
     .page-services #site-header,
     .page-web #site-header {
         top: 8px;
-        padding: 10px 16px 0;
+        padding: 10px 6px 0;
     }
 
     .page-about #site-header,
@@ -4603,6 +4603,12 @@ Navbar
 
     .page-web .footer-cta-zone {
         background: #f8f6fe !important;
+        overflow-x: clip;
+    }
+
+    /* Service-detail CTA pen image — never bleed past the viewport */
+    .page-web .cta-visual {
+        display: none !important;
     }
 
     .page-services .footer-cta-zone {
