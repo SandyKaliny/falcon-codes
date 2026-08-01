@@ -917,14 +917,14 @@ ul {
 
     font-size: 28px;
 
-    color: #4E7DFF;
+    color: #dcff4e;
 
-    background: #EEF4FF;
+    background: #fdd93e3b;
 
 }
 
 .icon img {
-    width: 50%;
+    width: 60%;
 }
 
 .icon.purple {
@@ -947,7 +947,7 @@ ul {
 
     color: #FF5C9F;
 
-    background: #FFF0F7;
+    background: #f2ebff;
 
 }
 
@@ -1122,7 +1122,7 @@ ul {
 
     color: #16162b;
 
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     letter-spacing: -0.5px;
 }
@@ -1364,6 +1364,14 @@ ul {
 
 }
 
+.tech-item .tool-desc,
+.tech-item1 .tool-desc {
+    margin: 0;
+    color: #8a869c;
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: center;
+}
 
 .tech-item:hover span {
 
@@ -1909,7 +1917,7 @@ ul {
 
     .section-title h2 {
 
-        font-size: 34px;
+        font-size: 25px;
 
     }
 
@@ -2344,7 +2352,7 @@ ul {
 
     .page-service .tech-grid,
     .page-service .tech-grid1 {
-        grid-template-columns: repeat(var(--tools-cols-mobile, 4), minmax(0, 1fr)) !important;
+        grid-template-columns: repeat(var(--tools-cols-mobile, 1), minmax(0, 1fr)) !important;
         gap: 8px !important;
     }
 
@@ -2383,8 +2391,7 @@ ul {
 
     .page-service .tech-item img,
     .page-service .tech-item1 img {
-        width: 26px !important;
-        height: 26px !important;
+        height: 64px !important;
     }
 
     .page-service .tech-item span,
@@ -2470,6 +2477,12 @@ ul {
 
 .tech-item1 h3 {
     color: #6848e9;
+}
+
+.tech-item1.paid-ads img {
+    width: 120px;
+    height: 74px;
+    object-fit: contain;
 }
 
 .tech-item1 p {

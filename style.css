@@ -2924,11 +2924,18 @@ ul {
 
 .service-card a {
 
-    color: #663EEF;
-    font-weight: 400;
+    height: 32px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 12px;
+    top: 20px;
+    color: #a34cff;
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    transition: color .35s ease;
 
 }
 

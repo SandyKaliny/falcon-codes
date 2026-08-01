@@ -122,6 +122,27 @@ function applyToolsGridClass(root, service) {
   root.dataset.toolsGrid = gridClass;
 }
 
+function getToolValue(tool, keys) {
+  if (!tool || typeof tool !== "object") return "";
+
+  for (const key of keys) {
+    const value = tool[key];
+    if (typeof value === "string" && value.trim()) {
+      return value.trim();
+    }
+  }
+
+  return "";
+}
+
+function normalizeTool(tool) {
+  return {
+    name: getToolValue(tool, ["name", "title", "label"]),
+    description: getToolValue(tool, ["desc", "description", "details", "summary"]),
+    image: getToolValue(tool, ["img", "image", "icon", "src"]),
+  };
+}
+
 function renderTools(service) {
   const root = document.querySelector('[data-bind="tools"]');
   if (!root || !Array.isArray(service.tools)) return;
@@ -129,27 +150,42 @@ function renderTools(service) {
   applyToolsGridClass(root, service);
 
   const itemClass = root.classList.contains("tech-grid1") ? "tech-item1" : "tech-item";
+  const serviceClassName = typeof service.id === "string" && service.id.trim() ? service.id.trim() : "";
+  const wrapperClass = serviceClassName ? `${itemClass} ${serviceClassName}` : itemClass;
 
   root.innerHTML = service.tools
     .map((tool) => {
-      const name = escapeHtml(tool.name || "");
-      const image = escapeHtml(tool.image || "");
+      const toolData = normalizeTool(tool);
+      const name = escapeHtml(toolData.name || "");
+      const description = escapeHtml(toolData.description || "");
+      const image = escapeHtml(toolData.image || "");
+      const altText = escapeHtml(toolData.name || toolData.description || "Tool");
       const visual = image
-        ? `<img src="${image}" alt="${name}">`
-        : `<span class="tool-label">${name}</span>`;
+        ? `<img src="${image}" alt="${altText}">`
+        : toolData.name
+          ? `<span class="tool-label">${name}</span>`
+          : toolData.description
+            ? `<span class="tool-label">${description}</span>`
+            : "";
+      const titleHtml = toolData.name ? `<h3>${name}</h3>` : "";
+      const descriptionHtml = toolData.description ? `<p class="tool-desc">${description}</p>` : "";
 
-      // tech-grid1 cards show name under the icon; tech-grid keeps icon-only when image exists
       if (itemClass === "tech-item1") {
         return `
-      <div class="${itemClass}">
+      <div class="${wrapperClass}">
         ${visual}
-        <h3>${name}</h3>
+        ${titleHtml}
+        ${descriptionHtml}
       </div>`;
       }
 
       return `
-      <div class="${itemClass}">
+      <div class="${wrapperClass}">
         ${visual}
+        ${toolData.name && !toolData.image ? `<span class="tool-label">${name}</span>` : ""}
+        ${toolData.description && !toolData.image ? descriptionHtml : ""}
+        ${toolData.name && toolData.image ? `<span class="tool-label">${name}</span>` : ""}
+        ${toolData.description && toolData.image ? descriptionHtml : ""}
       </div>`;
     })
     .join("");
