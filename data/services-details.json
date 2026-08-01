@@ -547,7 +547,7 @@
       "slug": "service-cashflow",
       "category": "financial-accounting",
       "title": "Cash Flow & Budgeting",
-      "description": "Maintain healthy cash flow and achieve your financial goals with our strategic cash flow and budgeting services. We provide comprehensive financial forecasting and strategic budget planning that helps you manage your finances effectively and plan for the future. Our services include cash flow analysis, budget preparation, variance analysis, and financial forecasting to help you anticipate financial needs and make proactive decisions. We work with you to develop realistic budgets, monitor performance against targets, and adjust plans as needed. Our cash flow management services help you optimize working capital, manage receivables and payables, and ensure you have the liquidity you need to operate and grow. Whether you're planning for short-term cash needs or long-term financial goals, our services provide the financial planning and analysis you need to succeed.",
+      "description": "We help you manage cash flow, budgets, and financial planning efficiently so your business stays profitable, organized, and ready for sustainable growth.",
       "lede": "Manage cash flow and budgets to keep your business healthy.",
       "headline": {
         "before": "Manage Cash Flow. Plan Better.",
@@ -566,92 +566,67 @@
       "extraImages": [
         "images/Budget Planning.png"
       ],
-      "featuresSectionTitle": "What We Build",
+      "featuresSectionTitle": "What We Help You With",
       "features": [
         {
-          "title": "Business Websites",
-          "description": "Professional & SEO friendly websites tailored for corporate growth.",
+          "title": "Cash Flow Tracking",
+          "description": "Monitor income & expenses in real time.",
           "iconType": "fa",
           "icon": "fa-solid fa-briefcase",
           "tone": ""
         },
         {
-          "title": "Web Applications",
-          "description": "Powerful & scalable solutions built with modern frameworks.",
+          "title": "Budget Planning",
+          "description": "Create realistic budgets & forecasts.",
           "iconType": "fa",
           "icon": "fa-solid fa-layer-group",
           "tone": "purple"
         },
         {
-          "title": "CMS Websites",
-          "description": "WordPress, Custom CMS & more for easy content management.",
+          "title": "Financial Reporting",
+          "description": "Accurate financial reports.",
           "iconType": "fa",
           "icon": "fa-solid fa-gears",
           "tone": "blue"
         },
         {
-          "title": "Landing Pages",
-          "description": "High converting & fast loading pages designed for lead generation.",
+          "title": "Forecasting",
+          "description": "Predict future cash flow needs",
           "iconType": "fa",
           "icon": "fa-solid fa-rocket",
           "tone": "pink"
         }
+       
       ],
-      "processSectionTitle": "Our Development Process",
+      "processSectionTitle": "Our Management Process",
       "process": [
         {
           "number": "01",
-          "title": "Discovery",
-          "description": "Understanding your business goals."
+          "title": "Analysis",
+          "description": "Analyze financial situation."
         },
         {
           "number": "02",
           "title": "Planning",
-          "description": "Strategy, sitemap & wireframes."
+          "description": "Create cash flow & budget plan"
         },
         {
           "number": "03",
-          "title": "Development",
-          "description": "Clean code & modern technologies."
+          "title": "Monitoring",
+          "description": "Track & measure performance."
         },
         {
           "number": "04",
-          "title": "Testing",
-          "description": "Quality assurance & performance."
+          "title": "Optimization",
+          "description": "Improve cash flow & control costs."
         },
         {
           "number": "05",
-          "title": "Launch",
-          "description": "Deployment & ongoing support."
+          "title": "Reporting",
+          "description": "Regular reports & insights."
         }
       ],
-      "toolsSectionTitle": "Technologies We Use",
-      "tools": [
-        {
-          "name": "Cash Flow",
-          "image": "images/Cash Flow Tracking.png"
-        },
-        {
-          "name": "Budgeting",
-          "image": "images/Budget Planning.png"
-        },
-        {
-          "name": "Forecasting",
-          "image": "images/Forecasting.png"
-        },
-        {
-          "name": "Expense Control",
-          "image": "images/Expense Control.png"
-        },
-        {
-          "name": "Analytics",
-          "image": "images/Analytics.png"
-        },
-        {
-          "name": "Reporting",
-          "image": "images/reporting.png"
-        }
-      ],
+     
       "tagline": "Maintaining healthy cash flow for sustainable growth",
       "slogan": "Ready To Build A Website That Works As Hard As You Do?",
       "ctaSupport": "Let's build something amazing together. From idea to online success, we're your partner in growth.",
@@ -678,14 +653,14 @@
       "slug": "service-cost-accounting",
       "category": "financial-accounting",
       "title": "Cost Accounting",
-      "description": "Optimize your business profitability with our expert cost accounting services. We provide comprehensive cost tracking, pricing analysis, and profitability management that helps you understand the true cost of your products and services. Our cost accounting services include activity-based costing, job costing, process costing, and standard costing to give you accurate insights into your cost structure. We help you identify cost drivers, analyze profitability by product or service line, and develop pricing strategies that maximize your margins. Our team works with you to implement cost control measures, improve operational efficiency, and make informed decisions about resource allocation. Whether you're looking to reduce costs, improve pricing, or understand profitability, our cost accounting services provide the financial intelligence you need to drive business growth.",
+      "description": "We provide accurate cost accounting solutions to help businesses analyze expenses, control operational costs, improve profitability, and make smarter financial decisions with confidence.",
       "lede": "Accurate accounting services to support your business.",
       "headline": {
         "before": "Know Your Costs.",
-        "accent": "Grow Your Margin."
+        "accent": "Increase Your Profits."
       },
       "images": [
-        "images/حسابات.png",
+        "images//حسابات.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
@@ -695,65 +670,65 @@
         }
       ],
       "extraImages": [
-        "images/Expense Control.png"
+        "images/expense-control.png"
       ],
-      "featuresSectionTitle": "What We Cover",
+      "featuresSectionTitle": "Our Cost Accounting Services",
       "features": [
         {
-          "title": "Cost Tracking",
-          "description": "Reliable tracking across products, projects and departments.",
-          "iconType": "fa",
-          "icon": "fa-solid fa-tags",
+          "title": "Cost Analysis",
+          "description": "Identify and evaluate all direct and indirect costs to improve financial control.",
+          "iconType": "img",
+          "icon": "images/cost-analysis.png",
           "tone": ""
         },
         {
-          "title": "Pricing Analysis",
-          "description": "Data-backed pricing that protects profit without guessing.",
-          "iconType": "fa",
-          "icon": "fa-solid fa-tag",
+          "title": "Cost Reporting",
+          "description": "Generate detailed and accurate cost reports for better business decisions.",
+          "iconType": "img",
+          "icon": "images/Cost Reporting.png",
           "tone": "purple"
         },
         {
-          "title": "Profitability Management",
-          "description": "See which lines make money — and which drain it.",
-          "iconType": "fa",
-          "icon": "fa-solid fa-chart-column",
+          "title": "Profit Analysis",
+          "description": "Measure profit margins and identify opportunities to increase profitability.",
+           "iconType": "img",
+          "icon": "images/Profit Analysis.png",
           "tone": "blue"
         },
         {
-          "title": "Resource Allocation",
+          "title": "Variance Analysis",
           "description": "Allocate people and spend where they create the most value.",
-          "iconType": "fa",
-          "icon": "fa-solid fa-diagram-project",
+          "iconType": "img",
+          "icon": "images/Variance Analysis.png",
           "tone": "pink"
         }
       ],
-      "processSectionTitle": "Our Accounting Process",
+      "processSectionTitle": "Our Process",
       "process": [
         {
           "number": "01",
-          "title": "Map",
-          "description": "Identify cost centers and current gaps."
+          "title": "Data Collection",
+          "description": "Gather accurate financial and operational data from all departments."
         },
         {
           "number": "02",
-          "title": "Structure",
-          "description": "Set categories, drivers and reporting rules."
+          "title": "Cost Classification",
+          "description": "Categorize direct, indirect, fixed, and variable costs effectively."
         },
         {
           "number": "03",
-          "title": "Track",
-          "description": "Implement tracking across operations."
+          "title": "Analysis",
+          "description": "Evaluate cost structures, identify inefficiencies, and discover savings opportunities."
         },
         {
           "number": "04",
-          "title": "Analyze",
-          "description": "Review margins and cost variances."
+          "title": "Reporting",
+          "description": "Prepare clear financial reports with actionable insights and recommendations."
         },
         {
           "number": "05",
-          "title": "Optimize",
-          "description": "Recommend pricing and allocation changes."
+          "title": "Recommendations",
+          "description": "Deliver strategic solutions to optimize costs and improve business performance."
         }
       ],
       "toolsSectionTitle": "Tools We Use",
@@ -784,10 +759,10 @@
         }
       ],
       "tagline": "Optimizing profitability through expert cost accounting",
-      "slogan": "Ready To Take Control Of Your Costs?",
-      "ctaSupport": "Build a cost system that makes profitability visible and manageable.",
-      "cardImage": "images/حسابات.png",
-      "heroImage": "images/حسابات.png",
+      "slogan": "Control Costs. Increase Profits.",
+      "ctaSupport": "Better cost management leads to stronger financial performance, higher profitability, and long-term business growth.",
+      "cardImage": "images/اله حاسبه.png",
+      "heroImage": "images/اله حاسبه.png",
       "relatedServices": [
         "cashflow",
         "auditing",
@@ -809,14 +784,14 @@
       "slug": "service-ecommerce",
       "category": "software-web-development",
       "title": "E-commerce Solutions",
-      "description": "Transform your online business with our comprehensive e-commerce development services. We design and implement e-commerce stores with an easy-to-use shopping interface featuring product and category management, integration of electronic payment systems, inventory management and shopping cart functionality, an advanced store control panel, SEO optimization specifically designed for online stores, and integration with shipping and delivery services. We build robust online stores using platforms like WooCommerce, Shopify, and custom solutions tailored to your specific needs. We ensure your online store is optimized for conversions, mobile-responsive, and provides an exceptional shopping experience.",
+      "description": "We build secure, scalable, and high-performing e-commerce stores that deliver exceptional shopping experiences, increase conversions, and help your business grow faster.",
       "lede": "Build powerful online stores that increase your sales.",
       "headline": {
         "before": "E-Commerce Solutions",
         "accent": "That Drive Sales"
       },
       "images": [
-        "images/تجاره.png",
+        "images/shoppin-g.png",
         "images/تجاره فوتر.png"
       ],
       "extraContent": [
@@ -835,29 +810,29 @@
       "featuresSectionTitle": "What We Offer",
       "features": [
         {
-          "title": "Online Store",
-          "description": "Custom & feature-rich online storefronts.",
+          "title": "Online Store Development",
+          "description": "Custom e-commerce websites tailored to your business goals.",
           "iconType": "img",
           "icon": "images/Online store.png",
           "tone": ""
         },
         {
-          "title": "Payment Gateway",
-          "description": "Secure & multiple payment options.",
+          "title": "Payment Gateway Integration",
+          "description": "Secure and reliable online payment solutions.",
           "iconType": "img",
           "icon": "images/Payment Gateway.png",
           "tone": "purple"
         },
         {
-          "title": "Product Mgmt",
-          "description": "Easy product & inventory management.",
+          "title": "Product Management",
+          "description": "Organize, update, and manage your product catalog with ease.",
           "iconType": "img",
           "icon": "images/Product Mgmt.png",
           "tone": "blue"
         },
         {
-          "title": "Shipping",
-          "description": "Real-time shipping & tracking integrations.",
+          "title": "Shipping Integration",
+          "description": "Connect with trusted shipping providers for smooth order fulfillment",
           "iconType": "img",
           "icon": "images/Shipping.png",
           "tone": "pink"
@@ -923,7 +898,7 @@
       "ctaSupport": "Let's build something amazing together. From idea to online success, we're your partner in growth.",
       "ctaImage": "images/تجاره فوتر.png",
       "cardImage": "images/e-commerce.png",
-      "heroImage": "images/تجاره.png",
+      "heroImage": "images/shoppin-g.png",
       "relatedServices": [
         "web-dev",
         "uiux",

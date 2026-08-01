@@ -64,10 +64,11 @@ function renderFeatures(service) {
       const description = escapeHtml(item.description || "");
       const tone = item.tone ? ` ${escapeHtml(item.tone)}` : ` ${tones[index % tones.length]}`;
       const icon = item.icon || icons[index % icons.length];
-      const iconHtml =
-        item.iconType === "img"
-          ? `<img src="${escapeHtml(icon)}" alt="${title}">`
-          : `<i class="${escapeHtml(icon)}"></i>`;
+      const useImageIcon =
+        item.iconType === "img" || /\.(png|jpe?g|svg|webp|gif)$/i.test(icon);
+      const iconHtml = useImageIcon
+        ? `<img src="${escapeHtml(icon)}" alt="${title}">`
+        : `<i class="${escapeHtml(icon)}"></i>`;
 
       return `
         <div class="service-card">
@@ -252,8 +253,36 @@ function showError(message) {
   document.body.classList.remove("is-loading");
 }
 
+function applyServiceSectionVisibility(service) {
+  const isCostAccounting = service.id === "cost-accounting";
+  const isPaidAds = service.id === "paid-ads";
+  const isSeo = service.id === "seo";
+  const isEcommerce = service.id === "ecommerce";
+  document.body.classList.toggle("is-cost-accounting", isCostAccounting);
+  
+  const pageService = document.querySelector('.page-service');
+  if (pageService) {
+    pageService.classList.toggle("is-cost-accounting", isCostAccounting);
+    pageService.classList.toggle("is-paid-ads", isPaidAds);
+    pageService.classList.toggle("is-seo", isSeo);
+    pageService.classList.toggle("is-ecommerce", isEcommerce);
+  }
+
+  const techSection = document.querySelector('.technologies');
+  if (techSection) {
+    techSection.hidden = isCostAccounting;
+  }
+
+  const moreSection = document.querySelector('.svc-more');
+  if (moreSection) {
+    moreSection.hidden = true;
+  }
+}
+
 function bindService(service, allServices) {
   document.title = `${service.title || "Service"} | Falcon Codes`;
+
+  applyServiceSectionVisibility(service);
 
   setText('[data-bind="title"]', service.title);
   renderHeadline(service);
@@ -271,6 +300,13 @@ function bindService(service, allServices) {
   renderProcess(service);
 
   setText('[data-bind="tools-title"]', service.toolsSectionTitle || "Technologies We Use");
+  const techSection = document.querySelector('.technologies');
+  if (techSection) {
+    techSection.classList.remove('cashflow');
+    if (service.id === 'cashflow') {
+      techSection.classList.add('cashflow');
+    }
+  }
   renderTools(service);
 
   setText('[data-bind="related-title"]', service.relatedSectionTitle || "Related Services");

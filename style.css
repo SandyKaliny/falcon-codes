@@ -3907,7 +3907,7 @@ ul {
     margin-top: 0;
     padding-top: 0px;
     /* Match testimonials section background above */
-    background: #F8F7FD;
+    background: transparent;
 }
 
 .cta {

@@ -206,28 +206,28 @@
       "process": [
         {
           "number": "01",
-          "title": "Requirement",
-          "description": "Understanding your business needs."
+          "title": "Requirement Analysis",
+          "description": "Understand your business goals and customer needs."
         },
         {
           "number": "02",
           "title": "Store Design",
-          "description": "UI/UX design for better conversions."
+          "description": "Create an attractive, user-friendly shopping experience."
         },
         {
           "number": "03",
           "title": "Development",
-          "description": "Build powerful & secure store."
+          "description": "Build a fast, secure, and scalable online store."
         },
         {
           "number": "04",
           "title": "Testing",
-          "description": "Test everything before launch."
+          "description": "Ensure flawless performance across all devices and browsers."
         },
         {
           "number": "05",
           "title": "Launch",
-          "description": "Go live & grow your business."
+          "description": "Deploy your store and provide continuous support for growth."
         }
       ],
       "toolsSectionTitle": "Platforms We Work With",
@@ -258,8 +258,8 @@
         }
       ],
       "tagline": "Building online stores that drive sales and customer satisfaction",
-      "slogan": "Ready To Launch A Store That Sells?",
-      "ctaSupport": "Let's build something amazing together. From idea to online success, we're your partner in growth.",
+      "slogan": "Ready to Start Selling Online?",
+      "ctaSupport": "Launch your online store with confidence and grow your business through powerful e-commerce solutions designed for success.",
       "relatedServices": [
         "web-dev",
         "mobile",
@@ -1346,7 +1346,7 @@
         "accent": "Grow Your Margin."
       },
       "images": [
-        "images/حسابات.png",
+        "images/اله حاسبه.png",
         "images/Modern Solutions.png"
       ],
       "extraContent": [
@@ -1461,7 +1461,7 @@
       "otherSectionTitle": "خدمات أخرى",
       "toolsGridClass": "tech-grid",
       "toolsGridColumns": 6,
-      "heroImage": "images/حسابات.png",
+      "heroImage": "images/حسابات",
       "cardImage": "images/حسابات.png",
       "ctaImage": "images/Modern Solutions.png"
     },

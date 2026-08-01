@@ -917,9 +917,9 @@ ul {
 
     font-size: 28px;
 
-    color: #dcff4e;
+    color: #567bff;
 
-    background: #fdd93e3b;
+    background: rgb(238, 243, 255);
 
 }
 
@@ -958,6 +958,7 @@ ul {
     margin-bottom: 14px;
 
     color: #222;
+    font-weight: 600;
 
 }
 
@@ -1125,6 +1126,26 @@ ul {
     font-size: 25px;
     font-weight: 600;
     letter-spacing: -0.5px;
+}
+
+.technologies.cashflow .section-title h2 {
+    text-transform: uppercase;
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+    color: #160c3d;
+}
+
+.technologies.cashflow .section-title {
+    margin-bottom: 28px;
+}
+
+.technologies.cashflow .line {
+    width: 62px;
+    height: 3px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #7356ff, #a64cff);
 }
 
 .technologies .line {
@@ -2189,7 +2210,158 @@ ul {
 
 /* Soft lavender band behind overlapping CTA — template pages only */
 .page-service .footer-cta-zone {
-    background: #f8f7fe;
+    background: transparent;
+}
+
+.page-service.is-cost-accounting .footer-cta-zone {
+    background: linear-gradient(46deg, #e6dcf40a, #c8ace2ed);
+}
+
+.page-service.is-ecommerce .cta-btn-default {
+    display: none;
+}
+
+.page-service.is-ecommerce .cta-image-ecommerce {
+    display: block !important;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+    animation: shoppingFloat 3s ease-in-out infinite;
+}
+
+.page-service.is-ecommerce .cta-box {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.page-service.is-ecommerce .cta-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+@keyframes shoppingFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+.page-service.is-seo .cta-btn-default {
+    display: none;
+}
+
+.page-service.is-seo .cta-image-seo {
+    display: block !important;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    margin-left: 20px;
+    flex-shrink: 0;
+    animation: floatBounce 3s ease-in-out infinite;
+}
+
+@keyframes floatBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+.page-service.is-seo .cta-box {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+}
+
+.page-service.is-seo .cta-left {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: auto;
+}
+}
+}
+
+.page-service.is-paid-ads .cta-btn-default {
+    display: none !important;
+}
+
+.page-service.is-paid-ads footer .cta-btn {
+    display: none !important;
+}
+
+.page-service.is-paid-ads .footer-cta-zone .cta-btn {
+    display: none !important;
+}
+
+.page-service.is-paid-ads .cta-box {
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+}
+
+.page-service.is-paid-ads .cta-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.page-service.is-paid-ads .cta-image-paid-ads {
+    display: block !important;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: brightness(1.2) contrast(1.3) saturate(1.2) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+    margin-top: 0;
+    margin-left: 20px;
+    animation: spinPulse 2s ease-in-out infinite;
+}
+
+@keyframes spinPulse {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(15deg) scale(1.08);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.page-service.is-cost-accounting .cta-btn-default {
+    display: none;
+}
+
+.page-service.is-cost-accounting .cta-image {
+    display: block !important;
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    flex-shrink: 0;
+    animation: moneyBounce 2.5s ease-in-out infinite;
+}
+
+@keyframes moneyBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-12px) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-8px) rotate(2deg);
+    }
 }
 
 .page-service .cta-visual {
