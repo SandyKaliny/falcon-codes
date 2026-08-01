@@ -919,7 +919,7 @@
       "slug": "service-legal-consulting",
       "category": "legal-services",
       "title": "Strategy Consulting",
-      "description": "Navigate complex legal challenges with confidence through our expert legal consulting services. We provide comprehensive legal analysis, risk assessment, and advisory services that help you make informed decisions and protect your business interests. Our legal consultants bring deep expertise across various areas of law, including corporate law, contract law, employment law, intellectual property, and regulatory compliance. We work closely with you to understand your business needs, identify legal risks, and develop strategies to mitigate those risks. Our consulting services include legal research, opinion writing, risk assessment, and strategic legal planning. Whether you're facing a specific legal issue, need ongoing legal support, or want to ensure compliance with regulations, our legal consulting services provide the expertise and guidance you need to protect your business and achieve your objectives.",
+      "description": "Navigate complex legal matters with confidence through our expert consulting services. We provide strategic legal advice, risk assessments, and compliance guidance tailored to your business needs. From contract review and corporate law to regulatory compliance and legal planning, our experienced consultants deliver practical solutions that protect your interests, minimize risk, and support long-term business success",
       "lede": "Smart strategies to help your business grow and scale.",
       "headline": {
         "before": "Legal Clarity",
@@ -1041,7 +1041,7 @@
       "otherSectionTitle": "Other Services",
       "toolsGridClass": "tech-grid",
       "toolsGridColumns": 6,
-      "heroImage": "images/strategyyy.png",
+      "heroImage": "images/legal-consulting.png",
       "cardImage": "images/strategyyy.png",
       "ctaImage": "images/Modern Solutions.png"
     }
