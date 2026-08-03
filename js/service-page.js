@@ -258,6 +258,7 @@ function applyServiceSectionVisibility(service) {
   const isPaidAds = service.id === "paid-ads";
   const isSeo = service.id === "seo";
   const isEcommerce = service.id === "ecommerce";
+  const isUiux = service.id === "ui-ux";
   document.body.classList.toggle("is-cost-accounting", isCostAccounting);
   
   const pageService = document.querySelector('.page-service');
@@ -266,6 +267,7 @@ function applyServiceSectionVisibility(service) {
     pageService.classList.toggle("is-paid-ads", isPaidAds);
     pageService.classList.toggle("is-seo", isSeo);
     pageService.classList.toggle("is-ecommerce", isEcommerce);
+    pageService.classList.toggle("is-uiux", isUiux);
   }
 
   const techSection = document.querySelector('.technologies');
